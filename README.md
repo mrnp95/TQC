@@ -21,3 +21,25 @@ Source codes for implementation of the Kitaev Honeycomb model!
     * try ffnn and compare it with rbm, from the perspective of time, effecient of parameters and, the most important, accuracy.
 
 ## Results
+
+### Play with alpha: how many hidden nodes are suitable?
+
+Study how number of hidden nodes, denoted by num_nh, influences accuracy and training time. Fix the lattice size to __5x5__, train batch number to __1kx10k__, optimizer to Sgd(learning_rate=0.01,decay_factor=1), sampler to MetropolisLocal. The exact ground state energy of 5x5 lattice is __-39.3892__. In the table below, -27.7808(59) means $-27.7808\pm0.0059$.
+
+|alpha|num_nh|num_para|energy|time|notes|
+|:---:|:----:|:------:|:----:|:--:|:---:|
+|0.1|  5| 305|-27.7808(59)|171.6|
+|0.3| 15| 815|-33.4312(37)|455.0|
+|0.5| 25|1325|-36.6024(22)|711.9|
+|1.0| 50|2600|-37.2464(13)|1549|
+|1.5| 75|3875|-37.1235(15)|2764|
+|2.0|100|5150|-37.3054(14)|5611|
+|3.0|150|7700|-37.3037(14)|8415|
+|4.0|200|10250|-37.1007(16)|11204|
+|6.0|300|15350|-37.2989(14)|18167|
+|8.0|400|20450|
+|10.0|500|25550|
+
+Conclusions:
+* 2 is the most suitable value for alpha. If it is too low, the fitting performace is not good; too high overfit will happen.
+* The training time is approximately proportional to the number of parameters. For each additional parameter, the training time is increased by about 1 second.
