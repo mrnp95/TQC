@@ -37,8 +37,8 @@ Study how number of hidden nodes, denoted by num_nh, influences accuracy and tra
 |3.0|150|7700|-37.3037(14)|8415|
 |4.0|200|10250|-37.1007(16)|11204|
 |6.0|300|15350|-37.2989(14)|18167|
-|8.0|400|20450|
-|10.0|500|25550|
+|8.0|400|20450|-37.1710(15)|26000|
+|10.0|500|25550|-37.1946(15)|32056|
 
 * __2 is the most suitable value for alpha__. If it is too low, the fitting performace is not good; too high overfit will happen.
 * The training time is approximately proportional to the number of parameters. __For each additional parameter, the training time is increased by about 1 second.__
