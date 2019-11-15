@@ -24,9 +24,9 @@ Source codes for implementation of the Kitaev Honeycomb model!
 
 ### Play with alpha: how many hidden nodes are suitable?
 
-Study how number of hidden nodes, denoted by num_nh, influences accuracy and training time. Fix the lattice size to __5x5__, train batch number to __1kx10k__, optimizer to Sgd(learning_rate=0.01,decay_factor=1), sampler to MetropolisLocal. The exact ground state energy of 5x5 lattice is __-39.3892__. In the table below, -27.7808(59) means $-27.7808\pm0.0059$.
+Study how number of hidden nodes, denoted by num_nh, influences accuracy and training time. Fix the __lattice size to 5x5__, train batch number to 1kx10k, optimizer to Sgd(learning_rate=0.01,decay_factor=1), sampler to MetropolisLocal. The exact ground state energy of 5x5 lattice is -39.3892. In the table below, -27.7808(59) means $-27.7808\pm0.0059$.
 
-|alpha|num_nh|num_para|energy|time|notes|
+|alpha|num_nh|num_para|energy|time(s)|notes|
 |:---:|:----:|:------:|:----:|:--:|:---:|
 |0.1|  5| 305|-27.7808(59)|171.6|
 |0.3| 15| 815|-33.4312(37)|455.0|
@@ -40,6 +40,15 @@ Study how number of hidden nodes, denoted by num_nh, influences accuracy and tra
 |8.0|400|20450|
 |10.0|500|25550|
 
-Conclusions:
-* 2 is the most suitable value for alpha. If it is too low, the fitting performace is not good; too high overfit will happen.
-* The training time is approximately proportional to the number of parameters. For each additional parameter, the training time is increased by about 1 second.
+* __2 is the most suitable value for alpha__. If it is too low, the fitting performace is not good; too high overfit will happen.
+* The training time is approximately proportional to the number of parameters. __For each additional parameter, the training time is increased by about 1 second.__
+* __The result of RBM is still far away from the analytic result.__
+
+### The performance of FFNN
+Below is the result of FFNN with one layer. As the structure of ffnn is similar to that of a no-visible-bias RBM(reffered as novb RBM below), the performance of one-layer FFNN is compared to that of no-visible-bias RBM.
+
+|alpha|num_nh|num_para|ffnn_energy|novb_rbm_energy|ffnn_time(s)|novb_rbm_time|notes|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|1.0| 50|2550|-37.2401(15)||2783|
+|2.0|100|5100|-37.2958(14)||4591|
+|3.0|150|7650|-37.3007(14)||6889|
