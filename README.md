@@ -56,3 +56,5 @@ Below is the result of FFNN with one layer. As the structure of ffnn is similar 
 
 * FFNN trains faster than RBM and performs better than RBM with no bias.
 * But FFNN's result again far away from the analytic one.
+
+Deep FFNNs with 2 and 3 layers are also tried. But some bugs seem happen, the energies stay at -25. It will be studied later.
