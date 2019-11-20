@@ -10,12 +10,11 @@ Source codes for implementation of the Kitaev Honeycomb model!
     * some utility functions which will be used in many other codes. It includes, get_graph_reza(), get_hamiltonian(), exact_diag(), gs_energy_babak(), rbm(), __measure()__ and __flip_spins()__
     * you need to create machine yourself and pass it to rbm() to train it
     * __flip_spins() is still being testing its stability. Be careful when using it__ 
-    * This script is supposed to only be imported and used in other scripts
+    * This script is supposed to only be imported and used in other scripts. One of using demo of this script can be found in calc_gs.py
 * exact_diag_for_reza.py
     * a script to show Reza that the exact diagonalize energy is different from Babak's formula
 * test_flip_and_measure.py
     * test measure and flip technology by Ising model
-    * measurment has been solved. Encountered some problems in flipping.
 * play_with_alpha.py
     * try how large of alpha is suitable, by a 5x5 lattice, 1kx10k trains and alpha 0.1,0.3,0.5,1,1.5,2,3,4,6,8,10.
 * try_other_machines.py
