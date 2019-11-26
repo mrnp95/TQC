@@ -22,6 +22,18 @@ Source codes for implementation of the Kitaev Honeycomb model!
 
 ## Results
 
+### Create Vortex and Measure its energy
+
+There are two theoretically equivalent method to create vortices
+    * (a) modifing parameters of RBM
+    * (b) creating a auxiliary Hamiltonian and train again. 
+But remember that measuring also takes a lot of times, so the first method is only 3-4 times faster than the other. I will double check using 3x3 lattice below.
+
+|spins be flipped|energy of a|energy of b|
+|:-:|:-:|:-:|
+|8x8z|-11.7335(5)|-12.1070(51)|
+|9x9z|-11.7474(5)|-11.8873(57)|
+|8y|cannot do that|-12.7447(37)|
 ### Play with alpha: how many hidden nodes are suitable?
 
 Study how number of hidden nodes, denoted by num_nh, influences accuracy and training time. Fix the __lattice size to 5x5__, train batch number to 1kx10k, optimizer to Sgd(learning_rate=0.01,decay_factor=1), sampler to MetropolisLocal. The exact ground state energy of 5x5 lattice is -39.3892. In the table below, -27.7808(59) means $-27.7808\pm0.0059$.
