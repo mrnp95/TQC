@@ -27,7 +27,7 @@ Source codes for implementation of the Kitaev Honeycomb model!
 There are two theoretically equivalent method to create vortices
     * (a) modifing parameters of RBM
     * (b) creating a auxiliary Hamiltonian and train again. 
-But remember that measuring also takes a lot of times, so the first method is only 3-4 times faster than the other. I will double check using 3x3 lattice below.
+But remember that measuring also takes a lot of times, so the first method is only 3-4 times faster than the other. I will double check using 3x3 lattice below. The numeric result of gs energy of 3x3 lattice is -13.7166(2).
 
 |spins be flipped|energy of a|energy of b|
 |:-:|:-:|:-:|
