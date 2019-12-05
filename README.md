@@ -38,11 +38,11 @@ But remember that measuring also takes a lot of times, so the first method is on
 
 Now I turn to larger lattice size, 7x7. The theoretical gs energy of this size is -77.1249, and the gs energy by RBM is -71.7927(30).
 
-|spins br flipped|vortices distance|energy by method a|notes|
-|:-:|:-:|:-:|:-:|
-|vortex free|0|-71.7927(30)||
-|49xy|1|-69.779(34)|consume 18% RAM so can only run in 4 threads and takes exactly 1.5 days to complete|
-|49xy51xy|2|-67.673(0.037)|takes 1.5 days if added another 4 mins|
+|spins be flipped|vortices distance|energy by method a|energy per votex|notes|
+|:-:|:-:|:-:|:-:|:-:|
+|vortex free|0|-71.7927(30)|-||
+|49xy|1|-69.779(34)|1.007(34)|consume 18% RAM so can only run in 4 threads and takes exactly 1.5 days to complete|
+|49xy51xy|2|-67.673(37)|2.060(37)|takes 1.5 days if added another 4 mins|
 
 
 ### Play with alpha: how many hidden nodes are suitable?
