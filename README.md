@@ -42,8 +42,8 @@ Now I turn to larger lattice size, 7x7. The theoretical gs energy of this size i
 |:-:|:-:|:-:|:-:|:-:|
 |vortex free|0|-71.7927(30)|-||
 |49xy|1|-69.779(34)|1.007(34)|consume 18% RAM so can only run in 4 threads and takes exactly 1.5 days to complete|
-|49xy51xy|2|-67.673(37)|2.060(37)|takes 1.5 days if added another 4 mins|
-
+|49xy 51xy|2|-67.673(37)|2.060(37)|takes 1.5 days if added another 4 mins|
+|47xy 49xy 51xy|3|-65.574(40)|3.109(40)|takes 1.5 days and 3 mins|
 
 ### Play with alpha: how many hidden nodes are suitable?
 
