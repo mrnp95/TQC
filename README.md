@@ -24,10 +24,10 @@ Source codes for implementation of the Kitaev Honeycomb model!
 
 ### Create Vortex and Measure its energy
 
-There are two theoretically equivalent method to create vortices
+There are three theoretically equivalent method to create vortices
 * a.modifing parameters of RBM
 * b.creating a auxiliary Hamiltonian and train again. 
-
+* c.Kitaev and Pachos
 But remember that measuring also takes a lot of times, so the first method is only 3-4 times faster than the other. I will double check using 3x3 lattice below. The numeric result of gs energy of 3x3 lattice is -13.7166(2), the theoretical gs energy is -14.2915.
 
 |spins be flipped|energy of a|energy of b|
@@ -38,12 +38,12 @@ But remember that measuring also takes a lot of times, so the first method is on
 
 Now I turn to larger lattice size, 7x7. The theoretical gs energy of this size is -77.1249, and the gs energy by RBM is -71.7927(30).
 
-|spins be flipped|vortices distance|energy by method a|energy per votex|notes|
+|spins be flipped|vortices distance|method a|method c|notes|
 |:-:|:-:|:-:|:-:|:-:|
-|vortex free|0|-71.7927(30)|-||
-|49xy|1|-69.779(34)|1.007(34)|consume 18% RAM so can only run in 4 threads and takes exactly 1.5 days to complete|
-|49xy 51xy|2|-67.673(37)|2.060(37)|takes 1.5 days if added another 4 mins|
-|47xy 49xy 51xy|3|-65.574(40)|3.109(40)|takes 1.5 days and 3 mins|
+|vortex free|0|-71.7927(30)|-77.1249||
+|49xy|1|-69.779(34)|-76.8307|consume 18% RAM so can only run in 4 threads and takes exactly 1.5 days to complete|
+|49xy 51xy|2|-67.673(37)|-76.5981|takes 1.5 days if added another 4 mins|
+|47xy 49xy 51xy|3|-65.574(40)|-76.4564|takes 1.5 days and 3 mins|
 
 ### Ground State Energy
 
