@@ -25,24 +25,30 @@ Source codes for implementation of the Kitaev Honeycomb model!
 ### Create Vortex and Measure its energy
 
 There are three theoretically equivalent method to create vortices
-* a.modifing parameters of RBM
-* b.creating a auxiliary Hamiltonian and train again. 
-* c.Kitaev and Pachos
-But remember that measuring also takes a lot of times, so the first method is only 3-4 times faster than the other. I will double check using 3x3 lattice below. The numeric result of gs energy of 3x3 lattice is -13.7166(2), the theoretical gs energy is -14.2915.
+* (a) modifing parameters of RBM
+* (b) creating a auxiliary Hamiltonian and train again
+* (c) transforming into auxiliary fermion and fixing u_{ij}s (Kitaev and Pachos)
 
-|spins be flipped|energy of a|energy of b|
-|:-:|:-:|:-:|
-|8x8z|-11.7335(5)|-12.1070(51)|
-|9x9z|-11.7474(5)|-11.8873(57)|
-|8y|cannot do that|-12.7447(37)|
+I will first triple check using 3x3 lattice. The numeric result of gs energy of 3x3 lattice is -13.7166(2), the theoretical gs energy is -14.2915. The results is as the table below.
 
-Now I turn to larger lattice size, 7x7. The theoretical gs energy of this size is -77.1249, and the gs energy by RBM is -71.7927(30). It is wired in method a computation that all these computations take exactly 1.5 days. By exactly, I means the error is at most 4 mins.
+|spins be flipped|energy of a |energy of b |energy of c|
+|:--------------:|:----------:|:----------:|:---------:|
+|8xz             |-11.7335(5) |-12.1070(51)|-13.9146   |
+|9xz             |-11.7474(5) |-11.8873(57)|-13.9146   |
+|8y              |unrealizable|-12.7447(37)|-13.9146   |
 
-|spins be flipped |/           |49xy       |49,51xy    |47,49,51xy |47,49,51,53xy|47xz48xy49yz|
-|:---------------:|:----------:|:---------:|:---------:|:---------:|:-----------:|:----------:|
-|vortices distance|0           |1          |2          |3          |4            |2           |
+__There is a wired thing in  method c, need to diss!__
+Method a is more stable than method b. Both of method a and b is far from than the correct result, method c. As the time they take, method c takes several ms to finish; method a and b take several minutes and method a is 3 or 4 times faster than method b.
+
+Now turn to larger lattice size, say, 7x7. It is wired in computation of method a that all these computations take exactly 1.5 days. By exactly, I means the error is at most 4 mins. The results are as below.
+
+|spins be flipped |/           |49xy       |49,51xy    |47,49,51xy |47,49,51,53xy|47xz48xy49yz|47xz48xy49yz 51xz52xy53yz|
+|:---------------:|:----------:|:---------:|:---------:|:---------:|:-----------:|:----------:|:-----------------------:|
+|vortices distance|0           |1          |2          |3          |4            |2           |4                        |
 |method a energy  |-71.7927(30)|-69.779(34)|-67.673(37)|-65.574(40)|-63.598(42)  |-70.053(39) |
 |energy diff      |/           |2.014      |4.120      |6.219      |8.195        |1.7397      |
+|method c energy  |-77.1249    |-76.8307   |-76.8490   |-76.8308   |-76.8308     |-76.8490    |-76.8308                 |
+|energy diff      |/           |0.2942     |0.2759     |0.2941     |0.2941       |0.2759      |0.2941                   |
 
 However, using method c, the vortices energies are as follows
 
@@ -52,6 +58,7 @@ However, using method c, the vortices energies are as follows
 |energy diff      |/        |0.2942   |0.5568   |0.6685  |0.8954  |1.1422   |
 |energy for 25x25 |-984.1179|-983.8513|-983.6629|983.5170|983.3135|-983.1343|-982.9740|982.7814|-982.6028|
 |energy diff      |/        |0.2666   |0.4550   |0.6009  |0.8044  |0.9836   |1.1439   |1.3365  |1.5151   |
+
 ### Ground State Energy
 
 Up to now, we have too many methods to calculate gs energies, including
@@ -61,15 +68,16 @@ Up to now, we have too many methods to calculate gs energies, including
 * b. The method of Kitaev and Pachos
 * c. Create Hamiltonian in Netket and direct diagnolize
 * d. RBM (alpha=2, train by 1kx10k)
-Here I compare the gs energy of them in different lattice size
+Here I will compare the gs energy of them with different lattice size
 
-|lattice size|2x2|2x3|2x4|3x3|3x4|4x4|5x5|6x6|7x7|8x8|
-|:----------:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|lattice size|2x2    |2x3    |2x4     |3x3     |3x4     |4x4     |5x5     |6x6     |7x7     |8x8      |
+|:----------:|:-----:|:-----:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:-------:|
 |a.i         |-6.4721|-9.8003|-12.5851|-14.2915|-18.9869|-25.1282|-39.3892|-56.7529|-77.1249|-100.7799|
 |a.ii        |-6     |-8     |-12.4721|-9      |-16.9282|-25.4164|-39.3685|-54     |-77.2721|-100.8009|
 |b           |-6     |-9.2915|-12.4721|-14.2915|-19.0918|-25.4164|-39.3892|-56.2668|-77.1249|-100.8009|
-|c           |-6.9282|-9.8003|-12.9443|-14.2915|-19.0918|/|/|/|/|/|
+|c           |-6.9282|-9.8003|-12.9443|-14.2915|-19.0918|
 |d           |-6.7197|-9.5414|-12.573 |-13.7374|        |-24.0783|-37.305 |-52.920 |-71.793 |-93.755  |
+
 ### Play with alpha: how many hidden nodes are suitable?
 
 Study how number of hidden nodes, denoted by num_nh, influences accuracy and training time. Fix the __lattice size to 5x5__, train batch number to 1kx10k, optimizer to Sgd(learning_rate=0.01,decay_factor=1), sampler to MetropolisLocal. The exact ground state energy of 5x5 lattice is -39.3892. In the table below, -27.7808(59) means $-27.7808\pm0.0059$.
