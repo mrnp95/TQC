@@ -37,8 +37,9 @@ I will first triple check using 3x3 lattice. The numeric result of gs energy of 
 |9xz             |-11.7474(5) |-11.8873(57)|-13.9146   |
 |8y              |unrealizable|-12.7447(37)|-13.9146   |
 
-__There is a wired thing in  method c, need to diss!__
-Method a is more stable than method b. Both of method a and b is far from than the correct result, method c. As the time they take, method c takes several ms to finish; method a and b take several minutes and method a is 3 or 4 times faster than method b.
+__There is a wired thing in  method c, need to disscuss!__
+
+Method a is more stable than method b. Both of method a and b is far from the correct result, method c. As the time they take, method c takes several ms to finish; method a and b take several minutes and method a is 3 or 4 times faster than method b.
 
 Now turn to larger lattice size, say, 7x7. It is wired in computation of method a that all these computations take exactly 1.5 days. By exactly, I means the error is at most 4 mins. The results are as below.
 
@@ -50,14 +51,14 @@ Now turn to larger lattice size, say, 7x7. It is wired in computation of method 
 |method_c_energy  |-77.1249    |-76.8307   |-76.8490   |-76.8308   |-76.8308     |-76.8490    |-76.8308                 |
 |energy_diff      |/           |0.2942     |0.2759     |0.2941     |0.2941       |0.2759      |0.2941                   |
 
-However, using method c, the vortices energies are as follows
+It is worth to evaluate energy of vertices by method c for more large systems.
 
-|vortices distance|0        |1        |2        |3       |4       |5        |6        |7       |8        |
-|:---------------:|:-------:|:-------:|:-------:|:------:|:------:|:-------:|:-------:|:------:|:-------:|
-|energy for 7x7   |-77.1249 |-76.8307 |-76.5981 |-76.4564|-76.2295|-75.9827 |
-|energy diff      |/        |0.2942   |0.5568   |0.6685  |0.8954  |1.1422   |
-|energy for 25x25 |-984.1179|-983.8513|-983.6629|983.5170|983.3135|-983.1343|-982.9740|982.7814|-982.6028|
-|energy diff      |/        |0.2666   |0.4550   |0.6009  |0.8044  |0.9836   |1.1439   |1.3365  |1.5151   |
+|vortices_distance|0        |1        |2        |3        |4        |5        |6        |7        |8        |
+|:---------------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|energy_for_7x7   |-77.1249 |-76.8307 |-76.8490 |-76.8308 |-76.8308 |-76.8490 |
+|energy_diff      |/        |0.2942   |0.2759   |0.2941   |0.2941   |0.2759   |
+|energy_for_25x25 |-984.1179|-983.8513|-983.8205|-983.8551|-983.8108|-983.8209|-983.8310|-983.8001|-983.8205|
+|energy_diff      |/        |0.2666   |0.2974   |0.2628   |0.3071   |0.2970   |0.2869   |0.3178   |0.2974   |
 
 ### Ground State Energy
 
@@ -76,7 +77,7 @@ Here I will compare the gs energy of them with different lattice size
 |a.ii        |-6     |-8     |-12.4721|-9      |-16.9282|-25.4164|-39.3685|-54     |-77.2721|-100.8009|
 |b           |-6     |-9.2915|-12.4721|-14.2915|-19.0918|-25.4164|-39.3892|-56.2668|-77.1249|-100.8009|
 |c           |-6.9282|-9.8003|-12.9443|-14.2915|-19.0918|
-|d           |-6.7197|-9.5414|-12.573 |-13.7374|        |-24.0783|-37.305 |-52.920 |-71.793 |-93.755  |
+|d           |-6.7197|-9.5414|-12.573 |-13.7374|-18.0466|-24.0783|-37.305 |-52.920 |-71.793 |-93.755  |
 
 ### Play with alpha: how many hidden nodes are suitable?
 
