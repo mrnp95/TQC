@@ -36,23 +36,22 @@ But remember that measuring also takes a lot of times, so the first method is on
 |9x9z|-11.7474(5)|-11.8873(57)|
 |8y|cannot do that|-12.7447(37)|
 
-Now I turn to larger lattice size, 7x7. The theoretical gs energy of this size is -77.1249, and the gs energy by RBM is -71.7927(30).
+Now I turn to larger lattice size, 7x7. The theoretical gs energy of this size is -77.1249, and the gs energy by RBM is -71.7927(30). It is wired in method a computation that all these computations take exactly 1.5 days. By exactly, I means the error is at most 4 mins.
 
-|spins be flipped|vortices distance|method a|notes|
-|:-:|:-:|:-:|:-:|
-|vortex free|0|-71.7927(30)||
-|49xy|1|-69.779(34)|consume 18% RAM so can only run in 4 threads and takes exactly 1.5 days to complete|
-|49xy 51xy|2|-67.673(37)|takes 1.5 days if added another 4 mins|
-|47xy 49xy 51xy|3|-65.574(40)|takes 1.5 days and 3 mins|
+|spins be flipped |/           |49xy       |49,51xy    |47,49,51xy |47,49,51,53xy|47xz48xy49yz|
+|:---------------:|:----------:|:---------:|:---------:|:---------:|:-----------:|:----------:|
+|vortices distance|0           |1          |2          |3          |4            |2           |
+|method a energy  |-71.7927(30)|-69.779(34)|-67.673(37)|-65.574(40)|-63.598(42)  |-70.053(39) |
+|energy diff      |/           |2.014      |4.120      |6.219      |8.195        |1.7397      |
 
 However, using method c, the vortices energies are as follows
 
-|vortices distance|0|1|2|3|4|5|6|7|8|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|energy for 7x7|-77.1249|-76.8307|-76.5981|-76.4564|-76.2295|-75.9827|
-|energy diff|/|0.2942|0.5568|0.6685|0.8954|1.1422|
-|energy for 25x25|-984.1179|-983.8513|-983.6629|983.5170|983.3135|-983.1343|-982.9740|982.7814|-982.6028|
-|energy diff|/|0.2666|0.4550|0.6009|0.8044|0.9836|1.1439|1.3365|1.5151|
+|vortices distance|0        |1        |2        |3       |4       |5        |6        |7       |8        |
+|:---------------:|:-------:|:-------:|:-------:|:------:|:------:|:-------:|:-------:|:------:|:-------:|
+|energy for 7x7   |-77.1249 |-76.8307 |-76.5981 |-76.4564|-76.2295|-75.9827 |
+|energy diff      |/        |0.2942   |0.5568   |0.6685  |0.8954  |1.1422   |
+|energy for 25x25 |-984.1179|-983.8513|-983.6629|983.5170|983.3135|-983.1343|-982.9740|982.7814|-982.6028|
+|energy diff      |/        |0.2666   |0.4550   |0.6009  |0.8044  |0.9836   |1.1439   |1.3365  |1.5151   |
 ### Ground State Energy
 
 Up to now, we have too many methods to calculate gs energies, including
