@@ -42,13 +42,13 @@ Method a is more stable than method b. Both of method a and b is far from than t
 
 Now turn to larger lattice size, say, 7x7. It is wired in computation of method a that all these computations take exactly 1.5 days. By exactly, I means the error is at most 4 mins. The results are as below.
 
-|spins be flipped |/           |49xy       |49,51xy    |47,49,51xy |47,49,51,53xy|47xz48xy49yz|47xz48xy49yz 51xz52xy53yz|
+|spins_be_flipped |/           |49xy       |49,51xy    |47,49,51xy |47,49,51,53xy|47xz48xy49yz|47xz48xy49yz 51xz52xy53yz|
 |:---------------:|:----------:|:---------:|:---------:|:---------:|:-----------:|:----------:|:-----------------------:|
-|vortices distance|0           |1          |2          |3          |4            |2           |4                        |
-|method a energy  |-71.7927(30)|-69.779(34)|-67.673(37)|-65.574(40)|-63.598(42)  |-70.053(39) |
-|energy diff      |/           |2.014      |4.120      |6.219      |8.195        |1.7397      |
-|method c energy  |-77.1249    |-76.8307   |-76.8490   |-76.8308   |-76.8308     |-76.8490    |-76.8308                 |
-|energy diff      |/           |0.2942     |0.2759     |0.2941     |0.2941       |0.2759      |0.2941                   |
+|vortices_distance|0           |1          |2          |3          |4            |2           |4                        |
+|method_a_energy  |-71.7927(30)|-69.779(34)|-67.673(37)|-65.574(40)|-63.598(42)  |-70.053(39) |
+|energy_diff      |/           |2.014      |4.120      |6.219      |8.195        |1.7397      |
+|method_c_energy  |-77.1249    |-76.8307   |-76.8490   |-76.8308   |-76.8308     |-76.8490    |-76.8308                 |
+|energy_diff      |/           |0.2942     |0.2759     |0.2941     |0.2941       |0.2759      |0.2941                   |
 
 However, using method c, the vortices energies are as follows
 
