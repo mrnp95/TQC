@@ -79,6 +79,8 @@ Here I will compare the gs energy of them with different lattice size
 |c           |-6.9282|-9.8003|-12.9443|-14.2915|-19.0918|
 |d           |-6.7197|-9.5414|-12.573 |-13.7374|-18.0466|-24.0783|-37.305 |-52.920 |-71.793 |-93.755  |
 
+From above table, it can be seen that method a.ii always agrees method b, which means we should use periodic boundry condition. It is still unknown why when lattice size is small method c and d's result are lower than method a and b.
+
 ### Play with alpha: how many hidden nodes are suitable?
 
 Study how number of hidden nodes, denoted by num_nh, influences accuracy and training time. Fix the __lattice size to 5x5__, train batch number to 1kx10k, optimizer to Sgd(learning_rate=0.01,decay_factor=1), sampler to MetropolisLocal. The exact ground state energy of 5x5 lattice is -39.3892. In the table below, -27.7808(59) means $-27.7808\pm0.0059$.
