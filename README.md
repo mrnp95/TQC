@@ -81,6 +81,15 @@ Here I will compare the gs energy of them with different lattice size
 
 From above table, it can be seen that method a.ii always agrees method b, which means we should use periodic boundry condition. It is still unknown why when lattice size is small method c and d's result are lower than method a and b.
 
+#### Try to improve accuracy
+
+Maybe first train RBM with large learning rate and then decrease it will lower gs energy. I keep train iters to 10k, but split it into two stages, first train with learning rate 0.3 then train with 0.01. But it comes out negetive result.
+random init --1k--> -36.610 --9k--> -37.183
+random init --2k--> -36.631 --8k--> -37.101
+random init --3k--> -36.649 --7k--> -37.291
+random init --4k--> -36.697 --6k--> -37.285
+random init --5k--> -36.758 --5k--> -37.201
+
 ### Play with alpha: how many hidden nodes are suitable?
 
 Study how number of hidden nodes, denoted by num_nh, influences accuracy and training time. Fix the __lattice size to 5x5__, train batch number to 1kx10k, optimizer to Sgd(learning_rate=0.01,decay_factor=1), sampler to MetropolisLocal. The exact ground state energy of 5x5 lattice is -39.3892. In the table below, -27.7808(59) means $-27.7808\pm0.0059$.
