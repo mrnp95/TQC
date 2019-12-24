@@ -84,11 +84,12 @@ From above table, it can be seen that method a.ii always agrees method b, which 
 #### Try to improve accuracy
 
 Maybe first train RBM with large learning rate and then decrease it will lower gs energy. I keep train iters to 10k, but split it into two stages, first train with learning rate 0.3 then train with 0.01. But it comes out negetive result.
-random init --1k--> -36.610 --9k--> -37.183
-random init --2k--> -36.631 --8k--> -37.101
-random init --3k--> -36.649 --7k--> -37.291
-random init --4k--> -36.697 --6k--> -37.285
-random init --5k--> -36.758 --5k--> -37.201
+
+random init --1k--> -36.610 --9k--> -37.183</br>
+random init --2k--> -36.631 --8k--> -37.101</br>
+random init --3k--> -36.649 --7k--> -37.291</br>
+random init --4k--> -36.697 --6k--> -37.285</br>
+random init --5k--> -36.758 --5k--> -37.201</br>
 
 ### Play with alpha: how many hidden nodes are suitable?
 
