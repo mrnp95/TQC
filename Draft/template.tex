@@ -91,7 +91,7 @@
 
 \begin{abstract}
 %\lipsum[1]
-In this work, the capability of restricted Boltzmann machines (RBM) as solutions for the Kitaev honeycomb model is investigated. The measured groundstate (GS) energy of the system is compared and shown to reside within less than $1\%$ error of the analytically derived value of energy. Furthermore, the possibility of realization of the anyons in the RBM is discussed and an algorithm is given to build these anyonic excitations in the RBM and braid them as a proof of concept for performing quantum gates and doing quantum computation. Moreover, the phase transition of the system is also studied by changing the corresponding hyperparameters of the system in RBM solution.
+In this work, the capability of restricted Boltzmann machines (RBMs) to find solutions for the Kitaev honeycomb model is investigated. The measured groundstate (GS) energy of the system is compared and shown to reside within less than $1\%$ error of the analytically derived value of the energy. Furthermore, the possibility of realizing anyons in the RBM is discussed and an algorithm is given to build these anyonic excitations and braid them as a proof of concept for performing quantum gates and doing quantum computation. Moreover, the phase transition of the system is also studied by changing the corresponding hyperparameters of the system in the RBM solution.
 \end{abstract}
 
 
@@ -102,14 +102,14 @@ In this work, the capability of restricted Boltzmann machines (RBM) as solutions
 \section{Introduction}
 %\lipsum[2]
 %\lipsum[3]
-Honeycomb model is a 2-dimensional lattice spin system (see Fig.\hspace{0.2mm}\ref{fig:fig0}) which was first introduced by Kitaev in 2006 \cite{kita} and is famous because of the topological quantum order due to a degenerate gaped groundstate which is persistent to local and finite-sized perturbations. The system also supports both abelian and non-abelian topological phases as demonstrated in the original proposal \cite{kita}. There is a wide range of applications for this model, from fault-tolerant quantum computation \cite{kita2} to analytical study of strongly correlated systems \cite{str-cor} and quantum spin liquids \cite{spi-liq}. The honeycomb lattice is not a Bravias lattice in its original structure, but it can be considered as a triangular Bravias lattice with a two-spin basis. The direct Bravias lattice and the primitive cells are illustrated in Fig.\hspace{0.2mm}\ref{fig:fig0}a with the dashed lines. Each primitive cell has a pair of odd and even indexed spins. Just for the sake of simplicity we will denote each cell with the even indexed (empty circles) spins of the system. The primitive vectors of the lattice, $\textbf{a}_1$ and $\textbf{a}_2$ are also shown in Fig.\hspace{0.2mm}\ref{fig:fig0}a (see also Equ.\hspace{0.2mm}\ref{eq:0}). The entire lattice can be tiled and covered with primitive cells using translations composed of different linear combinations of primitive vectors. 
+Honeycomb model is a 2-dimensional lattice spin system (see Fig.\hspace{0.2mm}\ref{fig:fig0}) which was first introduced by Kitaev in 2006 \cite{kita} and is famous because of the topological quantum order due to a degenerate gapped groundstate which is persistent to local and finite-sized perturbations. The system also supports both abelian and non-abelian topological phases as demonstrated in the original proposal \cite{kita}. There is a wide range of applications for this model, from fault-tolerant quantum computation \cite{kita2} to analytical study of strongly correlated systems \cite{str-cor} and quantum spin liquids \cite{spi-liq}. The honeycomb lattice is not a Bravias lattice in its original structure, but it can be considered as a triangular Bravias lattice with a two-spin basis. The direct Bravias lattice and the primitive cells are illustrated in Fig.\hspace{0.2mm}\ref{fig:fig0}a with the dashed lines. Each primitive cell has a pair of odd and even indexed spins. Just for the sake of simplicity we will denote each cell with the even indexed (empty circles) spins of the system. The primitive vectors of the lattice, $\textbf{a}_1$ and $\textbf{a}_2$ are also shown in Fig.\hspace{0.2mm}\ref{fig:fig0}a (see also Equ.\hspace{0.2mm}\ref{eq:0}). The entire lattice can be tiled and covered with primitive cells using translations composed of different linear combinations of primitive vectors. 
 
 \begin{equation}\label{eq:0}
     \textbf{a}_1 = \sqrt{3} a \textbf{e}_x \hspace{1cm} \& \hspace{1cm}
     \textbf{a}_2 = \frac{\sqrt{3}}{2} a (\textbf{e}_x, \sqrt{3}\textbf{e}_y)
 \end{equation}
 
-Where 'a' is the lattice constant. The reciprocal lattice for the triangle lattice can be obtained by solving the Equ.\hspace{0.2mm}\ref{eq:01} for basis vectors of the reciprocal lattice, $\textbf{b}_1$ and $\textbf{b}_2$.
+Where 'a' is the lattice constant. The reciprocal lattice for the triangle lattice can be obtained by solving Equ.\hspace{0.2mm}\ref{eq:01} for basis vectors of the reciprocal lattice, $\textbf{b}_1$ and $\textbf{b}_2$.
 
 \begin{equation}\label{eq:01}
     \textbf{a}_i.\textbf{b}_j = 2\pi\delta_{ij}
