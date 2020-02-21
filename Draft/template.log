@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.21)  21 FEB 2020 00:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.21)  20 FEB 2020 21:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -983,78 +983,88 @@ File: ./images/Anyons_Strings.png Graphic file (type png)
 Package pdftex.def Info: ./images/Anyons_Strings.png  used on input line 499.
 (pdftex.def)             Requested size: 328.82706pt x 199.72112pt.
 [10 <./images/Anyons_Strings.PNG>]
-<./images/gs_tbl.png, id=185, 878.28125pt x 254.9525pt>
+Underfull \hbox (badness 10000) in paragraph at lines 533--539
+
+ []
+
+<./images/gs_tbl.png, id=184, 878.28125pt x 254.9525pt>
 File: ./images/gs_tbl.png Graphic file (type png)
 <use ./images/gs_tbl.png>
-Package pdftex.def Info: ./images/gs_tbl.png  used on input line 537.
+Package pdftex.def Info: ./images/gs_tbl.png  used on input line 543.
 (pdftex.def)             Requested size: 234.87749pt x 68.18063pt.
-<./images/plots.pdf, id=186, 433.62pt x 289.08pt>
+<./images/plots.pdf, id=185, 433.62pt x 289.08pt>
 File: ./images/plots.pdf Graphic file (type pdf)
 <use ./images/plots.pdf>
-Package pdftex.def Info: ./images/plots.pdf  used on input line 538.
+Package pdftex.def Info: ./images/plots.pdf  used on input line 544.
 (pdftex.def)             Requested size: 328.82706pt x 219.22668pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 543--544
+Underfull \hbox (badness 10000) in paragraph at lines 549--550
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--554
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11 <./images/gs_tbl.png> <./images/plots.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 555--560
 
  []
 
-[11 <./images/gs_tbl.png> <./images/plots.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--564
 
  []
 
-<./images/alpha.png, id=224, 546.04pt x 459.7175pt>
+<./images/alpha.png, id=223, 546.04pt x 459.7175pt>
 File: ./images/alpha.png Graphic file (type png)
 <use ./images/alpha.png>
-Package pdftex.def Info: ./images/alpha.png  used on input line 561.
+Package pdftex.def Info: ./images/alpha.png  used on input line 567.
 (pdftex.def)             Requested size: 281.85585pt x 237.3008pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 565--568
+Underfull \hbox (badness 10000) in paragraph at lines 571--574
 
  []
 
-<./images/ffnn.png, id=225, 885.3075pt x 157.58875pt>
+<./images/ffnn.png, id=224, 885.3075pt x 157.58875pt>
 File: ./images/ffnn.png Graphic file (type png)
 <use ./images/ffnn.png>
-Package pdftex.def Info: ./images/ffnn.png  used on input line 575.
+Package pdftex.def Info: ./images/ffnn.png  used on input line 581.
 (pdftex.def)             Requested size: 375.80542pt x 66.89616pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 579--581
+Underfull \hbox (badness 10000) in paragraph at lines 585--587
 
  []
 
-[12 <./images/alpha.png> <./images/ffnn.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 590--593
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12 <./images/alpha.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 596--599
 
  []
 
-<./images/3x3.png, id=234, 505.89pt x 155.58125pt>
+<./images/3x3.png, id=231, 505.89pt x 155.58125pt>
 File: ./images/3x3.png Graphic file (type png)
 <use ./images/3x3.png>
-Package pdftex.def Info: ./images/3x3.png  used on input line 598.
+Package pdftex.def Info: ./images/3x3.png  used on input line 604.
 (pdftex.def)             Requested size: 375.80542pt x 115.57698pt.
-<./images/vort_dis.png, id=235, 884.30376pt x 257.96375pt>
+<./images/vort_dis.png, id=232, 884.30376pt x 257.96375pt>
 File: ./images/vort_dis.png Graphic file (type png)
 <use ./images/vort_dis.png>
-Package pdftex.def Info: ./images/vort_dis.png  used on input line 610.
+Package pdftex.def Info: ./images/vort_dis.png  used on input line 616.
 (pdftex.def)             Requested size: 375.80542pt x 109.62723pt.
-<./images/vort_dis_c.png, id=236, 876.27374pt x 190.7125pt>
+<./images/vort_dis_c.png, id=233, 876.27374pt x 190.7125pt>
 File: ./images/vort_dis_c.png Graphic file (type png)
 <use ./images/vort_dis_c.png>
-Package pdftex.def Info: ./images/vort_dis_c.png  used on input line 618.
+Package pdftex.def Info: ./images/vort_dis_c.png  used on input line 624.
 (pdftex.def)             Requested size: 375.80542pt x 81.79233pt.
-[13 <./images/3x3.png> <./images/vort_dis.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 770.
+[13 <./images/ffnn.png> <./images/3x3.png> <./images/vort_dis.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 776.
  [14 <./images/vort_dis_c.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 770.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 776.
  (/home/mohammad/Dropbox/Machine Learning Topological Phases/TQC/Draft/template.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 770.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 770.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 776.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 776.
 Package rerunfilecheck Info: File `template.out' has not changed.
 (rerunfilecheck)             Checksum: B8267BA7CD5F0C04568E1854D3CBE083;522.
 
@@ -1064,7 +1074,7 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 770.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 776.
  ) 
 Here is how much of TeX's memory you used:
  22279 strings out of 492164
@@ -1075,10 +1085,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  45i,16n,67p,1546b,457s stack positions out of 30000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "/home/mohammad/Dropbox/Machine Learning Topological Phases/TQC/Draft/template.pdf" (14 pages, 965456 bytes).
+Output written on "/home/mohammad/Dropbox/Machine Learning Topological Phases/TQC/Draft/template.pdf" (14 pages, 965654 bytes).
 PDF statistics:
- 339 PDF objects out of 1000 (max. 8388607)
- 275 compressed objects within 3 object streams
+ 338 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
  80 named destinations out of 1000 (max. 500000)
  28810 words of extra memory for PDF output out of 29859 (max. 10000000)
 
