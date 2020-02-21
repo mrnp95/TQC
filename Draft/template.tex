@@ -52,7 +52,7 @@
 
 
 \author{
-    M. Noormandipour\thanks{\texttt{mrn31@cam.ac.uk}}\hspace{1mm}$^{,a}$ , Youran Sun\thanks{\texttt{mrn31@cam.ac.uk}}\hspace{1mm}$^{,b}$ , Babak Haghighat\thanks{\texttt{babakhaghighat@tsinghua.edu.cn}}\hspace{1mm}$^{,b}$ \\
+    Mohammadreza Noormandipour\thanks{\texttt{mrn31@cam.ac.uk}}\hspace{1mm}$^{,a}$ , Youran Sun\thanks{\texttt{mrn31@cam.ac.uk}}\hspace{1mm}$^{,b}$ , Babak Haghighat\thanks{\texttt{babakhaghighat@tsinghua.edu.cn}}\hspace{1mm}$^{,b}$ \\
 	$^{a}$ \textit{DAMTP}, University of Cambridge, Wilberforce Road, Cambridge CB3 0WA, UK \\
 	$^{b}$ \textit{Yau Mathematical Sciences Center}, Tsinghua University, Beijing, 100084, China\\
       %% David S.~Hippocampus\thanks{Use footnote for providing further
@@ -526,16 +526,10 @@ This string operator will create two vortices at the ending points of the string
 
 \subsection{Groundstate}
 
-In this section, we present the results for the groundstate energy estimation of different system size for the proposed mapping in the section 3. These results are also compared to the exact analytical expression given in Equ.\hspace{0.2mm}\ref{eq:17}. The absolute value of the energies is plotted in Fig.\hspace{0.2mm}\ref{tab:r_space}. The RBM has the simple fully-connected and two-layered architecture with an optimized value of $\alpha = \frac{num_{v}}{num_{h}} = 2$ which is the ratio of number of visible nodes to the number of hidden nodes. For lower values of $\alpha$ the network does not give an accurate estimation of energies, while the larger values cause over-fitting and again inaccurate results. For training, the configuration space of the network has been sampled for hundreds of  times, depending on the lattice size, using Metropolis algorithm. Moreover, the stochastic gradient descent algorithm has been used for optimization for enough number of iterations such that the network converge to a low enough minima of the energy landscape.
+In this section, we present the results for the groundstate energy estimation of different system sizes for the proposed mapping in the section 3. These results are also compared to the exact analytical expression given in Equ.\hspace{0.2mm}\ref{eq:17}. The absolute value of the energies is plotted in Fig.\hspace{0.2mm}\ref{tab:r_space}. 
+The RBM has the simple fully-connected and two-layered architecture with an optimized value of $\alpha = \frac{num_{v}}{num_{h}} = 2$ which is the ratio of number of visible nodes to the number of hidden nodes. For lower values of $\alpha$ the network does not give an accurate estimation of energies, while the larger values cause over-fitting and again inaccurate results. For training, the configuration space of the network has been sampled for hundreds of  times, depending on the lattice size, using Metropolis algorithm. Moreover, the stochastic gradient descent algorithm has been used for optimization for enough number of iterations such that the network converge to a low enough minima of the energy landscape.
 
-Up to now, we have too many methods to calculate gs energies, including
-
-    a. Analytic formula using \\
-        i. anti-periodic boundry condition \\
-        ii. periodic boundry condition \\
-    b. The method of Kitaev and Pachos \\
-    c. Create Hamiltonian in Netket and direct diagonalize \\
-    d. RBM (alpha=2, train by 1kx10k) Here I will compare the gs energy of them with different lattice size \\
+As illustrated in Fig.\hspace{0.2mm}\ref{tab:r_space}
 
 
 \begin{figure}[!htb]
@@ -546,7 +540,7 @@ Up to now, we have too many methods to calculate gs energies, including
 	and Feed-Forward Neural Networks (FFNN) compared to the analytically obtained groundstate energy using Equ.\hspace{0.2mm}\ref{eq:16}.} 
 \end{figure}
 
-From above table, it can be seen that method a.ii always agrees method b, which means we should use periodic boundry condition. It is still unknown why when lattice size is small method c and d's result are lower than method a and b. \\
+From above table, it can be seen that method a.ii always agrees method b, which means we should use periodic boundary condition. It is still unknown why when lattice size is small method c and d's result are lower than method a and b. \\
 
 \textbf{Try to improve accuracy}
 
