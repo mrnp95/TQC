@@ -528,7 +528,7 @@ This string operator will create two vortices at the ending points of the string
 
 In this section, we present the results for the groundstate energy estimation of different system sizes for the proposed mapping in the section 3. These results are also compared to the exact analytical expression given in Equ.\hspace{0.2mm}\ref{eq:17}. The absolute value of the energies is plotted in Fig.\hspace{0.2mm}\ref{tab:r_space}. 
 
-The RBM has the simple fully-connected and two-layered architecture with an optimized value of $\alpha = \frac{num_{v}}{num_{h}} = 2$ which is the ratio of number of visible nodes to the number of hidden nodes. For lower values of $\alpha$ the network does not give an accurate estimation of energies, while the larger values cause over-fitting and again inaccurate results. For training, the configuration space of the network has been sampled for hundreds of  times, depending on the lattice size, using Metropolis algorithm. Moreover, the stochastic gradient descent algorithm has been used for optimization for enough number of iterations such that the network converge to a low enough minima of the energy landscape.
+The RBM has the simple fully-connected and two-layered architecture with an optimized value of $\alpha = \frac{num_{h}}{num_{v}} = 2$ which is the ratio of number of hidden nodes to the number of visible nodes. For lower values of $\alpha$ the network does not give an accurate estimation of energies, while the larger values cause over-fitting and again inaccurate results. For training, the configuration space of the network has been sampled for hundreds of  times, depending on the lattice size, using Metropolis algorithm. Moreover, the stochastic gradient descent algorithm has been used for optimization for enough number of iterations such that the network converge to a low enough minima of the energy landscape.
 
 \begin{figure}[!htb]
 	\centering
@@ -540,14 +540,12 @@ The RBM has the simple fully-connected and two-layered architecture with an opti
 
 Based on the results obtained for the energy of the state of system, training of the network was tested and optimized by changing the learning rate for different training phases and iteration numbers. However, the outcome was not considerably changed and improved and it seems that the above results are the most accurate results one can get for this particular architecture of network. 
 
-\textbf{Play with alpha: how many hidden nodes are suitable?}
+In order to check the effect of relative number of hidden and visible nodes on the outcome of the network, different values for $\alpha$ were tested, keeping other parameters fixed. The $\alpha$ parameter was changed just by changing the number of hidden nodes for a fixed system size (and hence fixed visible layer size) and the results are outlined in the table below, including the number of free parameters of the network and the time needed for the network to be trained. The exact analytical energy for the selected spin system is $-39.3892$.
 
-Study how number of hidden nodes, denoted by $num_{nh}$, influences accuracy and training time. Fix the lattice size to 5x5, train batch number to 1kx10k, optimizer to \texttt{$Sgd(learning_rate=0.01,decay_factor=1)$}, sampler to MetropolisLocal. The exact ground state energy of 5x5 lattice is -39.3892. In the table below, -27.7808(59) means $-27.7808\pm0.0059$. \\
-
-\begin{figure}[!htb]
+\begin{table}[!htb]
 	\centering
 	\includegraphics[width=0.6\textwidth]{./images/alpha.png}
-	\caption{\label{tab:alpha} Numerical results for the number of hidden nodes and its influence on energy calculations. $\alpha = \frac{num_{v}}{num_{h}}$.} 
+	\caption{\label{tab:alpha} Numerical results for the number of hidden nodes and its influence on energy calculations. $\alpha = \frac{num_{h}}{num_{v}}$.} 
 \end{figure}
 
     -- 2 is the most suitable value for alpha. If it is too low, the fitting performace is not good; too high overfit will happen. \\
