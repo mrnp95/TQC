@@ -91,7 +91,7 @@
 
 \begin{abstract}
 %\lipsum[1]
-In this work, the capability of restricted Boltzmann machines (RBMs) to find solutions for the Kitaev honeycomb model is investigated. The measured groundstate (GS) energy of the system is compared and shown to reside within less than $1\%$ error of the analytically derived value of the energy. Furthermore, the possibility of realizing anyons in the RBM is discussed and an algorithm is given to build these anyonic excitations and braid them as a proof of concept for performing quantum gates and doing quantum computation. Moreover, the phase transition of the system is also studied by changing the corresponding hyperparameters of the system in the RBM solution.
+In this work, the capability of restricted Boltzmann machines (RBMs) to find solutions for the Kitaev honeycomb model is investigated. The measured groundstate (GS) energy of the system is compared and shown to reside within less than $5\%$ error of the analytically derived value of the energy. Furthermore, the possibility of realizing anyons in the RBM is discussed and an algorithm is given to build these anyonic excitations and braid them as a proof of concept for performing quantum gates and doing quantum computation. Moreover, the phase transition of the system is also studied by changing the corresponding hyperparameters of the system in the RBM solution.
 \end{abstract}
 
 
@@ -527,10 +527,8 @@ This string operator will create two vortices at the ending points of the string
 \subsection{Groundstate}
 
 In this section, we present the results for the groundstate energy estimation of different system sizes for the proposed mapping in the section 3. These results are also compared to the exact analytical expression given in Equ.\hspace{0.2mm}\ref{eq:17}. The absolute value of the energies is plotted in Fig.\hspace{0.2mm}\ref{tab:r_space}. 
+
 The RBM has the simple fully-connected and two-layered architecture with an optimized value of $\alpha = \frac{num_{v}}{num_{h}} = 2$ which is the ratio of number of visible nodes to the number of hidden nodes. For lower values of $\alpha$ the network does not give an accurate estimation of energies, while the larger values cause over-fitting and again inaccurate results. For training, the configuration space of the network has been sampled for hundreds of  times, depending on the lattice size, using Metropolis algorithm. Moreover, the stochastic gradient descent algorithm has been used for optimization for enough number of iterations such that the network converge to a low enough minima of the energy landscape.
-
-As illustrated in Fig.\hspace{0.2mm}\ref{tab:r_space}
-
 
 \begin{figure}[!htb]
 	\centering
@@ -540,17 +538,7 @@ As illustrated in Fig.\hspace{0.2mm}\ref{tab:r_space}
 	and Feed-Forward Neural Networks (FFNN) compared to the analytically obtained groundstate energy using Equ.\hspace{0.2mm}\ref{eq:16}.} 
 \end{figure}
 
-From above table, it can be seen that method a.ii always agrees method b, which means we should use periodic boundary condition. It is still unknown why when lattice size is small method c and d's result are lower than method a and b. \\
-
-\textbf{Try to improve accuracy}
-
-Maybe first train RBM with large learning rate and then decrease it will lower gs energy. I keep train iters to 10k, but split it into two stages, first train with learning rate 0.3 then train with 0.01. But it comes out negetive result. 
-
-random init --1k--> -36.610 --9k--> -37.183 \\
-random init --2k--> -36.631 --8k--> -37.101 \\
-random init --3k--> -36.649 --7k--> -37.291 \\
-random init --4k--> -36.697 --6k--> -37.285 \\
-random init --5k--> -36.758 --5k--> -37.201 \\
+Based on the results obtained for the energy of the state of system, training of the network was tested and optimized by changing the learning rate for different training phases and iteration numbers. However, the outcome was not considerably changed and improved and it seems that the above results are the most accurate results one can get for this particular architecture of network. 
 
 \textbf{Play with alpha: how many hidden nodes are suitable?}
 
