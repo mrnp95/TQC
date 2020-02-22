@@ -54,7 +54,7 @@
 
 
 \author{
-    Mohammadreza Noormandipour\thanks{\texttt{mrn31@cam.ac.uk}}\hspace{1mm}$^{,a}$ , Youran Sun\thanks{\texttt{mrn31@cam.ac.uk}}\hspace{1mm}$^{,b}$ , Babak Haghighat\thanks{\texttt{babakhaghighat@tsinghua.edu.cn}}\hspace{1mm}$^{,b}$ \\
+    Mohammadreza Noormandipour\thanks{\texttt{mrn31@cam.ac.uk}}\hspace{1mm}$^{,a}$ , Youran Sun\thanks{\texttt{syouran0508@gmail.com}}\hspace{1mm}$^{,b}$ , Babak Haghighat\thanks{\texttt{babakhaghighat@tsinghua.edu.cn}}\hspace{1mm}$^{,b}$ \\
 	$^{a}$ \textit{DAMTP}, University of Cambridge, Wilberforce Road, Cambridge CB3 0WA, UK \\
 	$^{b}$ \textit{Yau Mathematical Sciences Center}, Tsinghua University, Beijing, 100084, China\\
       %% David S.~Hippocampus\thanks{Use footnote for providing further
@@ -124,7 +124,7 @@ The solution is as below:
     \textbf{b}_2 = \frac{4\pi}{3a} \textbf{e}_y
 \end{equation}
 
-The reciprocal lattice is depicted in Fig.\hspace{0.2mm}\ref{fig:fig0}b. The shaded region in the figure is the first Brillouin zone.
+The reciprocal lattice is depicted in Fig.\hspace{0.2mm}\ref{fig:fig0}b. 
 
 The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli matrices on a honeycomb lattice as written in Equ.\hspace{0.2mm}\ref{eq:1}, where $r \& r^{'}$ are indices for the nearest neighbour spins. The physics of the system is symmetric under permutation of coupling strengths $J_{\alpha}$ with $\alpha = x, y, z$ and due to an-isotropic interaction the model is a fraustrated spin system, because a spin cannot satisfy conflicting
  demands of orientation from its three neighboring sites \cite{Kitaev_2006}.
@@ -146,10 +146,17 @@ The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli m
 %     \caption{1b}
 %     \label{fig:fig0b}
 %     \end{subfigure}%
-    \subfloat[1a]{\includegraphics[width=0.7\textwidth]{./images/Final_A_2}}\\
-    \subfloat[1b]{\includegraphics[width=0.8\textwidth]{./images/br_zone_v2}}
-    \caption{plots of first Brillouin zone and basis vectors}
+    \subfloat[]{\includegraphics[width=0.7\textwidth]{./images/Final_A_2}}\\
+    \subfloat[]{\includegraphics[width=0.8\textwidth]{./images/br_zone_v2}}
+    \caption{(a) The honeycomb lattice in position space and its primitive vectors and primitive cell. (b) First Brillouin zone and primitive vectors of reciprocal lattice.}
     \label{fig:fig0}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./images/Jor-Wig}
+	\caption{\label{jor} Brick-wall lattice and the Jordan-Wigner transformation path depicted with the dashed arrows. The $\textbf{r}_1$ and $\textbf{r}_2$ are the primitive vectors for this lattice.} 
+	\label{fig:fig01}
 \end{figure}
 
 \begin{figure}[h!]
@@ -171,7 +178,7 @@ The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli m
 
 \section{Solution of the Model}
 
-In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved. First of all, we Fermionize the Hamiltonian by performing a one dimensional Jordan-Wigner transformation \cite{Jordan:1928wi} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice \todo{@Reza: please include the figure} (see Fig.\hspace{0.2mm}\ref{fig:fig-})  clarifies the mechanism of the Jordan-Wigner transformation and why it is one dimensional \cite{Chen_2008}. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
+In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved. First of all, we Fermionize the Hamiltonian by performing a one dimensional Jordan-Wigner transformation \cite{Jordan:1928wi} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice (see Fig.\hspace{0.2mm}\ref{fig:fig01})  clarifies the mechanism of the Jordan-Wigner transformation and why it is one dimensional \cite{Chen_2008}. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
 
 \begin{equation}\label{eq:2}
 	\begin{aligned}
@@ -252,7 +259,7 @@ In this section an exact solution of the system is provided and an explicit form
 	\end{aligned}
 \end{equation}\\
 
-\noindent where \textbf{r} is the position vector of z-bonds or unit cells  (see Fig.\hspace{0.2mm}\ref{fig:fig6.6})\todo{@Reza: fix the figure}. It makes no difference in physics if we set \textbf{r} on every point along the z-bond, whether it is on even site or odd site or some where in the middle of them, that's a matter of translation! 
+\noindent where \textbf{r} is the position vector of z-bonds or unit cells  (see Fig.\hspace{0.2mm}\ref{fig:fig01}). It makes no difference in physics if we set \textbf{r} on every point along the z-bond, whether it is on even site or odd site or some where in the middle of them, that's a matter of translation! 
 What will be important in what follows, is that now since we have grouped a pair of even and odd sites as an unit cell, to evaluate the summation over the unit cells, it is sufficient to just run over the even or odd sites.\\
 Furthermore, the $\alpha_\textbf{r} = (id_{\color{black}\bullet,\textbf{r}}d_{\circ,\textbf{r}})$ operators are defined on each z-bond of the lattice (labled by \textbf{r}) and they commute with the Hamiltonian and are good quantum numbers.
 Moreover, it can easily be shown that each plaquette operator can be written as:
