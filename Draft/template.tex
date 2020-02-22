@@ -13,7 +13,8 @@
 \usepackage{microtype}      % microtypography
 \usepackage{lipsum}
 \usepackage{graphicx}
-\usepackage{subcaption} 
+\usepackage{subfig}
+%\usepackage{subcaption} 
 %\graphicspath{ {./images} }
 \usepackage[rightcaption]{sidecap}
 \usepackage{wrapfig}
@@ -22,6 +23,7 @@
 \usepackage{braket}
 \usepackage{bbold}
 
+\usepackage{todonotes}
 
 
 \usepackage{listings}
@@ -102,7 +104,7 @@ In this work, the capability of restricted Boltzmann machines (RBMs) to find sol
 \section{Introduction}
 %\lipsum[2]
 %\lipsum[3]
-Honeycomb model is a 2-dimensional lattice spin system (see Fig.\hspace{0.2mm}\ref{fig:fig0}) which was first introduced by Kitaev in 2006 \cite{kita} and is famous because of the topological quantum order due to a degenerate gapped groundstate which is persistent to local and finite-sized perturbations. The system also supports both abelian and non-abelian topological phases as demonstrated in the original proposal \cite{kita}. There is a wide range of applications for this model, from fault-tolerant quantum computation \cite{kita2} to analytical study of strongly correlated systems \cite{str-cor} and quantum spin liquids \cite{spi-liq}. The honeycomb lattice is not a Bravias lattice in its original structure, but it can be considered as a triangular Bravias lattice with a two-spin basis. The direct Bravias lattice and the primitive cells are illustrated in Fig.\hspace{0.2mm}\ref{fig:fig0}a with the dashed lines. Each primitive cell has a pair of odd and even indexed spins. Just for the sake of simplicity we will denote each cell with the even indexed (empty circles) spins of the system. The primitive vectors of the lattice, $\textbf{a}_1$ and $\textbf{a}_2$ are also shown in Fig.\hspace{0.2mm}\ref{fig:fig0}a (see also Equ.\hspace{0.2mm}\ref{eq:0}). The entire lattice can be tiled and covered with primitive cells using translations composed of different linear combinations of primitive vectors. 
+Honeycomb model is a 2-dimensional lattice spin system (see Fig.\hspace{0.2mm}\ref{fig:fig0}) which was first introduced by Kitaev in 2006 \cite{Kitaev_2006} and is famous because of the topological quantum order due to a degenerate gapped groundstate which is persistent to local and finite-sized perturbations. The system also supports both abelian and non-abelian topological phases as demonstrated in the original proposal \cite{Kitaev_2006}. There is a wide range of applications for this model, from fault-tolerant quantum computation \cite{Kitaev_2003} to analytical study of strongly correlated systems \cite{Jackeli_2009} and quantum spin liquids \cite{Tikhonov_2011}. The honeycomb lattice is not a Bravias lattice in its original structure, but it can be considered as a triangular Bravias lattice with a two-spin basis. The direct Bravias lattice and the primitive cells are illustrated in Fig.\hspace{0.2mm}\ref{fig:fig0}a with the dashed lines. Each primitive cell has a pair of odd and even indexed spins. Just for the sake of simplicity we will denote each cell with the even indexed (empty circles) spins of the system. The primitive vectors of the lattice, $\textbf{a}_1$ and $\textbf{a}_2$ are also shown in Fig.\hspace{0.2mm}\ref{fig:fig0}a (see also Equ.\hspace{0.2mm}\ref{eq:0}). The entire lattice can be tiled and covered with primitive cells using translations composed of different linear combinations of primitive vectors. 
 
 \begin{equation}\label{eq:0}
     \textbf{a}_1 = \sqrt{3} a \textbf{e}_x \hspace{1cm} \& \hspace{1cm}
@@ -125,7 +127,7 @@ The solution is as below:
 The reciprocal lattice is depicted in Fig.\hspace{0.2mm}\ref{fig:fig0}b. The shaded region in the figure is the first Brillouin zone.
 
 The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli matrices on a honeycomb lattice as written in Equ.\hspace{0.2mm}\ref{eq:1}, where $r \& r^{'}$ are indices for the nearest neighbour spins. The physics of the system is symmetric under permutation of coupling strengths $J_{\alpha}$ with $\alpha = x, y, z$ and due to an-isotropic interaction the model is a fraustrated spin system, because a spin cannot satisfy conflicting
- demands of orientation from its three neighboring sites \cite{kita}.
+ demands of orientation from its three neighboring sites \cite{Kitaev_2006}.
 
 \begin{equation}\label{eq:1}
     H = - \sum_{\alpha} J_{\alpha} \sum_{\alpha-bonds} \sigma^{\alpha}_{r}\sigma^{\alpha}_{r^{'}}
@@ -146,7 +148,7 @@ The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli m
 %     \end{subfigure}%
     \subfloat[1a]{\includegraphics[width=0.7\textwidth]{./images/Final_A_2}}\\
     \subfloat[1b]{\includegraphics[width=0.8\textwidth]{./images/br_zone_v2}}
-    \caption{plots of....}
+    \caption{plots of first Brillouin zone and basis vectors}
     \label{fig:fig0}
 \end{figure}
 
@@ -169,7 +171,7 @@ The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli m
 
 \section{Solution of the Model}
 
-In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved. First of all, we Fermionize the Hamiltonian by performing a one dimensional Jordan-Wigner transformation \cite{nus-9-10} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice (see Fig.\hspace{0.2mm}\ref{fig:fig-}) clarifies the mechanism of the Jordan-Wigner transformation and why it is one dimensional. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
+In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved. First of all, we Fermionize the Hamiltonian by performing a one dimensional Jordan-Wigner transformation \cite{Jordan:1928wi} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice \todo{@Reza: please include the figure} (see Fig.\hspace{0.2mm}\ref{fig:fig-})  clarifies the mechanism of the Jordan-Wigner transformation and why it is one dimensional \cite{Chen_2008}. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
 
 \begin{equation}\label{eq:2}
 	\begin{aligned}
@@ -179,7 +181,7 @@ In this section an exact solution of the system is provided and an explicit form
 	\end{aligned}
 \end{equation}\\
 
-\noindent This transformation maps the Hilbert space of spins to the Hilbert space of spinless complex fermions \cite{schmull}. Using the fact that $ \sigma^{\pm} = \sigma^{x}\pm i\sigma^{y} $ one can expand the Hamiltonian in Equ.\hspace{0.2mm}\ref{eq:1} into three terms and re-write them as below.
+\noindent This transformation maps the Hilbert space of spins to the Hilbert space of spinless complex fermions. Using the fact that $ \sigma^{\pm} = \sigma^{x}\pm i\sigma^{y} $ one can expand the Hamiltonian in Equ.\hspace{0.2mm}\ref{eq:1} into three terms and re-write them as below \cite{Schmoll_2017}.
 
 
 \begin{equation}\label{eq:3}
@@ -204,7 +206,7 @@ In this section an exact solution of the system is provided and an explicit form
 	\end{aligned}
 \end{equation}\\
 
-\noindent The $J_x$ and $J_y$ terms are quadratic interactions in spinless fermions and are easy to solve, however, the $J_z$ term is a product of number density operators and can be further simplified by introducing the Majorana operators in Equ.\hspace{0.2mm}\ref{eq:5} \cite{schmull}. As we will see, this simplification can be done due to the presence of the conserved quantity called plaquette operator $B_p$ \cite{schmull}. 
+\noindent The $J_x$ and $J_y$ terms are quadratic interactions in spinless fermions and are easy to solve, however, the $J_z$ term is a product of number density operators and can be further simplified by introducing the Majorana operators in Equ.\hspace{0.2mm}\ref{eq:5} \cite{Schmoll_2017}. As we will see, this simplification can be done due to the presence of the conserved quantity called plaquette operator $B_p$ \cite{Schmoll_2017}. 
 
 \begin{equation}\label{eq:5}
 	\begin{aligned}
@@ -250,10 +252,10 @@ In this section an exact solution of the system is provided and an explicit form
 	\end{aligned}
 \end{equation}\\
 
-\noindent where \textbf{r} is the position vector of z-bonds or unit cells (see Fig.\hspace{0.2mm}\ref{fig:fig6.6}). It makes no difference in physics if we set \textbf{r} on every point along the z-bond, whether it is on even site or odd site or some where in the middle of them, that's a matter of translation! 
-What which will be important in what follows, is that now since we have grouped a pair of even and odd sites as an unit cell, to evaluate the summation over the unit cells, it is sufficient to just run over the even or odd sites.\\
-Furthermore, the $\alpha_\textbf{r} = (id_{\color{black}\bullet,\textbf{r}}d_{\circ,\textbf{r}})$ operators are defined on each z-bond of the lattice (labled by \textbf{r}) and they commute with Hamiltonian and are good quantum numbers.
-Moreover, it can easily be shown that each plaquette operator shall be written as:
+\noindent where \textbf{r} is the position vector of z-bonds or unit cells  (see Fig.\hspace{0.2mm}\ref{fig:fig6.6})\todo{@Reza: fix the figure}. It makes no difference in physics if we set \textbf{r} on every point along the z-bond, whether it is on even site or odd site or some where in the middle of them, that's a matter of translation! 
+What will be important in what follows, is that now since we have grouped a pair of even and odd sites as an unit cell, to evaluate the summation over the unit cells, it is sufficient to just run over the even or odd sites.\\
+Furthermore, the $\alpha_\textbf{r} = (id_{\color{black}\bullet,\textbf{r}}d_{\circ,\textbf{r}})$ operators are defined on each z-bond of the lattice (labled by \textbf{r}) and they commute with the Hamiltonian and are good quantum numbers.
+Moreover, it can easily be shown that each plaquette operator can be written as:
 
 \begin{equation}\label{eq:10}
 	\begin{aligned}
@@ -261,10 +263,10 @@ Moreover, it can easily be shown that each plaquette operator shall be written a
 	\end{aligned}
 \end{equation}
 
-\noindent On the other hand, from the Lieb's theorem \cite{Lieb} we know that the groundstate manifold is obtained by setting $B_p = 1, \forall p$. 
+\noindent On the other hand, from the Lieb's theorem \cite{Lieb_1994} we know that the groundstate manifold is obtained by setting $B_p = 1, \forall p$. 
 Thus the uniform choice of $\alpha_\textbf{r}=1, \forall \textbf{r}$ corresponds to a vortex-free sector, nevertheless all configurations leading to the same sector are equivalent.\\
 
-\noindent We also intoduce a Dirac fermion on each z-link using the Majorana operators:
+\noindent We also introduce a Dirac fermion on each z-link using the Majorana operators:
 
 \begin{equation}\label{eq:11}
 	\begin{aligned}
@@ -283,7 +285,7 @@ Thus the uniform choice of $\alpha_\textbf{r}=1, \forall \textbf{r}$ corresponds
 	\end{aligned}
 \end{equation}\\
 
-\noindent The Hamiltonian is translational invariant and can be transformed to momentum space in order to be diagonalized. We define the Fourier transformation for the Dirac fermion as:
+\noindent The Hamiltonian is translational invariant and can be transformed to momentum space in order to be diagonalized. We define the Fourier transf for the Dirac fermion through:
 
 \begin{equation}\label{eq:13}
 	\begin{aligned}
@@ -292,7 +294,7 @@ Thus the uniform choice of $\alpha_\textbf{r}=1, \forall \textbf{r}$ corresponds
 	\end{aligned}
 \end{equation}\\
 
-\noindent Setting $\textbf{k} \rightarrow \textbf{-k}$ in $d^\dagger_\textbf{r}$ simplifies the calculations. Then we have:
+\noindent Setting $\textbf{k} \rightarrow \textbf{-k}$ in $d^\dagger_\textbf{r}$ simplifies the calculations. We then have:
 
 \begin{equation}\label{eq:14}
 	\begin{aligned}
@@ -323,7 +325,7 @@ Using all previous transformations we obtain a Hamiltonian which is quadratic in
 	\end{aligned}
 \end{equation}\\
 
-\noindent By applying a uniary Bogoliubov transformation, we diagonalize the Hamiltonian which can be written as:
+\noindent By applying a unitary Bogoliubov transformation, we diagonalize the Hamiltonian which can be written as:
 
 \begin{equation}\label{eq:17}
 	\begin{aligned}
@@ -542,7 +544,7 @@ Based on the results obtained for the energy of the state of system, training of
 
 In order to check the effect of relative number of hidden and visible nodes on the outcome of the network, different values for $\alpha$ were tested, keeping other parameters fixed. The $\alpha$ parameter was changed just by changing the number of hidden nodes for a fixed system size (and hence fixed visible layer size) and the results are outlined in the table below, including the number of free parameters of the network and the time needed for the network to be trained. The exact analytical energy for the selected spin system is $-39.3892$.
 
-\begin{table}[!htb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.6\textwidth]{./images/alpha.png}
 	\caption{\label{tab:alpha} Numerical results for the number of hidden nodes and its influence on energy calculations. $\alpha = \frac{num_{h}}{num_{v}}$.} 
@@ -696,61 +698,9 @@ YMSC, Martin Duy Tat,
 %\end{itemize}
 
 
-\bibliographystyle{unsrt}  
-%\bibliography{references}  %%% Remove comment to use the external .bib file (using bibtex).
-%%% and comment out the ``thebibliography'' section.
+ \bibliographystyle{JHEP}     
+ {\footnotesize{\bibliography{references}}}
 
-
-%%% Comment out this section when you \bibliography{references} is enabled.
-\begin{thebibliography}{1}
-
-\bibitem{kita}
-M. Smelyanskiy, N. P. D. Sawaya, and A. Aspuru-Guzik.
-\newblock {\em qHiPSTER: The Quantum High Performance Software Testing Environment.}
-\newblock arXiv:1601.07195v2 [quant-ph], 2016.
-
-\bibitem{kita2}
-.
-\newblock {\em .}
-\newblock arXiv:9707021 [quant-ph], 1997.
-
-\bibitem{str-cor}
-G. Jackeli and G. Khaliullin.
-\newblock {\em .}
-\newblock Phys. Rev. Lett. \textbf{102}, 017205, 2009.
-
-\bibitem{spi-liq}
-K.  S.  Tikhonov,  M.  V.  Feigel’man,  and  A.  Yu.  Kitaev.
-\newblock {\em .}
-\newblock Phys. Rev. Lett. \textbf{102}, 067203, 2011.
-
-\bibitem{qperc}
-F. Tacchino, C. Macchiavello, D. Gerace, and D. Bajoni.
-\newblock {\em An artificial neuron implemented on an actual quantum processor.}
-\newblock npj Quantum Information \textbf{5}, Article number 26 , 2019.
-
-\bibitem{hard}
-Guy Hadash, Einat Kermany, Boaz Carmeli, Ofer Lavi, George Kour, and Alon
-  Jacovi.
-\newblock {\em FPGA-accelerated machine learning inference as a service for particle physics computing.}
-\newblock  arXiv:1904.08986v1 [physics.data-an] , 18 April 2019.
-
-\bibitem{rosen}
-F. Rosenblatt.
-\newblock {\em The Perceptron: A perceiving and recognizing automaton.}
-\newblock  Tech. Rep. Inc. Report No. 85-460-1 (Cornell Aeronautical Laboratory, 1957).
-
-\bibitem{pit}
-W.S. McCulloch, W. Pitts.
-\newblock {\em A logical calculus of the ideas immanent in nervous activity.}
-\newblock  Bull. Math. Biophys. \textbf{5}, 115-133m, 1943.
-
-\bibitem{hyper}
-M. Rossi, M. Huber, D. Brub, and C. Macchiavello.
-\newblock {\em Quantum hypergraph states.}
-\newblock  New J. Phys. \textbf{15}, 113022, 2013.
-
-\end{thebibliography}
 
 
 \end{document}

@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: template.aux
+White space in argument---line 64 of file template.aux
+ : \citation{24
+ :              of Das Sarmaa}
+I'm skipping whatever remains of this command
+White space in argument---line 65 of file template.aux
+ : \citation{https://pathmind.com/wiki/use-cases
+ :                                               - 33-38 of DasSarma and rep power paper}
+I'm skipping whatever remains of this command
+The style file: JHEP.bst
+Database file #1: references.bib
+Warning--I didn't find a database entry for "netket"
+You've used 9 entries,
+            2268 wiz_defined-function locations,
+            626 strings with 5618 characters,
+and the built_in function-call counts, 2634 in all, are:
+= -- 290
+> -- 79
+< -- 0
++ -- 25
+- -- 16
+* -- 176
+:= -- 374
+add.period$ -- 9
+call.type$ -- 9
+change.case$ -- 9
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 154
+empty$ -- 222
+format.name$ -- 16
+if$ -- 695
+int.to.chr$ -- 0
+int.to.str$ -- 9
+missing$ -- 33
+newline$ -- 31
+num.names$ -- 9
+pop$ -- 20
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 134
+stack$ -- 0
+substring$ -- 109
+swap$ -- 85
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 18
+width$ -- 10
+write$ -- 92
+(There were 2 error messages)
