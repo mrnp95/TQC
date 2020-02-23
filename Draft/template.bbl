@@ -1,5 +1,5 @@
 
-\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{1}
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{10}
 
 \bibitem{Kitaev_2006}
 A.~Kitaev, \emph{Anyons in an exactly solved model and beyond},
@@ -22,6 +22,23 @@ K.~S. Tikhonov, M.~V. Feigel’man and A.~Y. Kitaev, \emph{Power-law spin
   correlations in a perturbed spin model on a honeycomb lattice},
   \href{https://doi.org/10.1103/physrevlett.106.067203}{\emph{Physical Review
   Letters} {\bfseries 106} (2011) }.
+
+\bibitem{Deng_2017}
+D.-L. Deng, X.~Li and S.~Das~Sarma, \emph{Machine learning topological states},
+  \href{https://doi.org/10.1103/physrevb.96.195145}{\emph{Physical Review B}
+  {\bfseries 96} (2017) }.
+
+\bibitem{netket:2019}
+G.~Carleo, K.~Choo, D.~Hofmann, J.~E.~T. Smith, T.~Westerhout, F.~Alet et~al.,
+  \emph{Netket: A machine learning toolkit for many-body quantum systems},
+  \href{https://doi.org/10.1016/j.softx.2019.100311}{\emph{SoftwareX} (2019)
+  100311}.
+
+\bibitem{Torlai_2018}
+G.~Torlai, G.~Mazzola, J.~Carrasquilla, M.~Troyer, R.~Melko and G.~Carleo,
+  \emph{Neural-network quantum state tomography},
+  \href{https://doi.org/10.1038/s41567-018-0048-5}{\emph{Nature Physics}
+  {\bfseries 14} (2018) 447â450}.
 
 \bibitem{Jordan:1928wi}
 P.~Jordan and E.~P. Wigner, \emph{{About the Pauli exclusion principle}},

@@ -3,7 +3,7 @@
 
 \usepackage{arxiv}
 
-\usepackage[utf8]{inputenc} % allow utf-8 input
+%\usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 \usepackage{hyperref}       % hyperlinks
 \usepackage{url}            % simple URL typesetting
@@ -167,6 +167,8 @@ The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli m
 	n_{2}\textbf{e}_{2}$ with $n_{1}, n_{2} \in \mathbb{Z}$ and the above lattice is drawn for $N_{1} = N_{2} = 4 $ with toric boundary conditions.} 
 	\label{fig:fig1}
 \end{figure}
+
+In this paper we appy the approach develoved in \cite{Deng_2017} to the Honeycomb model. In particular, we demonstrate how to calculate the groundstate and excited states of the Honeycomb model using machine learning techniques. To this end we employ the \textit{NetKet} environment \cite{netket:2019} to train a restricted Boltzmann machine (RBM) in order to find a ground state via gradient decent. A vortex pair can be created by adjusting the parameters of the RBM and subsequent braiding can be achieved by further adjustments of parameters. An important application of the techniques developed is the reconstruction of a given quantum state from simple measurements known as quantum state tomography \cite{Torlai_2018}.
 
 
 % \section{The model}
