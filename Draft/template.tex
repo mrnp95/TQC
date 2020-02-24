@@ -374,10 +374,13 @@ The quantum state of the Honeycomb model, up to an irrelevant normalization fact
 where
 
 \begin{equation}\label{eq:19_1}
-	\Phi_{M}(\Xi;\Omega) =  \sum_{\{h_{k}\}}e^{\sum_{k}a_{k}\sigma_{k}^{z}+\sum_{k'}b_{k'}h_{k'}+\sum_{kk'}W_{kk'}h_{k}\sigma_{k'}^{z}}
+    \begin{aligned}
+        \Phi_{M}(\Xi;\Omega) &=  \sum_{\{h_{k}\}}e^{\sum_{k}a_{k}\sigma_{k}^{z}+\sum_{k'}b_{k'}h_{k'}+\sum_{kk'}W_{kk'}h_{k}\sigma_{k'}^{z}}\\
+        &= e^{\sum_k a_k \sigma_k^z} \times \prod_{k'} \cosh \left(\sum_k W_{kk'} \sigma_k^z + b_{k'} \right)
+    \end{aligned}
 \end{equation}\\
 
-The $\{h_{k}\}=\{-1,1\}^{M}$ is the set of possible configurations of hidden layer nodes and the $\Omega=(a_{k},b_{k'},W_{kk'})$ is the set of weights of the RBM which should be trained in such a way that the final RBM state represents the desired quantum state of the model (i.e. groundstate or the excited states). The combined number of weight parameters and nodes is polynomial in system size and computationally feasible.
+To obtain the second equality we used the values for $\{h_{k}\}=\{-1,1\}^{M}$ which is the set of possible configurations of hidden layer nodes and the $\Omega=(a_{k},b_{k'},W_{kk'})$ is the set of weights and biases of the RBM which should be trained in such a way that the final RBM state represents the desired quantum state of the model (i.e. groundstate or the excited states). The combined number of weight and bias parameters and nodes is polynomial in system size and computationally feasible.
 
 % If the visible and hidden layers of the network are fully connected, training the network for large lattice sizes is not computationally feasible. Therefore, we just use locally connected RBM in which the number of weight parameters and nodes in layers is linear in system size. 
 
@@ -409,7 +412,7 @@ which produces two vortices along the $\hat{z}$ direction in plaquettes 3 and 4.
     \label{fig:anyons}
 \end{figure}{}
 
-The reason why these operators can produce vortices in the system can be explained by re-writing the Hamiltonian of the system in terms of Majorana fermions. Kitaev originally solved the Hamiltonian through this approach. The disadvantage of this approach in comparison to what we did above is that when the Hamiltonian is mapped to Majorana fermions, there are unphysical states in the system which need to be projected out. This will be clear as we go along.\\
+The reason why these operators can produce vortices in the system can be explained by re-writing the Hamiltonian of the system in terms of Majorana fermions. Kitaev originally solved the Hamiltonian through this approach. The disadvantage of this approach in comparison to what was done above is that when the Hamiltonian is mapped to Majorana fermions, there are unphysical states in the system which need to be projected out. This will be clear as we go along.\\
 
 We assume that there are two fermionic modes living on each lattice site corresponding to the four creation and annihilation operators $a^\dagger_{m,i}$ and $a_{m,i}$, where $m\in \{1,2\}$ is the index for the modes and $i$ is the index for the lattice sites. Here unlike before, we use one index for lattice site to avoid unnecessary complications. Then we will separate the imaginary and real parts of these operators, to define the Majorana fermions as below
 
@@ -518,11 +521,23 @@ In general, we can define string operators to move the vortices anywhere in the 
 
 \begin{equation}\label{eq:29}
 	\begin{aligned}
-		\hat{S} = \prod_{\alpha-links} \exp{(-i\frac{\pi}{2}\sigma^\alpha_\circ)}~.
+		\hat{S} = \prod_{\alpha-links} \exp{(-i\frac{\pi}{2}\hat{\sigma}^\alpha_\circ)}~.
 		\end{aligned}
 \end{equation}
 
-This string operator will create two vortices at the ending points of the string which passes through the $\alpha-links$. The manipulation of link operators using these string operators is practically equivalent to changing the sign of the couplings $J_{ij}$ corresponding to the link $u_{ij}$ in the definition of the $A_{ij}$ (see Equ.\hspace{0.2mm}\ref{eq:24}).
+This string operator will create two vortices at the ending points of the string which passes through the $\alpha-links$. The manipulation of link operators using these string operators is practically equivalent to changing the sign of the couplings $J_{ij}$ corresponding to the link $u_{ij}$ in the definition of the $A_{ij}$ (see Equ.\hspace{0.2mm}\ref{eq:24}). Therefore, in the RBM language one can simply redefine the Hamiltonian with the desired signs of $J_{ij}$ for a particular vortex sector and then try to find the RBM representation for this new Hamiltonian through the approach explained in section 3. The only practical disadvantage of this vortex realization approach is that it is computationally expensive as the RBM should be trained again from scratch to find the representation for the excited state. An ideal approach is that, given the representation for groundstate, we would be able to directly and without further optimization steps find the representation for the excited state. 
+
+In principle, it is possible to directly manipulate the weight and bias parameters of the RBM,  $\Omega=(a_{k},b_{k'},W_{kk'})$ to realize the vortices and find the excited state representation. Looking at Equ.\hspace{0.2mm}\ref{eq:19_1}, we notice that there is a symmetry between the eigenvalues of physical spins and the value of parameters of the RBM. In other words, flipping a particular spin in site $k$ is equivalent to flipping the sign of the RBM parameter sitting next to the $\sigma^{\alpha}_k$ in Equ.\hspace{0.2mm}\ref{eq:19_1} and/or adding a phase to it. In general, for a string operator $\hat{S}_a = \exp{(-i\frac{\pi}{2}\hat{\sigma}^{\alpha}_a)}$ we have:
+
+\begin{equation}\label{eq:29_1}
+	\begin{aligned}
+		\hat{S}~|\Phi\rangle &= (-i\hat{\sigma}^{\alpha}_a)\sum_{\Xi}\Phi_{M}(\Xi;\Omega)|\Xi\rangle\\
+		&= \sum_{\Xi} e^{[(-1)^{\delta(\alpha-z)-1} a_a -i\frac{\pi}{2}\sigma^{z}_a]\sigma^{z}_a + \sum_{k\neq a} a_k \sigma_k^z} \times \\ &\prod_{k'} \cosh \left((-1)^{\delta(\alpha-z)-1} W_{ak'} \sigma_a^z + \sum_{k\neq a} W_{kk'} \sigma_k^z + b_{k'} \right) \hat{\sigma}^{\alpha}_a~|\Xi\rangle
+	\end{aligned}
+\end{equation}
+
+Therefore, applying $\hat{S}_a$ on RBM state, is equivalent to multiplying the bias parameter $a_a$ and weight parameters $W_{ak'}~\forall k'$ by $(-1)^{\delta(\alpha-z)-1}$ and then manually adding a $(-i\frac{\pi}{2}\sigma^{z}_a)$ phase angle to $a_a$, where $\sigma^{z}_a \in \{-1,+1\}$ is the eigenvalue of the $z$ component of the spin on site $a$. The presence of the $(-1)^{\delta(\alpha-z)-1}$ factor is to ensure that when $\alpha=x$ or $y$, the $\hat{\sigma}_a^{z}$ eigenvalue is multiplied by a minus sign. 
+
 
 \section{Results and Discussion}
 
@@ -598,7 +613,7 @@ I will first triple check using 3x3 lattice. The numeric result of gs energy of 
 	\caption{\label{tab:3x3} 3x3 lattice analysis.} 
 \end{figure}
 
-* There is a wired thing in method c, need to disscuss!
+* There is a wired thing in method c, need to discuss!
 
 Method a is more stable than method b. Both of method a and b is far from the correct result, method c. As the time they take, method c takes several ms to finish; method a and b take several minutes and method a is 3 or 4 times faster than method b.
 
