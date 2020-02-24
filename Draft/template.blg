@@ -1,56 +1,52 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: template.aux
-White space in argument---line 65 of file template.aux
- : \citation{24
- :              of Das Sarmaa}
-I'm skipping whatever remains of this command
-White space in argument---line 66 of file template.aux
- : \citation{https://pathmind.com/wiki/use-cases
- :                                               - 33-38 of DasSarma and rep power paper}
-I'm skipping whatever remains of this command
 The style file: JHEP.bst
 Database file #1: references.bib
-Warning--I didn't find a database entry for "netket"
-You've used 12 entries,
+I was expecting a `,' or a `}'---line 283 of file references.bib
+ : 
+ : @article{Nayak_2008,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 14 entries,
             2268 wiz_defined-function locations,
-            654 strings with 6701 characters,
-and the built_in function-call counts, 3729 in all, are:
-= -- 399
-> -- 149
+            672 strings with 7211 characters,
+and the built_in function-call counts, 4566 in all, are:
+= -- 492
+> -- 181
 < -- 0
-+ -- 44
-- -- 32
-* -- 252
-:= -- 533
-add.period$ -- 12
-call.type$ -- 12
-change.case$ -- 12
++ -- 53
+- -- 39
+* -- 309
+:= -- 639
+add.period$ -- 14
+call.type$ -- 14
+change.case$ -- 14
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 214
-empty$ -- 293
-format.name$ -- 32
-if$ -- 980
+cite$ -- 14
+duplicate$ -- 262
+empty$ -- 353
+format.name$ -- 39
+if$ -- 1207
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 45
-newline$ -- 40
-num.names$ -- 12
-pop$ -- 26
+int.to.str$ -- 14
+missing$ -- 53
+newline$ -- 46
+num.names$ -- 14
+pop$ -- 29
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 190
+skip$ -- 246
 stack$ -- 0
-substring$ -- 145
-swap$ -- 124
+substring$ -- 189
+swap$ -- 158
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 23
-width$ -- 14
-write$ -- 121
-(There were 2 error messages)
+while$ -- 28
+width$ -- 16
+write$ -- 142
+(There was 1 error message)

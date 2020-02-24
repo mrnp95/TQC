@@ -355,9 +355,9 @@ Using all previous transformations we obtain a Hamiltonian which is quadratic in
 
 \section{Restricted Boltzmann Machine Representation}
 
-With the ever growing applications of neural networks in sciences and the emergent new technologies to deploy and build the physical neural networks, this is the right time to investigate the potential applications of them in condensed matter systems. Recently, a new approach has been proposed for simulating quantum states using neural networks \cite{24 of Das Sarmaa}. In this section we use the same approach to map the Honeycomb Kitaev model to a restricted Boltzmann machine (RBM). There are many reasons why RBM is chosen. This particular architecture have proved to be effective in many tasks such as dimensional reduction, classification, regression, collaborative filtering, feature learning and topic modeling and in general a theorem shows that RBMs are universal approximators of discrete distributions \cite{https://pathmind.com/wiki/use-cases - 33-38 of DasSarma and rep power paper}.
+With the ever growing applications of neural networks in sciences and the emergent new technologies to deploy and build physical neural networks, this is the right time to investigate potential applications of them in condensed matter systems. Recently, a new approach has been proposed for simulating topological quantum states using neural networks \cite{Deng_2017}. In this section we use the same approach to map the Honeycomb Kitaev model to a restricted Boltzmann machine (RBM). There are many reasons why an RBM is chosen. This particular architecture has proved to be effective in many tasks such as dimensional reduction, classification, regression, collaborative filtering, feature learning and topic modeling and moreover a general theorem shows that RBMs are universal approximators of discrete distributions \cite{LeRouxBengio}.
 
-Having a set of spins on a lattice, $\Xi=(\sigma_{1},\sigma_{2},\cdots\sigma_{N})$ (in our case the Jordan-Wigner chain of spins), we want to use an RBM to reduce the dimensionality of Hilbert space and estimate the energy of the system in both groundstate and excited states and classify different geometrical(?) phases of the model. RBM is a short range feed-forward neural network with two layers. The first layer (visible layer) has $N$ nodes which are representing the physical spins in the Hamiltonian and the second layer (hidden layer) has $M$ binary valued nodes (architecture of the network is shown in the Fig.\ref{rbm-arc}). 
+Having a set of spins on a lattice, $\Xi=(\sigma_{1},\sigma_{2},\cdots\sigma_{N})$ (in our case the Jordan-Wigner chain of spins), our goal is to use an RBM to reduce the dimensionality of the Hilbert space and estimate the energy of the system in both groundstate and excited states and classify different topological phases of the model. An RBM is a short range feed-forward neural network with two layers. The first layer (visible layer) has $N$ nodes which are representing the physical spins in the Hamiltonian and the second layer (hidden layer) has $M$ binary valued nodes (architecture of the network is shown in Fig.\ref{rbm-arc}). 
 
 \begin{figure}[!htb]
 	\centering
@@ -381,24 +381,26 @@ The $\{h_{k}\}=\{-1,1\}^{M}$ is the set of possible configurations of hidden lay
 
 % If the visible and hidden layers of the network are fully connected, training the network for large lattice sizes is not computationally feasible. Therefore, we just use locally connected RBM in which the number of weight parameters and nodes in layers is linear in system size. 
 
-Mapping of the model to RBM was done using the machinery already developed in the \texttt{NetKet} software package \cite{netket}. In order to train the network, the parameter space of the network was sampled using Metropolis algorithm and the optimization iterations where done based on stochastic gradient descent algorithm. 
+Mapping of the model to RBM was done using the machinery already developed in the \texttt{NetKet} software package \cite{netket:2019}. In order to train the network, the parameter space of the network was sampled using the Metropolis algorithm and the optimization iterations are based on stochastic gradient descent algorithm. 
 
 \section{Braiding}
 
-First of all it is needed to produce (abelian/non-abelian) anyons in the system and then perform braiding and do quantum computation. In order to produce these quasi-particles in the system, we start with a groundstate sector and then try to change the eigenvalue of $B_p$ operators from +1 to -1 locally and in the region that we want to realize the vortices in the system. 
-In an arbitrary configuration of spins (not necessarily in the groundstate sector) it is easy to prove that $\prod B_p = +1 ,\forall p$. Hence, we can just build the vortices in pairs. For example, if you apply the operator $\hat{O}_1$ to the groundstate, it produces two vortices in plaquettes 1 and 2 (see Fig.\hspace{0.2mm}\ref{fig:anyons}). 
+In this section we want to explore the possibility to create anionic excitations in the RBM representation and describe anyon braiding. Such a representation is important for various reasons, in particular for performing quantum computation \cite{Nayak_2008}. 
+
+First of all, let us describe the creation of these quasi-particles by starting with a groundstate sector and then subsequently changing the eigenvalue of the $B_p$ operators from +1 to -1 locally and in the region that we want to realize the vortices in the system. 
+In an arbitrary configuration of spins (not necessarily in the groundstate sector) it is easy to prove that $\prod B_p = +1 ,\forall p$. Hence, we can just build the vortices in pairs. For example, if you apply the operator $\hat{O}_1$ to the groundstate,  it produces two vortices in plaquettes 1 and 2 (see Fig.\hspace{0.2mm}\ref{fig:anyons}). \todo{Do we need a reference here or are these ideas completely new?}
 
 \begin{equation}\label{eq:18}
     \hat{O}_1 = \exp{(-i\frac{\pi}{2}\hat{\sigma}^{z}_a)}
 \end{equation}{}
 
-Another possibility is to apply this operator: 
+Another possibility is to apply the following operator 
 
 \begin{equation}\label{eq:19}
-    \hat{O}_2 = \exp{(-i\frac{\pi}{2}\hat{\sigma}^{x}_a)}\exp{(-i\frac{\pi}{2}\hat{\sigma}^{y}_b)}
+    \hat{O}_2 = \exp{(-i\frac{\pi}{2}\hat{\sigma}^{x}_a)}\exp{(-i\frac{\pi}{2}\hat{\sigma}^{y}_b)}~,
 \end{equation}{}
 
-which produces two vortices along $\hat{z}$ direction in plaquettes 3 and 4.
+which produces two vortices along the $\hat{z}$ direction in plaquettes 3 and 4.
 
 \begin{figure}[!htb]
     \centering
@@ -407,7 +409,7 @@ which produces two vortices along $\hat{z}$ direction in plaquettes 3 and 4.
     \label{fig:anyons}
 \end{figure}{}
 
-The reason why these operators can produce vortices in the system can be explained by re-writing Hamiltonian of the system in terms of Majorana fermions. Kitaev originally solved the Hamiltonian through this approach. The disadvantage of this approach in comparison to what we did above is that when the Hamiltonian is mapped to Majorana fermions, there are unphysical states in the system which need to be projected out. This will be clear as we go along.\\
+The reason why these operators can produce vortices in the system can be explained by re-writing the Hamiltonian of the system in terms of Majorana fermions. Kitaev originally solved the Hamiltonian through this approach. The disadvantage of this approach in comparison to what we did above is that when the Hamiltonian is mapped to Majorana fermions, there are unphysical states in the system which need to be projected out. This will be clear as we go along.\\
 
 We assume that there are two fermionic modes living on each lattice site corresponding to the four creation and annihilation operators $a^\dagger_{m,i}$ and $a_{m,i}$, where $m\in \{1,2\}$ is the index for the modes and $i$ is the index for the lattice sites. Here unlike before, we use one index for lattice site to avoid unnecessary complications. Then we will separate the imaginary and real parts of these operators, to define the Majorana fermions as below
 
@@ -433,15 +435,15 @@ We can define the projector $P_i$ on site $i$ to do this job for us
 
 \begin{equation}\label{eq:22}
     \begin{aligned}
-        P_i = \frac{1+D_i}{2} \hspace{2mm}\text{where}\hspace{2mm} D_i = (1-2a^\dagger_{1,i}a_{1,i})(1-2a^\dagger_{2,i}a_{2,i}) = b^x_i b^y_i b^z_i c_i
+        P_i = \frac{1+D_i}{2} \hspace{2mm}\text{where}\hspace{2mm} D_i = (1-2a^\dagger_{1,i}a_{1,i})(1-2a^\dagger_{2,i}a_{2,i}) = b^x_i b^y_i b^z_i c_i~.
     \end{aligned}
 \end{equation}{}\\
 
-One can simply show that the relation between Majorana operators and the original Pauli operators is
+One can easily show that the relation between Majorana operators and the original Pauli operators is as follows
 
 \begin{equation}\label{eq:23}
     \begin{aligned}
-        \sigma^\alpha_i = i b^\alpha_i c_i \hspace{3mm}\text{for}\hspace{3mm} \alpha\in \{x,y,z\}\\
+        \sigma^\alpha_i = i b^\alpha_i c_i \hspace{3mm}\text{for}\hspace{3mm} \alpha\in \{x,y,z\}~.\\
     \end{aligned}
 \end{equation}{}\\
 
@@ -451,7 +453,7 @@ Using Equ.\hspace{0.2mm}\ref{eq:23} the Hamiltonian can be written in terms of M
 
 \begin{equation}\label{eq:24}
 	\begin{aligned}
-		H = \frac{i}{2} \sum_{i,j} A_{ij} c_i c_j \hspace{2mm}\text{where}\hspace{2mm} A_{ij} = J_{ij} u_{ij} \hspace{2mm}\text{and}\hspace{2mm} u_{ij} = i b^\alpha_i b^\alpha_j \hspace{2mm}\text{with}\hspace{2mm} \alpha\in \{x,y,z\}
+		H = \frac{i}{2} \sum_{i,j} A_{ij} c_i c_j \hspace{2mm}\text{where}\hspace{2mm} A_{ij} = J_{ij} u_{ij} \hspace{2mm}\text{and}\hspace{2mm} u_{ij} = i b^\alpha_i b^\alpha_j \hspace{2mm}\text{with}\hspace{2mm} \alpha\in \{x,y,z\}~.
 	\end{aligned}
 \end{equation}\\
 
@@ -463,9 +465,9 @@ The $u_{ij}$ are antisymmetric Hermitian link operators with eigenvalues $\pm 1$
 	\end{aligned}
 \end{equation}\\
 
-The link operators commute with Hamiltonian, $[H, u_{ij}] = 0$ so they are local symmetries. In this form, the Hamiltonian is representing a tight binding model of free Majorana fermions hopping along the lattice, with tunneling couplings that depend on the eigevalues of link operators which can be thought of as a classical $\mathbb{Z}_2$ gauge field. One can assign a configuration $\{u\}$ to all link operators and diagonalize the resulting quadratic Hamiltonian in Majorana operators directly and obtain the spectrum and groundstate energy for $H\{u\}$. But which configuration $\{u\}$ gives the global minima of the energy? This question has been answered by Lieb (1994) \cite{kour2014real}. This groundstate lies in the sector with $B_p = 1 \hspace{2mm} \forall p$ and since the $B_p$ operators are the only gauge invariant objects, every gauge fixing $\{u\}$ which leads to this certain configuration for $B_p$ is equivalent. Therefore, our goal is to find a configuration $\{u\}$ which leads to $B_p = 1 \hspace{2mm} \forall p$. 
+The link operators commute with the Hamiltonian, $[H, u_{ij}] = 0$, so they are local symmetries. In this form, the Hamiltonian is representing a tight binding model of free Majorana fermions hopping along the lattice, with tunneling couplings that depend on the eigevalues of link operators which can be thought of as a classical $\mathbb{Z}_2$ gauge field. One can assign a configuration $\{u\}$ to all link operators and diagonalize the resulting quadratic Hamiltonian in Majorana operators directly and obtain the spectrum and groundstate energy for $H\{u\}$. But which configuration $\{u\}$ corresponds to the global minimum of the energy? This question has been answered by Lieb (1994) \cite{kour2014real}. The groundstate lies in the sector with $B_p = 1 \hspace{2mm} \forall ~p$ and since the $B_p$ operators are the only gauge invariant objects, every gauge fixing choice $\{u\}$ which leads to this particular configuration for $B_p$ is equivalent. Therefore, our goal is to find a configuration $\{u\}$ which leads to $B_p = 1 \hspace{2mm} \forall ~p$. 
 
-Now, we define the vortex operator $W_p$ as
+Next, we define the vortex operator $W_p$ as
 
 \begin{equation}\label{eq:26}
 	\begin{aligned}
@@ -475,7 +477,7 @@ Now, we define the vortex operator $W_p$ as
             i  \in \hspace{2mm} \text{even sublattice} \\
             j  \in \hspace{2mm} \text{odd sublattice}
         \end{array}
-        \right.
+        \right.~.
 	\end{aligned}
 \end{equation}\\
 
@@ -485,7 +487,7 @@ The vortex operator can be simplified as below
 	\begin{aligned}
 		W_p &= u^x_{12}u^y_{32}u^z_{34}u^x_{54}u^y_{56}u^z_{16} \\
 		&= -(i)^6 c^x_1 c^x_2 c^y_2 c^y_3 c^z_3 c^z_4 c^x_4 c^x_5 c^y_5 c^y_6 c^z_6 c^z_1 \\
-		&= \sigma^y_1 D_1 \sigma^z_2 D_2 \sigma^x_3 D_3 \sigma^y_4 D_4 \sigma^z_5 D_5 \sigma^x_6 D_6 
+		&= \sigma^y_1 D_1 \sigma^z_2 D_2 \sigma^x_3 D_3 \sigma^y_4 D_4 \sigma^z_5 D_5 \sigma^x_6 D_6 ~,
 	\end{aligned}
 \end{equation}\\
 
