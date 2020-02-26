@@ -111,7 +111,7 @@ Honeycomb model is a 2-dimensional lattice spin system (see Fig.\hspace{0.2mm}\r
     \textbf{a}_2 = \frac{\sqrt{3}}{2} a (\textbf{e}_x, \sqrt{3}\textbf{e}_y)
 \end{equation}
 
-Where 'a' is the lattice constant. The reciprocal lattice for the triangle lattice can be obtained by solving Equ.\hspace{0.2mm}\ref{eq:01} for basis vectors of the reciprocal lattice, $\textbf{b}_1$ and $\textbf{b}_2$.
+Where $a$ is the lattice constant. The reciprocal lattice for the triangle lattice can be obtained by solving Equ.\hspace{0.2mm}\ref{eq:01} for basis vectors of the reciprocal lattice, $\textbf{b}_1$ and $\textbf{b}_2$.
 
 \begin{equation}\label{eq:01}
     \textbf{a}_i.\textbf{b}_j = 2\pi\delta_{ij}
@@ -168,7 +168,7 @@ The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli m
 	\label{fig:fig1}
 \end{figure}
 
-In this paper we appy the approach develoved in \cite{Deng_2017} to the Honeycomb model. In particular, we demonstrate how to calculate the groundstate and excited states of the Honeycomb model using machine learning techniques. To this end we employ the \textit{NetKet} environment \cite{netket:2019} to train a restricted Boltzmann machine (RBM) in order to find a ground state via gradient decent. A vortex pair can be created by adjusting the parameters of the RBM and subsequent braiding can be achieved by further adjustments of parameters. An important application of the techniques developed is the reconstruction of a given quantum state from simple measurements known as quantum state tomography \cite{Torlai_2018}.
+In this paper we apply the approach developed in \cite{Deng_2017} to the Honeycomb model. In sec.\hspace{0.2mm}\ref{sec2}, we briefly review the analytical solution of the model. In sec.\hspace{0.2mm}\ref{sec3} the mapping of the spin model to an RBM architecture is explained. In particular, we demonstrate how to calculate the groundstate and excited states of the Honeycomb model using machine learning techniques. To this end we employ the \texttt{NetKet} environment \cite{netket:2019} to train a restricted Boltzmann machine (RBM) in order to find a groundstate via gradient decent. In sec.\hspace{0.2mm}\ref{sec4} realization of vortices is discussed from both analytical and RBM language points of view. In brief, a vortex pair can be created by adjusting the parameters of the RBM and subsequent braiding can be achieved by further adjustments of parameters. Sec.\hspace{0.2mm}\ref{sec5} is dedicated to results and relevant discussions and finally we conclude in sec.\hspace{0.2mm}\ref{sec6}. An important application of the techniques developed in thi is the reconstruction of a given quantum state from simple measurements known as quantum state tomography \cite{Torlai_2018}.
 
 
 % \section{The model}
@@ -178,7 +178,7 @@ In this paper we appy the approach develoved in \cite{Deng_2017} to the Honeycom
 % Insert the lattice pictures in here.
 
 
-\section{Solution of the Model}
+\section{Solution of the Model}\label{sec2}
 
 In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved. First of all, we Fermionize the Hamiltonian by performing a one dimensional Jordan-Wigner transformation \cite{Jordan:1928wi} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice (see Fig.\hspace{0.2mm}\ref{fig:fig01})  clarifies the mechanism of the Jordan-Wigner transformation and why it is one dimensional \cite{Chen_2008}. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
 
@@ -353,7 +353,7 @@ Using all previous transformations we obtain a Hamiltonian which is quadratic in
 
 \noindent with a groundstate energy of $E_{GS} = -\frac{E_\textbf{k}}{2}$.
 
-\section{Restricted Boltzmann Machine Representation}
+\section{Restricted Boltzmann Machine Representation}\label{sec3}
 
 With the ever growing applications of neural networks in sciences and the emergent new technologies to deploy and build physical neural networks, this is the right time to investigate potential applications of them in condensed matter systems. Recently, a new approach has been proposed for simulating topological quantum states using neural networks \cite{Deng_2017}. In this section we use the same approach to map the Honeycomb Kitaev model to a restricted Boltzmann machine (RBM). There are many reasons why an RBM is chosen. This particular architecture has proved to be effective in many tasks such as dimensional reduction, classification, regression, collaborative filtering, feature learning and topic modeling and moreover a general theorem shows that RBMs are universal approximators of discrete distributions \cite{LeRouxBengio}.
 
@@ -386,7 +386,7 @@ To obtain the second equality we used the values for $\{h_{k}\}=\{-1,1\}^{M}$ wh
 
 Mapping of the model to RBM was done using the machinery already developed in the \texttt{NetKet} software package \cite{netket:2019}. In order to train the network, the parameter space of the network was sampled using the Metropolis algorithm and the optimization iterations are based on stochastic gradient descent algorithm. 
 
-\section{Braiding}
+\section{Braiding}\label{sec4}
 
 In this section we want to explore the possibility to create anionic excitations in the RBM representation and describe anyon braiding. Such a representation is important for various reasons, in particular for performing quantum computation \cite{Nayak_2008}. 
 
@@ -539,7 +539,7 @@ In principle, it is possible to directly manipulate the weight and bias paramete
 Therefore, applying $\hat{S}_a$ on RBM state, is equivalent to multiplying the bias parameter $a_a$ and weight parameters $W_{ak'}~\forall k'$ by $(-1)^{\delta(\alpha-z)-1}$ and then manually adding a $(-i\frac{\pi}{2}\sigma^{z}_a)$ phase angle to $a_a$, where $\sigma^{z}_a \in \{-1,+1\}$ is the eigenvalue of the $z$ component of the spin on site $a$. The presence of the $(-1)^{\delta(\alpha-z)-1}$ factor is to ensure that when $\alpha=x$ or $y$, the $\hat{\sigma}_a^{z}$ eigenvalue is multiplied by a minus sign. 
 
 
-\section{Results and Discussion}
+\section{Results and Discussion}\label{sec5}
 
 % \begin{figure}[h!]
 % 	\centering
@@ -638,7 +638,7 @@ It is worth to evaluate energy of vertices by method c for more large systems.
 %\subsection{Implementation in \textit{Intel-QS}}
 
 
-\section{Conclusion}
+\section{Conclusion}\label{sec6}
 \label{sec:conclusion}
 
 
