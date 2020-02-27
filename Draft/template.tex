@@ -387,6 +387,7 @@ To obtain the second equality we used the values for $\{h_{k}\}=\{-1,1\}^{M}$ wh
 Mapping of the model to RBM was done using the machinery already developed in the \texttt{NetKet} software package \cite{netket:2019}. In order to train the network, the parameter space of the network was sampled using the Metropolis algorithm and the optimization iterations are based on stochastic gradient descent algorithm. 
 
 \section{Braiding}
+\label{sec:braiding}
 
 In this section we want to explore the possibility to create anionic excitations in the RBM representation and describe anyon braiding. Such a representation is important for various reasons, in particular for performing quantum computation \cite{Nayak_2008}. 
 
@@ -554,9 +555,9 @@ Therefore, applying $\hat{S}_a$ on RBM state, is equivalent to multiplying the b
 
 \subsection{Groundstate}
 
-In this section, we present the results for the groundstate energy estimation of different system sizes for the proposed mapping in the section 3. These results are also compared to the exact analytical expression given in Equ.\hspace{0.2mm}\ref{eq:17}. The absolute value of the energies is plotted in Fig.\hspace{0.2mm}\ref{tab:r_space}. 
+In this section, we present the results for the groundstate energy estimate of different system sizes for the proposed mapping discussed in section 3. These results are also compared to the exact analytical expression given in Equ.\hspace{0.2mm}\ref{eq:17}. The absolute value of the energies is plotted in Fig.\hspace{0.2mm}\ref{tab:r_space}. 
 
-The RBM has the simple fully-connected and two-layered architecture with an optimized value of $\alpha = \frac{num_{h}}{num_{v}} = 2$ which is the ratio of number of hidden nodes to the number of visible nodes. For lower values of $\alpha$ the network does not give an accurate estimation of energies, while the larger values cause over-fitting and again inaccurate results. For training, the configuration space of the network has been sampled for hundreds of  times, depending on the lattice size, using Metropolis algorithm. Moreover, the stochastic gradient descent algorithm has been used for optimization for enough number of iterations such that the network converge to a low enough minima of the energy landscape.
+The RBM has a simple fully-connected and two-layered architecture with an optimization value $\alpha = \frac{num_{h}}{num_{v}} = 2$ which is the ratio of the number of hidden nodes to the number of visible nodes. For lower values of $\alpha$, the network does not give an accurate estimate of energies, while the larger values cause over-fitting and again lead to inaccurate results. For training, the configuration space of the network has been sampled for hundreds of  times, depending on the lattice size, using the Metropolis algorithm. Moreover, the stochastic gradient descent algorithm has been used for optimization using a suitable number of iterations such that the network converges to a low enough minimum of the energy landscape.
 
 \begin{figure}[!htb]
 	\centering
@@ -566,9 +567,21 @@ The RBM has the simple fully-connected and two-layered architecture with an opti
 	and Feed-Forward Neural Networks (FFNN) compared to the analytically obtained groundstate energy using Equ.\hspace{0.2mm}\ref{eq:16}.} 
 \end{figure}
 
-Based on the results obtained for the energy of the state of system, training of the network was tested and optimized by changing the learning rate for different training phases and iteration numbers. However, the outcome was not considerably changed and improved and it seems that the above results are the most accurate results one can get for this particular architecture of network. 
+The numerical results obtained are shown in Fig.\hspace{0.2mm}\ref{tab:r_space}. The different methods for computing the groundstate energy listed in the table are as follows:
+\begin{enumerate}
+	\item[a)] Analytic formula Equ.\hspace{0.2mm}\ref{eq:17} using
+	\begin{itemize}
+		\item[i.] anti-periodic boundary conditions
+		\item[ii.] periodic boundary conditions
+	\end{itemize}
+	\item[b)] The method of Kitaev and Pachos \todo{include reference here.}
+	\item[c)] Create the Hamiltonian in NetKet and perform direct diagonalization
+	\item[d)] RMB ($\alpha =2$, train by $1k \times 10k$).
+\end{enumerate}
 
-In order to check the effect of relative number of hidden and visible nodes on the outcome of the network, different values for $\alpha$ were tested, keeping other parameters fixed. The $\alpha$ parameter was changed just by changing the number of hidden nodes for a fixed system size (and hence fixed visible layer size) and the results are outlined in the table below, including the number of free parameters of the network and the time needed for the network to be trained. The exact analytical energy for the selected spin system is $-39.3892$.
+Based on the results obtained for the energy of the groundstate of the system, training of the network was tested and optimized by changing the learning rate for different training phases and iteration numbers. However, the outcome did not considerably change or improve and it seems that the above results are the most accurate results one can get for this particular network architecture. 
+
+In order to check the effect of the relative number of hidden and visible nodes on the outcome of the network, different values for $\alpha$ were tested, keeping other parameters fixed. The $\alpha$ parameter was changed just by changing the number of hidden nodes for a fixed system size (and hence fixed visible layer size) and the results are outlined in the table below, including the number of free parameters of the network and the time needed for the network to be trained. The exact analytical energy for the selected spin system is $-39.3892$.
 
 \begin{figure}[!htb]
 	\centering
@@ -576,13 +589,17 @@ In order to check the effect of relative number of hidden and visible nodes on t
 	\caption{\label{tab:alpha} Numerical results for the number of hidden nodes and its influence on energy calculations. $\alpha = \frac{num_{h}}{num_{v}}$.} 
 \end{figure}
 
-    -- 2 is the most suitable value for alpha. If it is too low, the fitting performace is not good; too high overfit will happen. \\
-    -- The training time is approximately proportional to the number of parameters. For each additional parameter, the training time is increased by about 1 second. \\
-    -- The result of RBM is still far away from the analytic result. \\
+From these results we can infer the following:
+
+\begin{enumerate}
+	\item $\alpha = 2$ is the most suitable value for alpha. If it is too low, the fitting performace is not good; if too high, it will lead to over-fitting. 
+	\item The training time is approximately proportional to the number of parameters. For each additional parameter, the training time is increased by about 1 second.
+	\item The result of the RBM is still far away from the analytic result.
+\end{enumerate}
 
 \textbf{The performance of FFNN}
 
-Below is the result of FFNN with one layer. As the structure of ffnn is similar to that of a no-visible-bias RBM(reffered as novb RBM below), the performance of one-layer FFNN is compared to that of no-visible-bias RBM.
+Below is the result of a FFNN with one layer. As the structure of the FFNN is similar to that of a no-visible-bias RBM(reffered as novb RBM below), the performance of the one-layer FFNN is compared to that of no-visible-bias RBM.
 
 \begin{figure}[!htb]
 	\centering
@@ -590,34 +607,33 @@ Below is the result of FFNN with one layer. As the structure of ffnn is similar 
 	\caption{\label{tab:ffnn} FFNN analysis.} 
 \end{figure}    
 
-    -- FFNN trains faster than RBM and performs better than RBM with no bias.\\
-    -- But FFNN's result again far away from the analytic one. \\
-
-Deep FFNNs with 2 and 3 layers are also tried. But some bugs seem happen, the energies stay at -25. It will be studied later.
+The conclusion we reach is:
+\begin{enumerate}
+	\item The FFNN trains faster than the RBM and performs better than the RBM with no bias.
+	\item But the FFNN's result again deviates by a similar margin from the analytic result.
+\end{enumerate}
 
 \subsection{Excited States: Realization of Anyons}
 
 \textbf{Create Vortex and Measure its energy}
 
-There are three theoretically equivalent method to create vortices
+As described in section \ref{sec:braiding}, there are three theoretically equivalent method to create vortices
 
     (a) modifing parameters of RBM \\
-    (b) creating a auxiliary Hamiltonian and train again \\
-    (c) transforming into auxiliary fermion and fixing $u_{ij}$s (Kitaev and Pachos) \\
+    (b) creating an auxiliary Hamiltonian and train again \\
+    (c) transforming into auxiliary fermion representation and fixing $u_{ij}$s (Kitaev and Pachos) \todo{reference?} \\
     
-I will first triple check using 3x3 lattice. The numeric result of gs energy of 3x3 lattice is -13.7166(2), the theoretical gs energy is -14.2915. The results is as the table below.
+We applied all three methods to a 3x3 lattice and computed the corresponding energy levels for excited states. The numeric result for the groundstate energy of a 3x3 lattice is -13.7166(2), the theoretical gs energy is -14.2915. For excited states obtained by flipping spins, the results we obtain are shown in the table below.
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./images/3x3.png}
 	\caption{\label{tab:3x3} 3x3 lattice analysis.} 
-\end{figure}
+\end{figure}\todo{change captions in the table!}
 
-* There is a wired thing in method c, need to discuss!
+We find that method a is more stable than method b. Both methods, a and b, deviate by a margin from the analytic result, namely method c. 
 
-Method a is more stable than method b. Both of method a and b is far from the correct result, method c. As the time they take, method c takes several ms to finish; method a and b take several minutes and method a is 3 or 4 times faster than method b.
-
-Now turn to larger lattice size, say, 7x7. It is wired in computation of method a that all these computations take exactly 1.5 days. By exactly, I means the error is at most 4 mins. The results are as below.
+Now we turn to larger lattice size and consider a 7x7 lattice. The results we obtain are as shown below.
 
 \begin{figure}[!htb]
 	\centering
@@ -625,7 +641,7 @@ Now turn to larger lattice size, say, 7x7. It is wired in computation of method 
 	\caption{\label{tab:vort_dis} Vortex vs. Distance analysis.} 
 \end{figure}
 
-It is worth to evaluate energy of vertices by method c for more large systems.
+It is worth to evaluate the energy of vortices by method c for large systems in the future.\todo{Should go into conclusions.}
 
 \begin{figure}[!htb]
 	\centering
