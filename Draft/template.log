@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.26)  27 FEB 2020 15:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.26)  24 FEB 2020 15:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1112,65 +1112,68 @@ Package pdftex.def Info: ./images/rbm.jpg used on input line 364.
 (pdftex.def)             Requested size: 375.80542pt x 183.32686pt.
 
 [7 <./images/rbm.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 381--382
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
 
  []
 
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 395.
+ine 391.
 <./images/anyons.png, id=172, 483.8075pt x 571.13374pt>
 File: ./images/anyons.png Graphic file (type png)
 
 <use ./images/anyons.png>
-Package pdftex.def Info: ./images/anyons.png used on input line 411.
+Package pdftex.def Info: ./images/anyons.png used on input line 407.
 (pdftex.def)             Requested size: 140.92792pt x 166.3653pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
-
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 427--428
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 436--437
+Underfull \vbox (badness 3189) has occurred while \output is active []
+
+ [8]
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 444--445
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 452--453
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--459
 
  []
 
 [9 <./images/anyons.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 470--471
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--487
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--497
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--505
+Underfull \hbox (badness 10000) in paragraph at lines 500--501
 
  []
 
@@ -1178,87 +1181,96 @@ Underfull \hbox (badness 10000) in paragraph at lines 504--505
 File: ./images/Anyons_Strings.png Graphic file (type png)
 
 <use ./images/Anyons_Strings.png>
-Package pdftex.def Info: ./images/Anyons_Strings.png used on input line 516.
+Package pdftex.def Info: ./images/Anyons_Strings.png used on input line 512.
 (pdftex.def)             Requested size: 328.82706pt x 199.72112pt.
  [10]
-Underfull \vbox (badness 1902) has occurred while \output is active []
-
- [11 <./images/Anyons_Strings.png>]
-<./images/gs_tbl.png, id=226, 878.28125pt x 254.9525pt>
+<./images/gs_tbl.png, id=217, 878.28125pt x 254.9525pt>
 File: ./images/gs_tbl.png Graphic file (type png)
 
 <use ./images/gs_tbl.png>
-Package pdftex.def Info: ./images/gs_tbl.png used on input line 564.
+Package pdftex.def Info: ./images/gs_tbl.png used on input line 548.
 (pdftex.def)             Requested size: 234.87749pt x 68.18063pt.
- <./images/plots.pdf, id=227, 433.62pt x 289.08pt>
+ <./images/plots.pdf, id=218, 433.62pt x 289.08pt>
 File: ./images/plots.pdf Graphic file (type pdf)
 
 <use ./images/plots.pdf>
-Package pdftex.def Info: ./images/plots.pdf used on input line 565.
+Package pdftex.def Info: ./images/plots.pdf used on input line 549.
 (pdftex.def)             Requested size: 328.82706pt x 219.22668pt.
- [12 <./images/gs_tbl.png> <./images/plots.pdf>]
-<./images/alpha.png, id=268, 546.04pt x 459.7175pt>
+ <./images/alpha.png, id=221, 546.04pt x 459.7175pt>
 File: ./images/alpha.png Graphic file (type png)
- <use ./images/alpha.png>
-Package pdftex.def Info: ./images/alpha.png used on input line 588.
+
+<use ./images/alpha.png>
+Package pdftex.def Info: ./images/alpha.png used on input line 560.
 (pdftex.def)             Requested size: 281.85585pt x 237.3008pt.
-
-<./images/ffnn.png, id=269, 885.3075pt x 157.58875pt>
-File: ./images/ffnn.png Graphic file (type png)
- <use ./images/ffnn.png>
-Package pdftex.def Info: ./images/ffnn.png used on input line 606.
-(pdftex.def)             Requested size: 375.80542pt x 66.89616pt.
-
-[13 <./images/alpha.png> <./images/ffnn.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 622--625
+ [11 <./images/Anyons_Strings.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 564--567
 
  []
 
-<./images/3x3.png, id=283, 505.89pt x 155.58125pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12 <./images/gs_tbl.png> <./images/plots.pdf> <./images/alpha.png>]
+<./images/ffnn.png, id=265, 885.3075pt x 157.58875pt>
+File: ./images/ffnn.png Graphic file (type png)
+ <use ./images/ffnn.png>
+Package pdftex.def Info: ./images/ffnn.png used on input line 574.
+(pdftex.def)             Requested size: 375.80542pt x 66.89616pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 578--580
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 589--592
+
+ []
+
+<./images/3x3.png, id=266, 505.89pt x 155.58125pt>
 File: ./images/3x3.png Graphic file (type png)
  <use ./images/3x3.png>
-Package pdftex.def Info: ./images/3x3.png used on input line 630.
+Package pdftex.def Info: ./images/3x3.png used on input line 597.
 (pdftex.def)             Requested size: 375.80542pt x 115.57698pt.
 
-<./images/vort_dis.png, id=284, 884.30376pt x 257.96375pt>
+<./images/vort_dis.png, id=267, 884.30376pt x 257.96375pt>
 File: ./images/vort_dis.png Graphic file (type png)
 
 <use ./images/vort_dis.png>
-Package pdftex.def Info: ./images/vort_dis.png used on input line 640.
+Package pdftex.def Info: ./images/vort_dis.png used on input line 609.
 (pdftex.def)             Requested size: 375.80542pt x 109.62723pt.
 
-<./images/vort_dis_c.png, id=285, 876.27374pt x 190.7125pt>
+<./images/vort_dis_c.png, id=268, 876.27374pt x 190.7125pt>
 File: ./images/vort_dis_c.png Graphic file (type png)
 
 <use ./images/vort_dis_c.png>
-Package pdftex.def Info: ./images/vort_dis_c.png used on input line 648.
+Package pdftex.def Info: ./images/vort_dis_c.png used on input line 617.
 (pdftex.def)             Requested size: 375.80542pt x 81.79233pt.
- (./template.bbl
+ (./template.bbl [13 <./images/ffnn.png> <./images/3x3.png>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 7.
- [14 <./images/3x3.png> <./images/vort_dis.png>]) [15 <./images/vort_dis_c.png>
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 748.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 748.
- (./template.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 748.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 748.
+) [14 <./images/vort_dis.png> <./images/vort_dis_c.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 717.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 717.
+
+(./template.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 717.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 717.
 Package rerunfilecheck Info: File `template.out' has not changed.
 (rerunfilecheck)             Checksum: B8267BA7CD5F0C04568E1854D3CBE083;522.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 748.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 717.
  ) 
 Here is how much of TeX's memory you used:
- 22375 strings out of 493014
- 406628 string characters out of 6133351
- 634021 words of memory out of 5000000
- 25189 multiletter control sequences out of 15000+600000
- 71136 words of font info for 190 fonts, out of 8000000 for 9000
+ 22326 strings out of 493014
+ 405743 string characters out of 6133351
+ 630021 words of memory out of 5000000
+ 25154 multiletter control sequences out of 15000+600000
+ 71006 words of font info for 188 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,16n,97p,1506b,869s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,16n,97p,1506b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/tex
@@ -1281,10 +1293,10 @@ nts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
 urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.p
 fb>
-Output written on template.pdf (15 pages, 1019207 bytes).
+Output written on template.pdf (14 pages, 1011522 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
- 340 compressed objects within 4 object streams
- 100 named destinations out of 1000 (max. 500000)
+ 387 PDF objects out of 1000 (max. 8388607)
+ 320 compressed objects within 4 object streams
+ 89 named destinations out of 1000 (max. 500000)
  33435 words of extra memory for PDF output out of 35830 (max. 10000000)
 
