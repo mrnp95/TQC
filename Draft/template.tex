@@ -93,7 +93,7 @@
 
 \begin{abstract}
 %\lipsum[1]
-In this work, the capability of restricted Boltzmann machines (RBMs) to find solutions for the Kitaev honeycomb model is investigated. The measured groundstate (GS) energy of the system is compared and shown to reside within less than $5\%$ error of the analytically derived value of the energy. Furthermore, the possibility of realizing anyons in the RBM is discussed and an algorithm is given to build these anyonic excitations and braid them as a proof of concept for performing quantum gates and doing quantum computation. Moreover, the phase transition of the system is also studied by changing the corresponding hyperparameters of the system in the RBM solution.
+In this work, the capability of restricted Boltzmann machines (RBMs) to find solutions for the Kitaev honeycomb model is investigated. The measured groundstate (GS) energy of the system is compared and shown to reside within less than $5\%$ error of the analytically derived value of the energy. Furthermore, the possibility of realizing anyons in the RBM is discussed and an algorithm is given to build these anyonic excitations and braid them as a proof of concept for performing quantum gates and doing quantum computation. Moreover, the phase transition of the system is also studied by changing the corresponding hyper-parameters of the system in the RBM solution.
 \end{abstract}
 
 
@@ -391,7 +391,7 @@ Mapping of the model to RBM was done using the machinery already developed in th
 In this section we want to explore the possibility to create anionic excitations in the RBM representation and describe anyon braiding. Such a representation is important for various reasons, in particular for performing quantum computation \cite{Nayak_2008}. 
 
 First of all, let us describe the creation of these quasi-particles by starting with a groundstate sector and then subsequently changing the eigenvalue of the $B_p$ operators from +1 to -1 locally and in the region that we want to realize the vortices in the system. 
-In an arbitrary configuration of spins (not necessarily in the groundstate sector) it is easy to prove that $\prod B_p = +1 ,\forall p$. Hence, we can just build the vortices in pairs. For example, if you apply the operator $\hat{O}_1$ to the groundstate,  it produces two vortices in plaquettes 1 and 2 (see Fig.\hspace{0.2mm}\ref{fig:anyons}). \todo{Do we need a reference here or are these ideas completely new?}
+In an arbitrary configuration of spins (not necessarily in the groundstate sector) it is easy to prove that $\prod B_p = +1 ,\forall p$. Hence, we can just build the vortices in pairs. For example, if you apply the operator $\hat{O}_1$ to the groundstate,  it produces two vortices in plaquettes 1 and 2 (see Fig.\hspace{0.2mm}\ref{fig:anyons}) \cite{Leggett} . \todo{Do we need a reference here or are these ideas completely new?}
 
 \begin{equation}\label{eq:18}
     \hat{O}_1 = \exp{(-i\frac{\pi}{2}\hat{\sigma}^{z}_a)}
