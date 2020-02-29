@@ -91,6 +91,14 @@ random init --3k--> -36.649 --7k--> -37.291</br>
 random init --4k--> -36.697 --6k--> -37.285</br>
 random init --5k--> -36.758 --5k--> -37.201</br>
 
+The first training lr=0.3 is too large. Using 0.02 or 0.03 as first stage lr is suitable. So I first keep lr to 0.03 then lower to 0.01.
+
+random init --1k--> -36.622 --9k--> -37.086</br>
+random init --2k--> -36.624 --8k--> -37.163</br>
+random init --3k--> -36.659 --7k--> -37.193</br>
+random init --4k--> -36.688 --6k--> -37.204</br>
+random init --5k--> -36.772 --5k--> -37.059</br>
+
 ### Play with alpha: how many hidden nodes are suitable?
 
 Study how number of hidden nodes, denoted by num_nh, influences accuracy and training time. Fix the __lattice size to 5x5__, train batch number to 1kx10k, optimizer to Sgd(learning_rate=0.01,decay_factor=1), sampler to MetropolisLocal. The exact ground state energy of 5x5 lattice is -39.3892. In the table below, -27.7808(59) means $-27.7808\pm0.0059$.
