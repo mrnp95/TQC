@@ -609,7 +609,7 @@ The numerical results obtained are shown in Fig.\hspace{0.2mm}\ref{tab:r_space}.
 		\item[i.] anti-periodic boundary conditions
 		\item[ii.] periodic boundary conditions
 	\end{itemize}
-	\item[b)] The method of Kitaev and Pachos \todo{include reference here.}
+	\item[b)] The method of Kitaev and Pachos \cite{Kitaev_2003} \cite{pachos_2012}
 	\item[c)] Create the Hamiltonian in NetKet and perform direct diagonalization
 	\item[d)] RMB ($\alpha =2$, train by $1k \times 10k$).
 \end{enumerate}
@@ -656,15 +656,15 @@ As described in sec.\hspace{0.2mm}\ref{sec4}, there are three theoretically equi
 
     (a) modifing parameters of RBM \\
     (b) creating an auxiliary Hamiltonian and train again \\
-    (c) transforming into auxiliary fermion representation and fixing $u_{ij}$s (Kitaev and Pachos) \todo{reference?} \\
+    (c) transforming into auxiliary fermion representation and fixing $u_{ij}$s \cite{Kitaev_2003} \cite{pachos_2012}\\
     
 We applied all three methods to a 3x3 lattice and computed the corresponding energy levels for excited states. The numeric result for the groundstate energy of a 3x3 lattice is -13.7166(2), the theoretical gs energy is -14.2915. For excited states obtained by flipping spins, the results we obtain are shown in the table below.
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{./images/3x3.png}
-	\caption{\label{tab:3x3} 3x3 lattice analysis.} 
-\end{figure}\todo{change captions in the table!}
+	\includegraphics[width=0.6\textwidth]{./images/3x3.png}
+	\caption{\label{tab:3x3} Energy of excited states with a pair of vortices in a 3x3 lattice system, measured through different methods as explained in the text.} 
+\end{figure}
 
 We find that method a is more stable than method b. Both methods, a and b, deviate by a margin from the analytic result, namely method c. 
 
@@ -676,15 +676,15 @@ Now we turn to larger lattice size and consider a 7x7 lattice. The results we ob
 	\caption{\label{tab:vort_dis} Vortex vs. Distance analysis.} 
 \end{figure}
 
-It is worth to evaluate the energy of vortices by method c for large systems in the future.\todo{Should go into conclusions.}
-
-\subsection{Quantum State Tomography for Groundstate}\label{sec5.3}
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./images/vort_dis_c.png}
 	\caption{\label{tab:vort_dis} Vortex vs. Distance analysis: Method C.} 
 \end{figure}
+
+
+\subsection{Quantum State Tomography for Groundstate}\label{sec5.3}
 
 % \section{Topological Quantum Phase Transition}
 
@@ -693,7 +693,7 @@ It is worth to evaluate the energy of vortices by method c for large systems in 
 
 \section{Conclusion}\label{sec6}
 \label{sec:conclusion}
-
+It is worth to evaluate the energy of vortices by method c for large systems in the future.
 
 \section{Acknowledgement}
 YMSC, Martin Duy Tat, 
