@@ -98,7 +98,7 @@ In this work, the capability of restricted Boltzmann machines (RBMs) to find sol
 
 
 % keywords can be removed
-\keywords{Restricted Boltzmann Machine (RBM) \and Feed-Forward Neural Network (FFNN) \and Honeycomb Lattice Model \and Quantum State Tomography \and Topological Phases of Matter \and Anyons \and Quantum Computing}
+\keywords{Restricted Boltzmann Machine (RBM) \and Feed-Forward Neural Network (FFNN) \and Honeycomb Lattice Model \and Quantum State Tomography (QST) \and Topological Phases of Matter \and Anyons \and Quantum Computing}
 
 
 \section{Introduction}
@@ -353,11 +353,13 @@ Using all previous transformations we obtain a Hamiltonian which is quadratic in
 
 \noindent with a groundstate energy of $E_{GS} = -\frac{E_\textbf{k}}{2}$.
 
-\section{Restricted Boltzmann Machine Representation}\label{sec3}
+\section{Restricted Boltzmann Machine Representations}\label{sec3}
+
+\subsection{RBM as a Neural Network Quantum State}
 
 With the ever growing applications of neural networks in sciences and the emergent new technologies to deploy and build physical neural networks, this is the right time to investigate potential applications of them in condensed matter systems. Recently, a new approach has been proposed for simulating topological quantum states using neural networks \cite{Deng_2017}. In this section we use the same approach to map the Honeycomb Kitaev model to a restricted Boltzmann machine (RBM). There are many reasons why an RBM is chosen. This particular architecture has proved to be effective in many tasks such as dimensional reduction, classification, regression, collaborative filtering, feature learning and topic modeling and moreover a general theorem shows that RBMs are universal approximators of discrete distributions \cite{LeRouxBengio}.
 
-Having a set of spins on a lattice, $\Xi=(\sigma_{1},\sigma_{2},\cdots\sigma_{N})$ (in our case the Jordan-Wigner chain of spins), our goal is to use an RBM to reduce the dimensionality of the Hilbert space and estimate the energy of the system in both groundstate and excited states and classify different topological phases of the model. An RBM is a short range feed-forward neural network with two layers. The first layer (visible layer) has $N$ nodes which are representing the physical spins in the Hamiltonian and the second layer (hidden layer) has $M$ binary valued nodes (architecture of the network is shown in Fig.\ref{rbm-arc}). 
+Having a set of spins on a lattice, $\Xi=(\sigma_{1},\sigma_{2},\cdots\sigma_{N})$ (in our case the Jordan-Wigner chain of spins), our goal is to use an RBM to reduce the dimensionality of the Hilbert space and estimate the energy of the system in both groundstate and excited states to be able to classify different topological phases of the model. An RBM is a short range feed-forward neural network with two layers. The first layer (visible layer) has $N$ nodes which are representing the physical spins in the Hamiltonian and the second layer (hidden layer) has $M$ binary valued nodes (architecture of the network is shown in Fig.\ref{rbm-arc}). 
 
 \begin{figure}[!htb]
 	\centering
@@ -385,6 +387,40 @@ To obtain the second equality we used the values for $\{h_{k}\}=\{-1,1\}^{M}$ wh
 % If the visible and hidden layers of the network are fully connected, training the network for large lattice sizes is not computationally feasible. Therefore, we just use locally connected RBM in which the number of weight parameters and nodes in layers is linear in system size. 
 
 Mapping of the model to RBM was done using the machinery already developed in the \texttt{NetKet} software package \cite{netket:2019}. In order to train the network, the parameter space of the network was sampled using the Metropolis algorithm and the optimization iterations are based on stochastic gradient descent algorithm. 
+
+\subsection{Quantum State Tomography}
+
+Reconstruction of complex synthetic quantum states from experimental measurement data is computationally exponentially expensive. Therefore, the capability of neural network quantum states such as RBM to accurately and efficiently represent a high-dimensional quantum states is beneficial to quantum state tomography. Apart from the numerous applications of QST, in our study case, the reconstructed states of the honeycomb model can later on be used for validation of particular quantum processes, e.g. braiding of vortices in the system, phase transitions, etc. at the experimental level and after implementation of the framework developed in sec.\hspace{0.2mm}\ref{sec4}. For instance, there are promising proposals for implementation of topological systems in cold atoms. A review has recently been published here \cite{coldatom}. 
+
+In sec.\hspace{0.2mm}\ref{sec5.3} we present QST results for the groundstate of a small system size of the honeycomb model, as proof of concept. In a normal QST task, the data sets come from experimental measurements, but since we don't have experimental data, we need to first find the exact wave-function for the system through exact diagonalization methods and then sample that wave-function by performing single shot measurements in different basis to build the data set. 
+
+After preparing the train data set, one needs to define a variational ansatz that should be trained on the measurement data. For the same motivations, we also choose an ansatz similar to the one used in \cite{Torlai_2018}
+
+\begin{equation}\label{eq:19_2}
+        \tilde \psi_{\boldsymbol{\lambda/\mu}} (\boldsymbol{\sigma})  =  p_{\boldsymbol{\lambda}}(\boldsymbol{\sigma}) e^{i \phi_{\boldsymbol{\mu}}(\boldsymbol{\sigma})}
+\end{equation}\\
+
+where $\phi_{\boldsymbol{\mu}}(\boldsymbol{\sigma}) = \log p_{\boldsymbol{\mu}}(\boldsymbol{\sigma})$ and $p_{\boldsymbol{\lambda/\mu}}$ are RBM real probability distributions corresponding to two separate sets of RBM parameters $\boldsymbol{\lambda/\mu}$. The probability distribution of single shot measurements in basis \textit{b} is given by 
+
+\begin{equation}\label{eq:19_3}
+        P_{b}(\boldsymbol{\sigma}) = | \langle \boldsymbol{\sigma}| \hat{U}_{b} |\Psi_{U}\rangle|^{2}
+\end{equation}\\
+
+where $|\Psi_{U}\rangle$ is the physical wave-function that we want to reconstruct. $\hat{U}_{b}$ is the unitary transformation which rotates the wave-function to the basis \textit{b} in which the measurement is done. One can write the same expression for the probability distribution of the measurements for the variational wave-function $|\tilde \psi_{\boldsymbol{\lambda/\mu}}\rangle$, namely $\tilde P_{b}(\boldsymbol{\sigma})$.
+
+Then the QST problem reduces to a minimization task to find the set of parameters $\boldsymbol{\kappa}$ which minimises the total Kullback-Leibler divergence between $P_{b}(\boldsymbol{\sigma})$ and $\tilde P_{b}(\boldsymbol{\sigma})$
+
+\begin{equation}\label{eq:19_4}
+        \Xi(\boldsymbol{\kappa}) = \sum_{b} \mathbb{KL}_{b}({\kappa})
+\end{equation}\\
+
+where
+
+\begin{equation}\label{eq:19_5}
+        \mathbb{KL}_{b}({\boldsymbol{\kappa}}) = \sum_{\boldsymbol{\sigma}} P_{b}(\boldsymbol{\sigma}) \log \frac{ P_{b}(\boldsymbol{\sigma})}{\tilde P_{b}(\boldsymbol{\sigma})}
+\end{equation}\\
+
+A more detailed explanation of how to perform this minimization using gradient descent can be found in \cite{Torlai_2018}. The whole process of QST was done using \texttt{NetKet} \cite{netket:2019} which has the above algorithm already built in.
 
 \section{Braiding}\label{sec4}
 
@@ -641,6 +677,8 @@ Now we turn to larger lattice size and consider a 7x7 lattice. The results we ob
 \end{figure}
 
 It is worth to evaluate the energy of vortices by method c for large systems in the future.\todo{Should go into conclusions.}
+
+\subsection{Quantum State Tomography for Groundstate}\label{sec5.3}
 
 \begin{figure}[!htb]
 	\centering
