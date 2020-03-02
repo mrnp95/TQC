@@ -686,6 +686,16 @@ Now we turn to larger lattice size and consider a 7x7 lattice. The results we ob
 
 \subsection{Quantum State Tomography for Groundstate}\label{sec5.3}
 
+2x2-16k.1.png is the best plot I can get so far. The parameters are, 2x2 lattice, alpha=2, training-data-size=16k, train-batch-size=n-samples=2k. The system will first be trained with lr=0.02, then with lr=0.01 if overlap reach 0.84, then with lr=0.005 if overlap reach 0.92 until overlap reach 0.97. The 0.84 and 0.92 here are only experience parameters, if too small, not efficient, too large, can not never reach.
+
+The traning-data-size will affect the finally accuracy tomography can reach. For example, if we change it from 16k to 2k, the result will be like 2x2-2k.1.png.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./images/2x2_16k_1.png}
+	\caption{\label{fig:qst} Energy and overlap results for QST of 2x2 lattice system.} 
+\end{figure}
+
 % \section{Topological Quantum Phase Transition}
 
 %\subsection{Implementation in \textit{Intel-QS}}
