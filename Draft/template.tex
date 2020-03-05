@@ -104,7 +104,7 @@ In this work, the capability of restricted Boltzmann machines (RBMs) to find sol
 \section{Introduction}
 %\lipsum[2]
 %\lipsum[3]
-Honeycomb model is a 2-dimensional lattice spin system (see Fig.\hspace{0.2mm}\ref{fig:fig0}) which was first introduced by Kitaev in 2006 \cite{Kitaev_2006} and is famous because of the topological quantum order due to a degenerate gapped groundstate which is persistent to local and finite-sized perturbations. The system also supports both abelian and non-abelian topological phases as demonstrated in the original proposal \cite{Kitaev_2006}. There is a wide range of applications for this model, from fault-tolerant quantum computation \cite{Kitaev_2003} to analytical study of strongly correlated systems \cite{Jackeli_2009} and quantum spin liquids \cite{Tikhonov_2011}. The honeycomb lattice is not a Bravias lattice in its original structure, but it can be considered as a triangular Bravias lattice with a two-spin basis. The direct Bravias lattice and the primitive cells are illustrated in Fig.\hspace{0.2mm}\ref{fig:fig0}a with the dashed lines. Each primitive cell has a pair of odd and even indexed spins. Just for the sake of simplicity we will denote each cell with the even indexed (empty circles) spins of the system. The primitive vectors of the lattice, $\textbf{a}_1$ and $\textbf{a}_2$ are also shown in Fig.\hspace{0.2mm}\ref{fig:fig0}a (see also Equ.\hspace{0.2mm}\ref{eq:0}). The entire lattice can be tiled and covered with primitive cells using translations composed of different linear combinations of primitive vectors. 
+The Honeycomb model is a 2-dimensional lattice spin system (see Fig.\hspace{0.2mm}\ref{fig:fig0}) which was first introduced by Kitaev in 2006 \cite{Kitaev_2006} and is famous because of the topological quantum order due to a degenerate gapped groundstate which is persistent to local and finite-sized perturbations. The system also supports both abelian and non-abelian topological phases as demonstrated in the original proposal \cite{Kitaev_2006}. There is a wide range of applications for this model, from fault-tolerant quantum computation \cite{Kitaev_2003} to analytical study of strongly correlated systems \cite{Jackeli_2009} and quantum spin liquids \cite{Tikhonov_2011}. The honeycomb lattice is not a Bravias lattice in its original structure, but it can be considered as a triangular Bravias lattice with a two-spin basis. The direct Bravias lattice and the primitive cells are illustrated in Fig.\hspace{0.2mm}\ref{fig:fig0}a with the dashed lines. Each primitive cell has a pair of odd and even indexed spins. Just for the sake of simplicity we will denote each cell with the even indexed (empty circles) spins of the system. The primitive vectors of the lattice, $\textbf{a}_1$ and $\textbf{a}_2$ are also shown in Fig.\hspace{0.2mm}\ref{fig:fig0}a (see also Equ.\hspace{0.2mm}\ref{eq:0}). The entire lattice can be tiled and covered with primitive cells using translations composed of different linear combinations of primitive vectors. 
 
 \begin{equation}\label{eq:0}
     \textbf{a}_1 = \sqrt{3} a \textbf{e}_x \hspace{1cm} \& \hspace{1cm}
@@ -126,7 +126,7 @@ The solution is as below:
 
 The reciprocal lattice is depicted in Fig.\hspace{0.2mm}\ref{fig:fig0}b. 
 
-The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli matrices on a honeycomb lattice as written in Equ.\hspace{0.2mm}\ref{eq:1}, where $r \& r^{'}$ are indices for the nearest neighbour spins. The physics of the system is symmetric under permutation of coupling strengths $J_{\alpha}$ with $\alpha = x, y, z$ and due to an-isotropic interaction the model is a fraustrated spin system, because a spin cannot satisfy conflicting
+The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli matrices on a honeycomb lattice as written in Equ.\hspace{0.2mm}\ref{eq:1}, where $r \& r^{'}$ are indices for the nearest neighbour spins. The physics of the system is symmetric under permutation of coupling strengths $J_{\alpha}$ with $\alpha = x, y, z$ and due to an-isotropic interaction the model is a frustrated spin system, because a spin cannot satisfy conflicting
  demands of orientation from its three neighboring sites \cite{Kitaev_2006}.
 
 \begin{equation}\label{eq:1}
@@ -168,7 +168,7 @@ The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli m
 	\label{fig:fig1}
 \end{figure}
 
-In this paper we apply the approach developed in \cite{Deng_2017} to the Honeycomb model. In sec.\hspace{0.2mm}\ref{sec2}, we briefly review the analytical solution of the model. In sec.\hspace{0.2mm}\ref{sec3} the mapping of the spin model to an RBM architecture is explained. In particular, we demonstrate how to calculate the groundstate and excited states of the Honeycomb model using machine learning techniques. To this end we employ the \texttt{NetKet} environment \cite{netket:2019} to train a restricted Boltzmann machine (RBM) in order to find a groundstate via gradient decent. In sec.\hspace{0.2mm}\ref{sec4} realization of vortices is discussed from both analytical and RBM language points of view. In brief, a vortex pair can be created by adjusting the parameters of the RBM and subsequent braiding can be achieved by further adjustments of parameters. Sec.\hspace{0.2mm}\ref{sec5} is dedicated to results and relevant discussions and finally we conclude in sec.\hspace{0.2mm}\ref{sec6}. An important application of the techniques developed in thi is the reconstruction of a given quantum state from simple measurements known as quantum state tomography \cite{Torlai_2018}.
+In this paper we apply the approach developed in \cite{Deng_2017} to the Honeycomb model. In sec.\hspace{0.2mm}\ref{sec2}, we briefly review the analytical solution of the model. In sec.\hspace{0.2mm}\ref{sec3} the mapping of the spin model to an RBM architecture is explained. In particular, we demonstrate how to calculate the groundstate and excited states of the Honeycomb model using machine learning techniques. To this end we employ the \texttt{NetKet} environment \cite{netket:2019} to train a restricted Boltzmann machine (RBM) in order to find a groundstate via gradient decent. In sec.\hspace{0.2mm}\ref{sec4} realization of vortices is discussed from both analytical and RBM language points of view. In brief, a vortex pair can be created by adjusting the parameters of the RBM and subsequent braiding can be achieved by further adjustments of parameters. Sec.\hspace{0.2mm}\ref{sec5} is dedicated to results and relevant discussions and finally we conclude in sec.\hspace{0.2mm}\ref{sec6}. An important application of the techniques developed in this paper is the reconstruction of a given quantum state from simple measurements known as quantum state tomography \cite{Torlai_2018}.
 
 
 % \section{The model}
@@ -180,7 +180,7 @@ In this paper we apply the approach developed in \cite{Deng_2017} to the Honeyco
 
 \section{Solution of the Model}\label{sec2}
 
-In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved. First of all, we Fermionize the Hamiltonian by performing a one dimensional Jordan-Wigner transformation \cite{Jordan:1928wi} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice (see Fig.\hspace{0.2mm}\ref{fig:fig01})  clarifies the mechanism of the Jordan-Wigner transformation and why it is one dimensional \cite{Chen_2008}. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
+In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved. First of all, we fermionize the Hamiltonian by performing a one-dimensional Jordan-Wigner transformation \cite{Jordan:1928wi} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice (see Fig.\hspace{0.2mm}\ref{fig:fig01})  clarifies the mechanism of the Jordan-Wigner transformation and why it is one-dimensional \cite{Chen_2008}. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
 
 \begin{equation}\label{eq:2}
 	\begin{aligned}
@@ -190,7 +190,7 @@ In this section an exact solution of the system is provided and an explicit form
 	\end{aligned}
 \end{equation}\\
 
-\noindent This transformation maps the Hilbert space of spins to the Hilbert space of spinless complex fermions. Using the fact that $ \sigma^{\pm} = \sigma^{x}\pm i\sigma^{y} $ one can expand the Hamiltonian in Equ.\hspace{0.2mm}\ref{eq:1} into three terms and re-write them as below \cite{Schmoll_2017}.
+\noindent This transformation maps the Hilbert space of spins to the Hilbert space of spinless complex fermions. Using the fact that $ \sigma^{\pm} = \sigma^{x}\pm i\sigma^{y} $ one can expand the Hamiltonian in Equ.\hspace{0.2mm}\ref{eq:1} into three terms and rewrite them as below \cite{Schmoll_2017}.
 
 
 \begin{equation}\label{eq:3}
@@ -261,7 +261,7 @@ In this section an exact solution of the system is provided and an explicit form
 	\end{aligned}
 \end{equation}\\
 
-\noindent where \textbf{r} is the position vector of z-bonds or unit cells  (see Fig.\hspace{0.2mm}\ref{fig:fig01}). It makes no difference in physics if we set \textbf{r} on every point along the z-bond, whether it is on even site or odd site or some where in the middle of them, that's a matter of translation! 
+\noindent where \textbf{r} is the position vector of z-bonds or unit cells  (see Fig.\hspace{0.2mm}\ref{fig:fig01}). It makes no difference in the physics if we set \textbf{r} to be any point along the z-bond, whether we choose an even site or an odd site or some point in the middle, they are all related through translation. 
 What will be important in what follows, is that now since we have grouped a pair of even and odd sites as an unit cell, to evaluate the summation over the unit cells, it is sufficient to just run over the even or odd sites.\\
 Furthermore, the $\alpha_\textbf{r} = (id_{\color{black}\bullet,\textbf{r}}d_{\circ,\textbf{r}})$ operators are defined on each z-bond of the lattice (labled by \textbf{r}) and they commute with the Hamiltonian and are good quantum numbers.
 Moreover, it can easily be shown that each plaquette operator can be written as:
@@ -272,7 +272,7 @@ Moreover, it can easily be shown that each plaquette operator can be written as:
 	\end{aligned}
 \end{equation}
 
-\noindent On the other hand, from the Lieb's theorem \cite{Lieb_1994} we know that the groundstate manifold is obtained by setting $B_p = 1, \forall p$. 
+\noindent On the other hand, from Lieb's theorem \cite{Lieb_1994} we know that the groundstate manifold is obtained by setting $B_p = 1, \forall p$. 
 Thus the uniform choice of $\alpha_\textbf{r}=1, \forall \textbf{r}$ corresponds to a vortex-free sector, nevertheless all configurations leading to the same sector are equivalent.\\
 
 \noindent We also introduce a Dirac fermion on each z-link using the Majorana operators:
@@ -294,7 +294,7 @@ Thus the uniform choice of $\alpha_\textbf{r}=1, \forall \textbf{r}$ corresponds
 	\end{aligned}
 \end{equation}\\
 
-\noindent The Hamiltonian is translational invariant and can be transformed to momentum space in order to be diagonalized. We define the Fourier transf for the Dirac fermion through:
+\noindent The Hamiltonian is translation invariant and can be transformed to momentum space in order to be diagonalized. We define the Fourier transform for the Dirac fermion through:
 
 \begin{equation}\label{eq:13}
 	\begin{aligned}
@@ -347,7 +347,7 @@ Using all previous transformations we obtain a Hamiltonian which is quadratic in
 			0 & -E_\textbf{k}
 		\end{pmatrix}
 		\begin{pmatrix} \gamma_\textbf{k} \\ \gamma^\dagger_{\textbf{-k}} \end{pmatrix}\\
-		&= \sum_\textbf{k}E_\textbf{k}(\gamma^\dagger_\textbf{k}\gamma_{\textbf{k}}-\frac{1}{2}).
+		&= \sum_\textbf{k}E_\textbf{k}(\gamma^\dagger_\textbf{k}\gamma_{\textbf{k}}-\frac{1}{2}), \quad E_{\mathbf{k}} = \sqrt{\epsilon_{\mathbf{k}}^2 + \Delta_{\mathbf{k}}^2}. 
 	\end{aligned}
 \end{equation}\\
 
@@ -382,19 +382,19 @@ where
     \end{aligned}
 \end{equation}\\
 
-To obtain the second equality we used the values for $\{h_{k}\}=\{-1,1\}^{M}$ which is the set of possible configurations of hidden layer nodes and the $\Omega=(a_{k},b_{k'},W_{kk'})$ is the set of weights and biases of the RBM which should be trained in such a way that the final RBM state represents the desired quantum state of the model (i.e. groundstate or the excited states). The combined number of weight and bias parameters and nodes is polynomial in system size and computationally feasible.
+To obtain the second equality we used the values for $\{h_{k}\}=\{-1,1\}^{M}$ which is the set of possible configurations of hidden layer nodes and $\Omega=(a_{k},b_{k'},W_{kk'})$ is the set of weights and biases of the RBM which should be trained in such a way that the final RBM state represents the desired quantum state of the model (i.e. groundstate or the excited states). The combined number of weight and bias parameters and nodes is polynomial in system size and computationally feasible.
 
 % If the visible and hidden layers of the network are fully connected, training the network for large lattice sizes is not computationally feasible. Therefore, we just use locally connected RBM in which the number of weight parameters and nodes in layers is linear in system size. 
 
-Mapping of the model to RBM was done using the machinery already developed in the \texttt{NetKet} software package \cite{netket:2019}. In order to train the network, the parameter space of the network was sampled using the Metropolis algorithm and the optimization iterations are based on stochastic gradient descent algorithm. 
+The mapping of the model to an RBM is done using the machinery already developed in the \texttt{NetKet} software package \cite{netket:2019}. In order to train the network, the parameter space of the network was sampled using the Metropolis algorithm and the optimization iterations are based on the stochastic gradient descent algorithm. 
 
 \subsection{Quantum State Tomography}
 
-Reconstruction of complex synthetic quantum states from experimental measurement data is computationally exponentially expensive. Therefore, the capability of neural network quantum states such as RBM to accurately and efficiently represent a high-dimensional quantum states is beneficial to quantum state tomography. Apart from the numerous applications of QST, in our study case, the reconstructed states of the honeycomb model can later on be used for validation of particular quantum processes, e.g. braiding of vortices in the system, phase transitions, etc. at the experimental level and after implementation of the framework developed in sec.\hspace{0.2mm}\ref{sec4}. For instance, there are promising proposals for implementation of topological systems in cold atoms. A review has recently been published here \cite{coldatom}. 
+Reconstruction of complex synthetic quantum states from experimental measurement data is computationally exponentially expensive. Therefore, the capability of neural network quantum states such as RBM to accurately and efficiently represent high-dimensional quantum states is beneficial to quantum state tomography. Apart from the numerous applications of QST, in our study case, the reconstructed states of the honeycomb model can later on be used for validation of particular quantum processes, e.g. braiding of vortices in the system, phase transitions, etc. at the experimental level and after implementation of the framework developed in sec.\hspace{0.2mm}\ref{sec4}. For instance, there are promising proposals for implementation of topological systems in cold atoms. A review has recently been published here \cite{coldatom}. 
 
-In sec.\hspace{0.2mm}\ref{sec5.3} we present QST results for the groundstate of a small system size of the honeycomb model, as proof of concept. In a normal QST task, the data sets come from experimental measurements, but since we don't have experimental data, we need to first find the exact wave-function for the system through exact diagonalization methods and then sample that wave-function by performing single shot measurements in different basis to build the data set. 
+In sec.\hspace{0.2mm}\ref{sec5.3} we present QST results for the groundstate of a small system size of the honeycomb model, as proof of concept. In a normal QST task, the data sets come from experimental measurements, but since we don't have experimental data, we need to first find the exact wave-function for the system through exact diagonalization methods and then sample that wave-function by performing single shot measurements in different bases to build the data set. 
 
-After preparing the train data set, one needs to define a variational ansatz that should be trained on the measurement data. For the same motivations, we also choose an ansatz similar to the one used in \cite{Torlai_2018}
+After preparing the training data set, one needs to define a variational ansatz that should be trained on the measurement data. For the same motivations, we also choose an ansatz similar to the one used in \cite{Torlai_2018}
 
 \begin{equation}\label{eq:19_2}
         \tilde \psi_{\boldsymbol{\lambda/\mu}} (\boldsymbol{\sigma})  =  p_{\boldsymbol{\lambda}}(\boldsymbol{\sigma}) e^{i \phi_{\boldsymbol{\mu}}(\boldsymbol{\sigma})}
@@ -406,9 +406,9 @@ where $\phi_{\boldsymbol{\mu}}(\boldsymbol{\sigma}) = \log p_{\boldsymbol{\mu}}(
         P_{b}(\boldsymbol{\sigma}) = | \langle \boldsymbol{\sigma}| \hat{U}_{b} |\Psi_{U}\rangle|^{2}
 \end{equation}\\
 
-where $|\Psi_{U}\rangle$ is the physical wave-function that we want to reconstruct. $\hat{U}_{b}$ is the unitary transformation which rotates the wave-function to the basis \textit{b} in which the measurement is done. One can write the same expression for the probability distribution of the measurements for the variational wave-function $|\tilde \psi_{\boldsymbol{\lambda/\mu}}\rangle$, namely $\tilde P_{b}(\boldsymbol{\sigma})$.
+where $|\Psi_{U}\rangle$ is the physical wave-function that we want to reconstruct. $\hat{U}_{b}$ is the unitary transformation which rotates the wave-function to the basis \textit{b} in which the measurement is performed. One can write the same expression for the probability distribution of the measurements for the variational wave-function $|\tilde \psi_{\boldsymbol{\lambda/\mu}}\rangle$, namely $\tilde P_{b}(\boldsymbol{\sigma})$.
 
-Then the QST problem reduces to a minimization task to find the set of parameters $\boldsymbol{\kappa}$ which minimises the total Kullback-Leibler divergence between $P_{b}(\boldsymbol{\sigma})$ and $\tilde P_{b}(\boldsymbol{\sigma})$
+Then the QST problem reduces to a minimization task to find the set of parameters $\boldsymbol{\kappa}$ which minimizes the total Kullback-Leibler divergence between $P_{b}(\boldsymbol{\sigma})$ and $\tilde P_{b}(\boldsymbol{\sigma})$
 
 \begin{equation}\label{eq:19_4}
         \Xi(\boldsymbol{\kappa}) = \sum_{b} \mathbb{KL}_{b}({\kappa})
@@ -420,13 +420,13 @@ where
         \mathbb{KL}_{b}({\boldsymbol{\kappa}}) = \sum_{\boldsymbol{\sigma}} P_{b}(\boldsymbol{\sigma}) \log \frac{ P_{b}(\boldsymbol{\sigma})}{\tilde P_{b}(\boldsymbol{\sigma})}
 \end{equation}\\
 
-A more detailed explanation of how to perform this minimization using gradient descent can be found in \cite{Torlai_2018}. The whole process of QST was done using \texttt{NetKet} \cite{netket:2019} which has the above algorithm already built in.
+A more detailed explanation of how to perform this minimization using gradient descent can be found in \cite{Torlai_2018}. The entire process of QST was implemented using \texttt{NetKet} \cite{netket:2019} which has the above algorithm already built in.
 
 \section{Braiding}\label{sec4}
 
 In this section we want to explore the possibility to create anionic excitations in the RBM representation and describe anyon braiding. Such a representation is important for various reasons, in particular for performing quantum computation \cite{Nayak_2008}. 
 
-First of all, let us describe the creation of these quasi-particles by starting with a groundstate sector and then subsequently changing the eigenvalue of the $B_p$ operators from +1 to -1 locally and in the region that we want to realize the vortices in the system. 
+First of all, let us describe the creation of these quasi-particles by starting with a groundstate sector and then subsequently changing the eigenvalue of the $B_p$ operators from +1 to -1 locally and in the region where we want to realize the vortices in the system. 
 In an arbitrary configuration of spins (not necessarily in the groundstate sector) it is easy to prove that $\prod B_p = +1 ,\forall p$. Hence, we can just build the vortices in pairs. For example, if you apply the operator $\hat{O}_1$ to the groundstate,  it produces two vortices in plaquettes 1 and 2 (see Fig.\hspace{0.2mm}\ref{fig:anyons}) \cite{Leggett} . 
 
 \begin{equation}\label{eq:18}
@@ -448,7 +448,7 @@ which produces two vortices along the $\hat{z}$ direction in plaquettes 3 and 4.
     \label{fig:anyons}
 \end{figure}{}
 
-The reason why these operators can produce vortices in the system can be explained by re-writing the Hamiltonian of the system in terms of Majorana fermions. Kitaev originally solved the Hamiltonian through this approach. The disadvantage of this approach in comparison to what was done above is that when the Hamiltonian is mapped to Majorana fermions, there are unphysical states in the system which need to be projected out. This will be clear as we go along.\\
+The reason why these operators can produce vortices in the system can be explained by rewriting the Hamiltonian of the system in terms of Majorana fermions. Kitaev originally solved the Hamiltonian through this approach. The disadvantage of this approach in comparison to what was done above is that when the Hamiltonian is mapped to Majorana fermions, there are unphysical states in the system which need to be projected out. This will be clear as we go along.\\
 
 We assume that there are two fermionic modes living on each lattice site corresponding to the four creation and annihilation operators $a^\dagger_{m,i}$ and $a_{m,i}$, where $m\in \{1,2\}$ is the index for the modes and $i$ is the index for the lattice sites. Here unlike before, we use one index for lattice site to avoid unnecessary complications. Then we will separate the imaginary and real parts of these operators, to define the Majorana fermions as below
 
@@ -538,7 +538,7 @@ where we used $i c^x_j c^y_j = -\sigma^z_j D_j$ and cyclic permutations. Conside
 		\end{aligned}
 \end{equation}\\
 
-Now we are at a point to explain in detail why the operators $\hat{O}_1$ and $\hat{O}_2$ can create vortices in the system. As mentioned earlier, if we flip the sign of eigenvalue of vortex operator at p, a vortex will be created in the system. Looking back at Equ.\hspace{0.2mm}\ref{eq:26}, we see that the vortex configuration $\{W_p\}$ is created by fixing the gauge at every link $\{u_{ij}\}$. Therefore, by changing the link operators, we can move between vortex sectors. Starting from a vortex-free sector with all link operators being $+1$, applying the $\hat{O}_1$ on site $a$ will leave the $\sigma^z_a$ untouched while flipping the $\sigma^x_a$ and $\sigma^y_a$. Consequently, this will change the sign of the eigenvalue of the $u_{ij}$ for x-link and y-link attached to site $a$, leaving the system with $B_{p_1} = -1$ and $B_{p_2} = -1$. We can also move the vortices around in the system, by consecutively applying these operators on the particular sites in a path for which we want to move the vortices along. As an example, the red path shown in the Fig.\hspace{0.2mm}\ref{fig:string} corresponds to the operator
+Now we are at a point to explain in detail why the operators $\hat{O}_1$ and $\hat{O}_2$ can create vortices in the system. As mentioned earlier, if we flip the sign of the eigenvalue of the vortex operator at p, a vortex will be created in the system. Looking back at Equ.\hspace{0.2mm}\ref{eq:26}, we see that the vortex configuration $\{W_p\}$ is created by fixing the gauge at every link $\{u_{ij}\}$. Therefore, by changing the link operators, we can move between vortex sectors. Starting from a vortex-free sector with all link operators being $+1$, applying $\hat{O}_1$ on site $a$ will leave the $\sigma^z_a$ untouched while flipping the $\sigma^x_a$ and $\sigma^y_a$. Consequently, this will change the sign of the eigenvalue of the $u_{ij}$ for x-link and y-link attached to site $a$, leaving the system with $B_{p_1} = -1$ and $B_{p_2} = -1$. We can also move the vortices around in the system, by consecutively applying these operators on the particular sites in a path for which we want to move the vortices along. As an example, the red path shown in the Fig.\hspace{0.2mm}\ref{fig:string} corresponds to the operator
 
 \begin{equation}\label{eq:29}
 	\begin{aligned}
@@ -561,7 +561,7 @@ In general, we can define string operators to move the vortices anywhere in the 
 		\end{aligned}
 \end{equation}
 
-This string operator will create two vortices at the ending points of the string which passes through the $\alpha-links$. The manipulation of link operators using these string operators is practically equivalent to changing the sign of the couplings $J_{ij}$ corresponding to the link $u_{ij}$ in the definition of the $A_{ij}$ (see Equ.\hspace{0.2mm}\ref{eq:24}). Therefore, in the RBM language one can simply redefine the Hamiltonian with the desired signs of $J_{ij}$ for a particular vortex sector and then try to find the RBM representation for this new Hamiltonian through the approach explained in sec.\hspace{0.2mm}\ref{sec3}. The only practical disadvantage of this vortex realization approach is that it is computationally expensive as the RBM should be trained again from scratch to find the representation for the excited state. An ideal approach is that, given the representation for groundstate, we would be able to directly and without further optimization steps find the representation for the excited state. 
+This string operator will create two vortices at the ending points of the string which passes through the $\alpha-links$. The manipulation of link operators using these string operators is practically equivalent to changing the sign of the couplings $J_{ij}$ corresponding to the link $u_{ij}$ in the definition of the $A_{ij}$ (see Equ.\hspace{0.2mm}\ref{eq:24}). Therefore, in the RBM language one can simply redefine the Hamiltonian with the desired signs of $J_{ij}$ for a particular vortex sector and then try to find the RBM representation for this new Hamiltonian through the approach explained in sec.\hspace{0.2mm}\ref{sec3}. The only practical disadvantage of this vortex realization approach is that it is computationally expensive as the RBM should be trained again from scratch to find the representation for the excited state. An ideal approach is one where, given the representation for the groundstate, we would be able to directly and without further optimization steps find the representation for the excited state. 
 
 In principle, it is possible to directly manipulate the weight and bias parameters of the RBM,  $\Omega=(a_{k},b_{k'},W_{kk'})$ to realize the vortices and find the excited state representation. Looking at Equ.\hspace{0.2mm}\ref{eq:19_1}, we notice that there is a symmetry between the eigenvalues of physical spins and the value of parameters of the RBM. In other words, flipping a particular spin in site $k$ is equivalent to flipping the sign of the RBM parameter sitting next to the $\sigma^{\alpha}_k$ in Equ.\hspace{0.2mm}\ref{eq:19_1} and/or adding a phase to it. In general, for a string operator $\hat{S}_a = \exp{(-i\frac{\pi}{2}\hat{\sigma}^{\alpha}_a)}$ we have:
 
@@ -572,7 +572,7 @@ In principle, it is possible to directly manipulate the weight and bias paramete
 	\end{aligned}
 \end{equation}
 
-Therefore, applying $\hat{S}_a$ on RBM state, is equivalent to multiplying the bias parameter $a_a$ and weight parameters $W_{ak'}~\forall k'$ by $(-1)^{\delta(\alpha-z)-1}$ and then manually adding a $(-i\frac{\pi}{2}\sigma^{z}_a)$ phase angle to $a_a$, where $\sigma^{z}_a \in \{-1,+1\}$ is the eigenvalue of the $z$ component of the spin on site $a$. The presence of the $(-1)^{\delta(\alpha-z)-1}$ factor is to ensure that when $\alpha=x$ or $y$, the $\hat{\sigma}_a^{z}$ eigenvalue is multiplied by a minus sign. 
+\todo{Need to fix the formula (40)} Therefore, applying $\hat{S}_a$ on the RBM state, is equivalent to multiplying the bias parameter $a_a$ and weight parameters $W_{ak'}~\forall k'$ by $(-1)^{\delta(\alpha-z)-1}$ and then manually adding a $(-i\frac{\pi}{2}\sigma^{z}_a)$ phase angle to $a_a$, where $\sigma^{z}_a \in \{-1,+1\}$ is the eigenvalue of the $z$ component of the spin on site $a$. The presence of the $(-1)^{\delta(\alpha-z)-1}$ factor is to ensure that when $\alpha=x$ or $y$, the $\hat{\sigma}_a^{z}$ eigenvalue is multiplied by a minus sign. 
 
 
 \section{Results and Discussion}\label{sec5}
