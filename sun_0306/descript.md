@@ -2,7 +2,7 @@
 
 A typical tomography result is like
 
-(http://github.com/mrnp95/TQC/raw/master/sun_0306/2x2_a2.png)
+<img src="https://github.com/mrnp95/TQC/raw/master/sun_0306/2x2_a2.png" width="50%">
 
 It is a tomography for 2x2 lattice. 
 The parameters are: num_train_data=8x32x2000, alpha=2. 
