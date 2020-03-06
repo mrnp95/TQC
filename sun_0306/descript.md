@@ -50,4 +50,15 @@ Then its 3rd electron is flipped, which will affect plaquette A and B (i.e. back
     
 In other words, the flipping I realizing before works perfectly.
     
+## Add Plaquette Operators in training
+
+Valus of plaquette operators can be used as criterion and auxiliary target in training. But, after three days of strggle and desperate, the result is not contenting.
+
+If train only on energy and observe plaquette operators, their valus will always be near zero. If train on maximizing sum of plaquette operators, sum_plaq will be better but the energy this time will fluctuates around zero. If train on energy minus sum_plaq, the situation will be a little better but neither energy nor sum_plaq can be close to theoretic values. The typical results are, for 3x3 lattice, whose exact gs energy is -14.2915, if training only on energy, the energy can reach -13.7 but sum_plaq will stay at zero; if training on sum_plaq, it can get to 8.5 but energy will be zero; if train on both, their values will conpromise, and finally be about -12 and 7.
+
+My explanation to this is as follows. We know that near the ground state, there are many vortices states whose energies are only about 0.2 higher than ground state energy. Due to the stable of vortices states, they are all local minimum for energy. So when we trying to find out its energy-minimal state, we also keeps many states like this. Remember that vortices states have minus Ws, this explains why sum_plaq always be zero when we train on energy. And this also explains why there is always a small distance from out rbm energy to exact energy.
+
+To explain why energy becomes zero when trainging on sum_plaq, remember that the energy of honeycomb model is symmetry -- its ground states have sum_plaq =9, however, its highest energy states also have sum_plaq=9. So training on sum_plaq will pick these two types of states out, with nearly same weights. That makes the energy be near zero.
+
+I tried many combinations and methods as well as many configuration of parameters to utilize both energy and sum_plaq to make the result of rbm better, but did not success so far.
     
