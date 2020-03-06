@@ -14,29 +14,29 @@ I realized flipping spins by modifying parameters of RBM before. Now we can veri
 For a rbm for 2x2 lattice with alpha=2 got by tomography, its four plaquette operators are computed,
     
     A: 0.85984304
-    C: 0.85363150
     B: 0.86507473
+    C: 0.85363150
     D: 0.85877449
 
 Then its 5th electron is flipped in yz direction, which will affect plaquette B and D. And its plaquette operators change to:
     
     A: 0.85984304
-    C: 0.85363150
     B: -0.86507473
+    C: 0.85363150
     D: -0.85877449
 
 Then its 7th electron is flipped(based on last step), which will affect plaquette A and D:
 
     A: -0.85984304
-    C: 0.85363150
     B: -0.86507473
+    C: 0.85363150
     D: 0.85877449
     
 Then its 3rd electron is flipped, which will affect plaquette A and B (i.e. back to initial state):
 
     A: 0.85984304
-    C: 0.85363150
     B: 0.86507473
+    C: 0.85363150
     D: 0.85877449
     
     
