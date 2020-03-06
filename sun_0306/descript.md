@@ -9,7 +9,7 @@ Only with suitable parameters can satisfactory output be got.
 The number of training datas will affect the final pricision tomography can reach.
 For example, the overlap can only reach 50% for 2x2 lattice when num_train_data=2000.
 
-There is another interesting thing, which is, that only train_batch_num and sample_num both reach some threshold can the tomography success. Or its overlap will fluctuates around a very low level forever. I call this phenomenon "launch". For example, for 2x2 lattice, when train_batch_num=sample_num=1k or larger can it "launch". But when train_batch_num=sample_num=500, it cannot. 
+There is another interesting thing, which is, that only train_batch_num and sample_num both reach some thresholds can the tomography success. Or its overlap will fluctuates around a very low level forever. I call this phenomenon "launch". For example, for 2x2 lattice, when train_batch_num=sample_num=1k or larger can it "launch". But when train_batch_num=sample_num=500, it cannot. 
 
 
 ## Plaquette Operator
@@ -30,7 +30,7 @@ Then its 5th electron is flipped in yz direction, which will affect plaquette B 
     C: 0.85363150
     D: -0.85877449
 
-Then its 7th electron is flipped(based on last step), which will affect plaquette A and D:
+Then its 7th electron is flipped (based on last step), which will affect plaquette A and D:
 
     A: -0.85984304
     B: -0.86507473
@@ -43,5 +43,7 @@ Then its 3rd electron is flipped, which will affect plaquette A and B (i.e. back
     B: 0.86507473
     C: 0.85363150
     D: 0.85877449
+    
+In other words, the flipping I realizing before works perfectly.
     
     
