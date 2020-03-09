@@ -93,7 +93,7 @@
 
 \begin{abstract}
 %\lipsum[1]
-In this work, the capability of restricted Boltzmann machines (RBMs) to find solutions for the Kitaev honeycomb model is investigated. The measured groundstate (GS) energy of the system is compared and shown to reside within less than $5\%$ error of the analytically derived value of the energy. Furthermore, the possibility of realizing anyons in the RBM is discussed and an algorithm is given to build these anyonic excitations and braid them as a proof of concept for performing quantum gates and doing quantum computation. Moreover, the phase transition of the system is also studied by changing the corresponding hyper-parameters of the system in the RBM solution.
+In this work, the capability of restricted Boltzmann machines (RBMs) to find solutions for the Kitaev honeycomb model is investigated. The measured groundstate (GS) energy of the system is compared and shown to reside within less than $5\%$ error of the analytically derived value of the energy. Furthermore, the possibility of realizing anyons in the RBM is discussed and an algorithm is given to build these anyonic excitations and braid them as a proof of concept for performing quantum gates and doing quantum computation.
 \end{abstract}
 
 
@@ -180,7 +180,7 @@ In this paper we apply the approach developed in \cite{Deng_2017} to the Honeyco
 
 \section{Solution of the Model}\label{sec2}
 
-In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved. First of all, we fermionize the Hamiltonian by performing a one-dimensional Jordan-Wigner transformation \cite{Jordan:1928wi} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice (see Fig.\hspace{0.2mm}\ref{fig:fig01})  clarifies the mechanism of the Jordan-Wigner transformation and why it is one-dimensional \cite{Chen_2008}. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
+In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved where we will be following references \cite{Kitaev_2006,pachos_2012}. First of all, we fermionize the Hamiltonian by performing a one-dimensional Jordan-Wigner transformation \cite{Jordan:1928wi} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice (see Fig.\hspace{0.2mm}\ref{fig:fig01})  clarifies the mechanism of the Jordan-Wigner transformation and why it is one-dimensional \cite{Chen_2008}. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
 
 \begin{equation}\label{eq:2}
 	\begin{aligned}
@@ -447,7 +447,7 @@ which produces two vortices along the $\hat{z}$ direction in plaquettes 3 and 4.
     \includegraphics[width=0.3\textwidth]{./images/anyons.png}
     \caption{Caption}
     \label{fig:anyons}
-\end{figure}{}
+\end{figure}{}\todo{fix caption}
 
 The reason why these operators can produce vortices in the system can be explained by rewriting the Hamiltonian of the system in terms of Majorana fermions. Kitaev originally solved the Hamiltonian through this approach. The disadvantage of this approach in comparison to what was done above is that when the Hamiltonian is mapped to Majorana fermions, there are unphysical states in the system which need to be projected out. This will be clear as we go along.\\
 
@@ -564,16 +564,21 @@ In general, we can define string operators to move the vortices anywhere in the 
 
 This string operator will create two vortices at the ending points of the string which passes through the $\alpha-links$. The manipulation of link operators using these string operators is practically equivalent to changing the sign of the couplings $J_{ij}$ corresponding to the link $u_{ij}$ in the definition of the $A_{ij}$ (see Equ.\hspace{0.2mm}\ref{eq:24}). Therefore, in the RBM language one can simply redefine the Hamiltonian with the desired signs of $J_{ij}$ for a particular vortex sector and then try to find the RBM representation for this new Hamiltonian through the approach explained in Section\hspace{0.2mm}\ref{sec3}. The only practical disadvantage of this vortex realization approach is that it is computationally expensive as the RBM should be trained again from scratch to find the representation for the excited state. An ideal approach is one where, given the representation for the groundstate, we would be able to directly and without further optimization steps find the representation for the excited state. 
 
-In principle, it is possible to directly manipulate the weight and bias parameters of the RBM,  $\Omega=(a_{k},b_{k'},W_{kk'})$ to realize the vortices and find the excited state representation. Looking at Equ.\hspace{0.2mm}\ref{eq:19_1}, we notice that there is a symmetry between the eigenvalues of physical spins and the value of parameters of the RBM. In other words, flipping a particular spin in site $k$ is equivalent to flipping the sign of the RBM parameter sitting next to the $\sigma^{\alpha}_k$ in Equ.\hspace{0.2mm}\ref{eq:19_1} and/or adding a phase to it. In general, for a string operator $\hat{S}_a = \exp{(-i\frac{\pi}{2}\hat{\sigma}^{\alpha}_a)}$ we have:
+In principle, it is possible to directly manipulate the weight and bias parameters of the RBM,  $\Omega=(a_{k},b_{k'},W_{kk'})$ to realize the vortices and find the excited state representation. Looking at Equ.\hspace{0.2mm}\ref{eq:19_1}, we notice that there is a symmetry between the eigenvalues of physical spins and the value of parameters of the RBM. In other words, flipping a particular spin in site $k$ is equivalent to flipping the sign of the RBM parameter sitting next to the $\sigma^{\alpha}_k$ in Equ.\hspace{0.2mm}\ref{eq:19_1} and/or adding a phase to it. In general, for a string operator $\hat{S}_l^{\alpha} = \exp{(-i\frac{\pi}{2}\hat{\sigma}^{\alpha}_l)}$ we have:
 
 \begin{equation}\label{eq:29_1}
 	\begin{aligned}
-		\hat{S}~|\Phi\rangle &= (-i\hat{\sigma}^{\alpha}_a)\sum_{\Xi}\Phi_{M}(\Xi;\Omega)|\Xi\rangle\\
-		&= \sum_{\Xi} e^{[(-1)^{\delta(\alpha-z)-1} a_a -i\frac{\pi}{2}\sigma^{z}_a]\sigma^{z}_a + \sum_{k\neq a} a_k \sigma_k^z} \times \\ &\prod_{k'} \cosh \left((-1)^{\delta(\alpha-z)-1} W_{ak'} \sigma_a^z + \sum_{k\neq a} W_{kk'} \sigma_k^z + b_{k'} \right) \hat{\sigma}^{\alpha}_a~|\Xi\rangle
+		\hat{S}~|\Phi\rangle &= (-i\hat{\sigma}^{\alpha}_l)\sum_{\Xi}\Phi_{M}(\Xi;\Omega)|\Xi\rangle\\
+		&= \sum_{\Xi} e^{[(-1)^{\delta(\alpha-z)-1} a_l]\sigma^{z}_l + \sum_{k\neq l} a_k \sigma_k^z} \times \\ &\prod_{k'} \cosh \left((-1)^{\delta(\alpha-z)-1} W_{lk'} \sigma_l^z + \sum_{k\neq l} W_{kk'} \sigma_k^z + b_{k'} \right) (-i\hat{\sigma}^{\alpha}_l)~|\Xi\rangle~.
 	\end{aligned}
 \end{equation}
 
-\todo{Need to fix the formula (40)} Therefore, applying $\hat{S}_a$ on the RBM state, is equivalent to multiplying the bias parameter $a_a$ and weight parameters $W_{ak'}~\forall k'$ by $(-1)^{\delta(\alpha-z)-1}$ and then manually adding a $(-i\frac{\pi}{2}\sigma^{z}_a)$ phase angle to $a_a$, where $\sigma^{z}_a \in \{-1,+1\}$ is the eigenvalue of the $z$ component of the spin on site $a$. The presence of the $(-1)^{\delta(\alpha-z)-1}$ factor is to ensure that when $\alpha=x$ or $y$, the $\hat{\sigma}_a^{z}$ eigenvalue is multiplied by a minus sign. 
+Next, one needs to evaluate how $(-i \hat{\sigma}^{\alpha}_a)$ acts on $|\Xi\rangle$. Here we subdivide the three cases $\alpha =z$, $x$ and $y$. If $\alpha =z$, spin up states will get a phase $-i$ and spin down states a phase $i$. The overall effect of this can be absorbed in a shift of $a_l$ by $-i \frac{\pi}{2}$. If $\alpha=x$, then spins up and down are just exchanged and the $-i$ is an overall phase which can be ignored. If $\alpha = y$, we get a combination of the previous two cases. Summarizing, we obtain:
+\begin{eqnarray}
+	\hat{S}^z_l & : & \left(W_{lk'},a_l\right) \mapsto \left(W_{lk'},a_l- i \frac{\pi}{2}\right) \nonumber \\	
+	\hat{S}^x_l & : & \left(W_{lk'},a_l\right) \mapsto \left(-W_{lk'},-a_l\right) \nonumber \\
+	\hat{S}^y_l & : & \left(W_{lk'},a_l\right) \mapsto \left(-W_{lk'},-a_l-i \frac{\pi}{2}\right)~.
+\end{eqnarray}
 
 
 \section{Results and Discussion}\label{sec5}
@@ -649,7 +654,7 @@ The conclusion we reach is:
 	\item But the FFNN's result again deviates by a similar margin from the analytic result.
 \end{enumerate}
 
-One explanation for the slight deviation of the RBM result from the exact analytic result is that the RBM result is not in an exact eigenstate of the plaquette operators $W_p$. In fact, we find that all plaquette operator expectation values are close to zero, whereas the true ground state should have $W_p = + 1$ for all plaquettes $p$. Thus the state we are finding seems to be a highly entangled state composed of the true ground state as well as certain excited states with small energy. This seems to be a side effect of the gradient descent algorithm for minimizing the energy expectation value. We will have more to say about how to circumvent this constraint in Section \hspace{0.2mm}\ref{sec5.3}.
+One explanation for the slight deviation of the RBM result from the exact analytic result is that the RBM result is not in an exact eigenstate of the plaquette operators $W_p$. In fact, we find that the sum of all plaquette operator expectation values is close to zero, whereas the true ground state should have $W_p = + 1$ for all plaquettes $p$. Thus the state we are finding seems to be a highly entangled state composed of the true ground state as well as certain excited states with small energy. This seems to be a side effect of the gradient descent algorithm for minimizing the energy expectation value. We will have more to say about how to circumvent this constraint in Section \hspace{0.2mm}\ref{sec5.3}.
 
 \subsection{Creating Vortex pairs and measuring their energy}
 
@@ -681,35 +686,38 @@ In this section we apply the technique discussed in Section \ref{sec3.2} to reco
 	\caption{\label{fig:qst} Energy and overlap results for QST of 2x2 lattice system.} 
 \end{figure}
 
-There are many intricate parameters which one can adjust during training, such as \todo{explain} learning rate, train-batch-num, sample-num, num-train-data. Only with a suitable choice of parameters can one achieve a satisfactory result. For the example depicted, the size of the training data set is $8 \times 32 \times 2000$ and the variable $\alpha$ is $2$. This choice leads to an overlap of 97 percent between the exact wave function and the learned one. On the other hand, the overlap can only reach $50$ percent for a $2 \times 2$ lattice if the number of training data points is reduced to $2000$. Moreover, we observe that, only in cases where  the variables train-batch-num and sample-num both reach certain thresholds, the tomography can be successful. Otherwise, the overlap of the two wave functions will fluctuate around a very low level indefinitely. For the $2 \times 2$ lattice this threshold is reached when train-batch-num = sample-num = 1000 and higher. 
+There are many intricate parameters which one can adjust during training, such as learning rate, batch size, number of samples, number of single measurements. Only with a suitable choice of parameters can one achieve a satisfactory result. For the example depicted, the size of the training data set is $8 \times 32 \times 2000$ and the variable $\alpha$ is $2$. This choice leads to an overlap of 97 percent between the exact wave function and the learned one. On the other hand, the overlap can only reach $50$ percent for a $2 \times 2$ lattice if the number of training data points is reduced to $2000$. Moreover, we observe that, only in cases where  the variables train-batch-num and sample-num both reach certain thresholds, the tomography can be successful. Otherwise, the overlap of the two wave functions will fluctuate around a very low level indefinitely. For the $2 \times 2$ lattice this threshold is reached when train-batch-num = sample-num = 1000 and higher. 
 
 \subsubsection*{Plaquette Operator expectation values and spin flipping}
 
-Starting from the state obtained from tomography as discussed above, one can then realize spin flipping by modifying parameters of the RBM as described in Section \hspace{0.2mm}\ref{sec4}. In order to verify that spin flipping takes us to the right excited state, we proceed by measuring the relevant plaquette operators each time. The results are as shown below.
+Starting from the state obtained from tomography as discussed above, one can then realize spin flipping by modifying parameters of the RBM as described in Section \hspace{0.2mm}\ref{sec4}. In order to verify that spin flipping takes us to the right excited state, we proceed by measuring the relevant plaquette operators each time. The convention for labeling plaquette operators and sites is as shown in \todo{Include figure} Figure below. Let us discuss the results in the following.
 
-For an RBM obtained by training from a ground state by tomography, the expectation values of its four plaquette operators are shown in Table \ref{tab:pl0}.
+For an RBM obtained by training from a ground state by tomography, the expectation values of its four plaquette operators as well as the expected and measured energies are shown below.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{./images/Plaquette0.png}
 	\caption{\label{tab:pl0} Expectation values of plaquette operators obtained by ground state tomography.} 
 \end{figure}
-Flipping spin number $5$ along \todo{explain: how is this a direction?}$yz$-direction will affect plaquettes $B$ and $D$. The corresponding expectation value are shown in Table \ref{tab:pl5}.
+
+Flipping the spin at lattice site number $5$ along the $y$- and $z$-directions will affect plaquettes $B$ and $D$. The corresponding expectation values are shown below.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{./images/Plaquette5.png}
-	\caption{\label{tab:pl5} Expectation values of plaquette operators obtained by flipping the spin at lattice point $5$.} 
+	\caption{\label{tab:pl5} Expectation values of plaquette operators obtained by flipping spins at lattice site number $5$.} 
 \end{figure}
-Proceeding by flipping the spin of site $7$, will affect the expectation values for plaquettes $A$ and $D$, as shown in Table \ref{tab:pl7}.
+
+Proceeding by flipping the spins of site $7$, will affect the expectation values for plaquettes $A$ and $D$, as shown in the Figure \ref{tab:pl7} below.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{./images/Plaquette7.png}
-	\caption{\label{tab:pl7} Expectation values of plaquette operators obtained by flipping the spin at lattice point $7$.} 
+	\caption{\label{tab:pl7} Expectation values of plaquette operators obtained by flipping the spins at lattice site $7$.} 
 \end{figure}
-Finally, by flipping the spin at the 3rd site, which affects plaquettes A and B, we  close the circle and arrive back to the initial state, see Table \ref{tab:pl3}.
+
+Finally, by flipping the spin at the 3rd site, which affects plaquettes A and B, we  close the circle and arrive back to the initial state, see Figure \ref{tab:pl3}.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{./images/Plaquette0.png}
-	\caption{\label{tab:pl3} Expectation values of plaquette operators obtained by flipping the spin at lattice point $3$.} 
+	\caption{\label{tab:pl3} Expectation values of plaquette operators obtained by flipping spins at lattice site $3$.} 
 \end{figure}
 % \section{Topological Quantum Phase Transition}
 

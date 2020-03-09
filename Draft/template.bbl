@@ -40,6 +40,10 @@ G.~Torlai, G.~Mazzola, J.~Carrasquilla, M.~Troyer, R.~Melko and G.~Carleo,
   \href{https://doi.org/10.1038/s41567-018-0048-5}{\emph{Nature Physics}
   {\bfseries 14} (2018) 447â450}.
 
+\bibitem{pachos_2012}
+J.~K. Pachos, \emph{Introduction to Topological Quantum Computation}. Cambridge
+  University Press, USA, 1st~ed., 2012.
+
 \bibitem{Jordan:1928wi}
 P.~Jordan and E.~P. Wigner, \emph{{About the Pauli exclusion principle}},
   \href{https://doi.org/10.1007/BF01331938}{\emph{Z. Phys.} {\bfseries 47}
@@ -86,9 +90,5 @@ A.~J. Leggett, \emph{Lecture 26, the kitaev models, \textbf{PHYS598PTD}},
 G.~Kour and R.~Saabne, \emph{Real-time segmentation of on-line handwritten
   arabic script},  in \emph{Frontiers in Handwriting Recognition (ICFHR), 2014
   14th International Conference on}, pp.~417--422, IEEE, 2014.
-
-\bibitem{pachos_2012}
-J.~K. Pachos, \emph{Introduction to Topological Quantum Computation}. Cambridge
-  University Press, USA, 1st~ed., 2012.
 
 \end{thebibliography}\endgroup
