@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.26)  5 MAR 2020 13:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.26)  9 MAR 2020 14:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -757,9 +757,6 @@ LaTeX Warning: Label `eq:29' multiply defined.
 
 LaTeX Warning: Label `tab:r_space' multiply defined.
 
-
-LaTeX Warning: Label `tab:vort_dis' multiply defined.
-
 )
 \openout1 = `template.aux'.
 
@@ -1117,177 +1114,178 @@ Underfull \hbox (badness 10000) in paragraph at lines 383--384
 
 [7]
 
-LaTeX Warning: Citation `coldatom' on page 8 undefined on input line 393.
+LaTeX Warning: Citation `coldatom' on page 8 undefined on input line 394.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
+Underfull \hbox (badness 10000) in paragraph at lines 402--403
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
 
  []
 
 [8 <./images/rbm.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 415--416
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
 
  []
 
-
-LaTeX Warning: Citation `Leggett' on page 9 undefined on input line 430.
-
-<./images/anyons.png, id=209, 483.8075pt x 571.13374pt>
+<./images/anyons.png, id=210, 483.8075pt x 571.13374pt>
 File: ./images/anyons.png Graphic file (type png)
 
 <use ./images/anyons.png>
-Package pdftex.def Info: ./images/anyons.png used on input line 446.
+Package pdftex.def Info: ./images/anyons.png used on input line 447.
 (pdftex.def)             Requested size: 140.92792pt x 166.3653pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--452
+Underfull \hbox (badness 10000) in paragraph at lines 452--453
 
  []
 
 [9 <./images/anyons.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 471--472
+Underfull \hbox (badness 10000) in paragraph at lines 472--473
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 487--488
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--498
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 505--506
+Underfull \hbox (badness 10000) in paragraph at lines 506--507
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 521--522
+Underfull \hbox (badness 10000) in paragraph at lines 522--523
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 531--532
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 539--540
+Underfull \hbox (badness 10000) in paragraph at lines 540--541
 
  []
 
-<./images/Anyons_Strings.png, id=235, 715.17188pt x 434.37282pt>
+<./images/Anyons_Strings.png, id=237, 715.17188pt x 434.37282pt>
 File: ./images/Anyons_Strings.png Graphic file (type png)
 
 <use ./images/Anyons_Strings.png>
-Package pdftex.def Info: ./images/Anyons_Strings.png used on input line 551.
+Package pdftex.def Info: ./images/Anyons_Strings.png used on input line 552.
 (pdftex.def)             Requested size: 328.82706pt x 199.72112pt.
  [11]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 575.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+ine 576.
  [12 <./images/Anyons_Strings.png>]
-<./images/gs_tbl.png, id=262, 878.28125pt x 254.9525pt>
+<./images/gs_tbl.png, id=264, 878.28125pt x 254.9525pt>
 File: ./images/gs_tbl.png Graphic file (type png)
 
 <use ./images/gs_tbl.png>
-Package pdftex.def Info: ./images/gs_tbl.png used on input line 599.
+Package pdftex.def Info: ./images/gs_tbl.png used on input line 600.
 (pdftex.def)             Requested size: 234.87749pt x 68.18063pt.
- <./images/plots.pdf, id=263, 433.62pt x 289.08pt>
+ <./images/plots.pdf, id=265, 433.62pt x 289.08pt>
 File: ./images/plots.pdf Graphic file (type pdf)
 
 <use ./images/plots.pdf>
-Package pdftex.def Info: ./images/plots.pdf used on input line 600.
+Package pdftex.def Info: ./images/plots.pdf used on input line 601.
 (pdftex.def)             Requested size: 328.82706pt x 219.22668pt.
-
-
-LaTeX Warning: Citation `pachos_2012' on page 13 undefined on input line 612.
-
-[13 <./images/gs_tbl.png> <./images/plots.pdf>]
-<./images/alpha.png, id=306, 546.04pt x 459.7175pt>
+ <./images/alpha.png, id=272, 546.04pt x 459.7175pt>
 File: ./images/alpha.png Graphic file (type png)
- <use ./images/alpha.png>
-Package pdftex.def Info: ./images/alpha.png used on input line 623.
-(pdftex.def)             Requested size: 281.85585pt x 237.3008pt.
 
-<./images/ffnn.png, id=307, 885.3075pt x 157.58875pt>
+<use ./images/alpha.png>
+Package pdftex.def Info: ./images/alpha.png used on input line 624.
+(pdftex.def)             Requested size: 281.85585pt x 237.3008pt.
+ [13 <./images/gs_tbl.png> <./images/plots.pdf>]
+<./images/ffnn.png, id=311, 885.3075pt x 157.58875pt>
 File: ./images/ffnn.png Graphic file (type png)
  <use ./images/ffnn.png>
-Package pdftex.def Info: ./images/ffnn.png used on input line 641.
+Package pdftex.def Info: ./images/ffnn.png used on input line 642.
 (pdftex.def)             Requested size: 375.80542pt x 66.89616pt.
 
 [14 <./images/alpha.png> <./images/ffnn.png>]
-
-LaTeX Warning: Citation `pachos_2012' on page 15 undefined on input line 659.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 657--660
+Underfull \hbox (badness 10000) in paragraph at lines 658--661
 
  []
 
-<./images/3x3.png, id=323, 505.89pt x 155.58125pt>
+<./images/3x3.png, id=329, 505.89pt x 155.58125pt>
 File: ./images/3x3.png Graphic file (type png)
  <use ./images/3x3.png>
-Package pdftex.def Info: ./images/3x3.png used on input line 665.
+Package pdftex.def Info: ./images/3x3.png used on input line 666.
 (pdftex.def)             Requested size: 281.85585pt x 86.68333pt.
 
-<./images/vort_dis.png, id=324, 884.30376pt x 257.96375pt>
-File: ./images/vort_dis.png Graphic file (type png)
-
-<use ./images/vort_dis.png>
-Package pdftex.def Info: ./images/vort_dis.png used on input line 675.
-(pdftex.def)             Requested size: 375.80542pt x 109.62723pt.
-
-<./images/vort_dis_c.png, id=325, 876.27374pt x 190.7125pt>
-File: ./images/vort_dis_c.png Graphic file (type png)
-
-<use ./images/vort_dis_c.png>
-Package pdftex.def Info: ./images/vort_dis_c.png used on input line 682.
-(pdftex.def)             Requested size: 375.80542pt x 81.79233pt.
-
-<./images/2x2_16k_1.png, id=326, 462.528pt x 346.896pt>
+<./images/2x2_16k_1.png, id=332, 462.528pt x 346.896pt>
 File: ./images/2x2_16k_1.png Graphic file (type png)
 
 <use ./images/2x2_16k_1.png>
-Package pdftex.def Info: ./images/2x2_16k_1.png used on input line 695.
+Package pdftex.def Info: ./images/2x2_16k_1.png used on input line 680.
 (pdftex.def)             Requested size: 375.80542pt x 281.86818pt.
- [15 <./images/3x3.png> <./images/vort_dis.png> <./images/vort_dis_c.png>] (./t
-emplate.bbl
+
+<./images/Plaquette0.png, id=335, 960.58875pt x 121.45375pt>
+File: ./images/Plaquette0.png Graphic file (type png)
+
+<use ./images/Plaquette0.png>
+Package pdftex.def Info: ./images/Plaquette0.png used on input line 693.
+(pdftex.def)             Requested size: 469.75499pt x 59.39423pt.
+
+<./images/Plaquette5.png, id=337, 956.57375pt x 124.465pt>
+File: ./images/Plaquette5.png Graphic file (type png)
+
+<use ./images/Plaquette5.png>
+Package pdftex.def Info: ./images/Plaquette5.png used on input line 699.
+(pdftex.def)             Requested size: 469.75499pt x 61.12132pt.
+
+<./images/Plaquette7.png, id=339, 957.5775pt x 116.435pt>
+File: ./images/Plaquette7.png Graphic file (type png)
+
+<use ./images/Plaquette7.png>
+Package pdftex.def Info: ./images/Plaquette7.png used on input line 705.
+(pdftex.def)             Requested size: 469.75499pt x 57.11937pt.
+File: ./images/Plaquette0.png Graphic file (type png)
+ <use ./images/Plaquette0.png>
+Package pdftex.def Info: ./images/Plaquette0.png used on input line 711.
+(pdftex.def)             Requested size: 469.75499pt x 59.39423pt.
+ [15 <./images/3x3.png>] (./template.bbl
+Underfull \vbox (badness 3271) has occurred while \output is active []
+
+ [16 <./images/2x2_16k_1.png> <./images/Plaquette0.png> <./images/Plaquette5.pn
+g> <./images/Plaquette7.png>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 7.
- [16 <./images/2x2_16k_1.png>]) [17]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 795.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 795.
-
-(./template.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 795.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 795.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 81.
+) [17]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 810.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 810.
+ (./template.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 810.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 810.
 Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: 4DDCB24BEDEFA5F7EB502013C23EC085;774.
+(rerunfilecheck)             Checksum: 4003E299E0C89F3BF5BC5DB640D2163F;785.
 
 
 LaTeX Warning: There were undefined references.
@@ -1295,14 +1293,14 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 795.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 810.
  ) 
 Here is how much of TeX's memory you used:
- 22389 strings out of 493014
- 406521 string characters out of 6133351
- 629021 words of memory out of 5000000
- 25189 multiletter control sequences out of 15000+600000
- 72987 words of font info for 197 fonts, out of 8000000 for 9000
+ 22428 strings out of 493014
+ 407226 string characters out of 6133351
+ 634021 words of memory out of 5000000
+ 25216 multiletter control sequences out of 15000+600000
+ 75980 words of font info for 201 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,16n,97p,1510b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1331,10 +1329,10 @@ ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/
 type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on template.pdf (17 pages, 1091906 bytes).
+Output written on template.pdf (17 pages, 1113193 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
- 386 compressed objects within 4 object streams
- 106 named destinations out of 1000 (max. 500000)
- 33464 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 486 PDF objects out of 1000 (max. 8388607)
+ 407 compressed objects within 5 object streams
+ 113 named destinations out of 1000 (max. 500000)
+ 33981 words of extra memory for PDF output out of 35830 (max. 10000000)
 

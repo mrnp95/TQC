@@ -77,9 +77,18 @@ C.~Nayak, S.~H. Simon, A.~Stern, M.~Freedman and S.~Das~Sarma,
   \href{https://doi.org/10.1103/revmodphys.80.1083}{\emph{Reviews of Modern
   Physics} {\bfseries 80} (2008) 1083–1159}.
 
+\bibitem{Leggett}
+A.~J. Leggett, \emph{Lecture 26, the kitaev models, \textbf{PHYS598PTD}},
+  \href{https://doi.org/https://courses.physics.illinois.edu/phys598PTD/fa2013/L26.pdf}{\emph{University
+  of Illinois, Department of Physics} (2013) }.
+
 \bibitem{kour2014real}
 G.~Kour and R.~Saabne, \emph{Real-time segmentation of on-line handwritten
   arabic script},  in \emph{Frontiers in Handwriting Recognition (ICFHR), 2014
   14th International Conference on}, pp.~417--422, IEEE, 2014.
+
+\bibitem{pachos_2012}
+J.~K. Pachos, \emph{Introduction to Topological Quantum Computation}. Cambridge
+  University Press, USA, 1st~ed., 2012.
 
 \end{thebibliography}\endgroup
