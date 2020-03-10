@@ -17,33 +17,43 @@ I realized flipping spins by modifying parameters of RBM before. Now we can veri
 
 For a rbm for 2x2 lattice with alpha=2 got by tomography, its four plaquette operators are computed,
     
-    A: 0.85984304
-    B: 0.86507473
-    C: 0.85363150
-    D: 0.85877449
+    A: 0.94889473
+    B: 0.95168581
+    C: 0.95248031
+    D: 0.95528330
+    Energy: -6.0778
+    Energy(exact): -6.4721
 
 Then its 5th electron is flipped in yz direction, which will affect plaquette B and D. And its plaquette operators change to:
     
-    A: 0.85984304
-    B: -0.86507473
-    C: 0.85363150
-    D: -0.85877449
+    A: 0.94889473
+    B: -0.95168581
+    C: 0.95248031
+    D: -0.95528330
+    Energy: -4.0105
+    Energy(exact): -6.2925
 
 Then its 7th electron is flipped (based on last step), which will affect plaquette A and D:
 
-    A: -0.85984304
-    B: -0.86507473
-    C: 0.85363150
-    D: 0.85877449
+    A: -0.94889473
+    B: -0.95168581
+    C: 0.95248031
+    D: 0.95528330
+    Energy: -1.8040
+    Energy(exact): -5.8064
     
 Then its 3rd electron is flipped, which will affect plaquette A and B (i.e. back to initial state):
 
-    A: 0.85984304
-    B: 0.86507473
-    C: 0.85363150
-    D: 0.85877449
+    A: 0.94889473
+    B: 0.95168581
+    C: 0.95248031
+    D: 0.95528330
+    Energy: 0.0606
+    Energy(exact): -6.4721
     
-In other words, the flipping I realizing before works perfectly.
+In other words, the flipping I realizing before works perfectly. But the energy does not perform good: (i) the energy change when flipping a spin is too large in contrust to exact(about 2 to about 0.2); (ii) the energy does not get back to ground state energy after 3 flipps.
+
+The machine parameters for above computation is in this folder, the "2x2_a2.best.ma".
     
 ## Add Plaquette Operators in training
 
