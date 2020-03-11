@@ -23,6 +23,7 @@
 \usepackage{braket}
 \usepackage{bbold}
 
+\usepackage[table]{xcolor}
 \usepackage{todonotes}
 
 
@@ -162,7 +163,7 @@ The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli m
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./images/diag_1.png}
-	\caption{\label{tab:r_space} Kitaev Honeycomb lattice model on a torus: The generators of the lattice in position space are named
+	\caption{\label{kit_torus} Kitaev Honeycomb lattice model on a torus: The generators of the lattice in position space are named
 	$\textbf{e}_{1}$ and  $\textbf{e}_{2}$, as shown in the image above. Hence, the lattice points are $\textbf{L} = n_{1}\textbf{e}_{1} + 
 	n_{2}\textbf{e}_{2}$ with $n_{1}, n_{2} \in \mathbb{Z}$ and the above lattice is drawn for $N_{1} = N_{2} = 4 $ with toric boundary conditions.} 
 	\label{fig:fig1}
@@ -541,7 +542,7 @@ where we used $i c^x_j c^y_j = -\sigma^z_j D_j$ and cyclic permutations. Conside
 
 Now we are at a point to explain in detail why the operators $\hat{O}_1$ and $\hat{O}_2$ can create vortices in the system. As mentioned earlier, if we flip the sign of the eigenvalue of the vortex operator at p, a vortex will be created in the system. Looking back at Equ.\hspace{0.2mm}\ref{eq:26}, we see that the vortex configuration $\{W_p\}$ is created by fixing the gauge at every link $\{u_{ij}\}$. Therefore, by changing the link operators, we can move between vortex sectors. Starting from a vortex-free sector with all link operators being $+1$, applying $\hat{O}_1$ on site $a$ will leave the $\sigma^z_a$ untouched while flipping the $\sigma^x_a$ and $\sigma^y_a$. Consequently, this will change the sign of the eigenvalue of the $u_{ij}$ for x-link and y-link attached to site $a$, leaving the system with $B_{p_1} = -1$ and $B_{p_2} = -1$. We can also move the vortices around in the system, by consecutively applying these operators on the particular sites in a path for which we want to move the vortices along. As an example, the red path shown in the Fig.\hspace{0.2mm}\ref{fig:string} corresponds to the operator
 
-\begin{equation}\label{eq:29}
+\begin{equation}
 	\begin{aligned}
 		\hat{O} = \exp{(-i\frac{\pi}{2}\sigma^z_i)} \exp{(-i\frac{\pi}{2}\sigma^x_j)}
 		\end{aligned}
@@ -582,27 +583,35 @@ Next, one needs to evaluate how $(-i \hat{\sigma}^{\alpha}_a)$ acts on $|\Xi\ran
 
 \section{Results and Discussion}\label{sec5}
 
-% \begin{figure}[h!]
-% 	\centering
-% 	\includegraphics[width=0.8\textwidth]{E_GS.pdf}
-% 	\includegraphics[width=0.8\textwidth]{E_p.pdf}
-% 	\includegraphics[width=0.8\textwidth]{DeltaE.pdf}
-% 	\includegraphics[width=0.8\textwidth]{plots.pdf}
-% 	\caption{\label{tab:r_space} Kitaev Honeycomb lattice model on a torus: The generators of the lattice in position space are named as
-% 	$\textbf{e}_{1}$ and  $\textbf{e}_{2}$, as shown in the image above. Hence, the lattice points are $\textbf{L} = n_{1}\textbf{e}_{1} + 
-% 	n_{2}\textbf{e}_{2}$ with $n_{1}, n_{2} \in \mathbb{Z}$ and the above lattice is drawn for $N_{1} = N_{2} = 4 $ with toric boundary conditions.} 
-% \end{figure}
-
 \subsection{Groundstate}
 
 In this section, we present the results for the groundstate energy estimate of different system sizes for the proposed mapping discussed in Section\hspace{0.2mm}\ref{sec3}. These results are also compared to the exact analytical expression given in Equ.\hspace{0.2mm}\ref{eq:17}. The absolute value of the energies is plotted in Fig.\hspace{0.2mm}\ref{tab:r_space}. All results for this and the following sections are for the \textit{non-Abelian} phase $J_x = J_y = J_z = 1$.
 
 The RBM has a simple fully-connected and two-layered architecture. The optimized value for the density of hidden nodes was found to be $\alpha = \frac{num_{h}}{num_{v}} = 2$. For lower values of $\alpha$, the network does not give an accurate estimate of energies, while the larger values cause over-fitting and again lead to inaccurate results. For training, the configuration space of the network has been sampled for hundreds of  times, depending on the lattice size, using the Metropolis algorithm. Moreover, the stochastic gradient descent algorithm has been used for optimization using a suitable number of iterations such that the network converges to a low enough minimum of the energy landscape.
 
+\vspace{1cm}
+
+{\rowcolors{2}{green!80!yellow!50}{green!60!yellow!30}
+\begin{tabular}[c]{|c||c|c|c|c|c|c|c|c|c|c|}
+\hline
+lattice size&$2\times2$    &$2\times3$    &$2\times4$     &$3\times3$     &$3\times4$     &$4\times4$     &$5\times5$     &$6\times6$     &$7\times7$ \\
+\hline \hline
+a.i         &-6.4721&-9.8003&-12.5851&-14.2915&-18.9869&-25.1282&-39.3892&-56.7529&-77.1249\\
+\hline
+a.ii        &-6     &-9.2915&-12.4721&-14.2915&-19.0918&-25.4164&-39.3892&-56.2668&-77.1249\\
+\hline
+b           &-6     &-9.2915&-12.4721&-14.2915&-19.0918&-25.4164&-39.3892&-56.2668&-77.1249\\
+\hline
+c           &-6.9282&-9.8003&-12.9443&-14.2915&-19.0918&-&-&-&-\\
+\hline
+d           &-6.7197&-9.5414&-12.573 &-13.7374&-18.0466&-24.0783&-37.305 &-52.920 &-71.793 \\ 
+\hline
+\end{tabular}
+}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/gs_tbl.png}
-	\includegraphics[width=0.7\textwidth]{./images/plots.pdf}
+	%\includegraphics[width=0.5\textwidth]{./images/gs_tbl.png}
+	\includegraphics[width=\textwidth]{./images/plots.pdf}
 	\caption{\label{tab:r_space} Numerical results for groundstate energy calculation using Restricted Boltzmann Machines (RBM) 
 	and Feed-Forward Neural Networks (FFNN) compared to the analytically obtained exact groundstate energy using Equ.\hspace{0.2mm}\ref{eq:16}.} 
 \end{figure}
@@ -621,15 +630,41 @@ The numerical results obtained are shown in Fig.\hspace{0.2mm}\ref{tab:r_space}.
 
 Based on the results obtained for the energy of the groundstate of the system, training of the network was tested and optimized by changing the learning rate for different training phases and iteration numbers. However, the outcome did not considerably change or improve and it seems that the above results are the most accurate results one can get for this particular network architecture. We will later elaborate more on the reasons behind this discrepancy observed between the energy obtained using RBM and the analytical exact values.
 
-In order to check the effect of the relative number of hidden and visible nodes on the outcome of the network, different values for $\alpha$ were tested, keeping other parameters fixed. The $\alpha$ parameter was changed just by changing the number of hidden nodes for a fixed system size (and hence fixed visible layer size) and the results are outlined in the table below, including the number of free parameters of the network and the time needed for the network to be trained. In order to keep things simple, we focus on one particular system size. The results summarized in the table are for a $5 \times 5$ plaquette lattice with exact analytic energy being $-39.3892$.
+In order to check the effect of the relative number of hidden and visible nodes on the outcome of the network, different values for $\alpha$ were tested, keeping other parameters fixed. The $\alpha$ parameter was changed just by changing the number of hidden nodes for a fixed system size (and hence fixed visible layer size) and the results are outlined in the table below, including the number of free parameters of the network. In order to keep things simple, we focus on one particular system size. The results summarized in the table are for a $5 \times 5$ plaquette lattice with exact analytic energy being $-39.3892$.
 
-\begin{figure}[!htb]
+\begin{table}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{./images/alpha.png}
+	{\rowcolors{2}{green!80!yellow!50}{green!60!yellow!30}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    $\alpha$&Number of Hidden Nodes&Number of Parameters&Energy\\
+    \hline \hline
+    0.1&  5& 305&-27.7808(59)\\
+    \hline
+    0.3& 15& 815&-33.4312(37)\\
+    \hline
+    0.5& 25&1325&-36.6024(22)\\
+    \hline
+    1.0& 50&2600&-37.2464(13)\\
+    \hline
+    1.5& 75&3875&-37.1235(15)\\
+    \hline
+    2.0&100&5150&-37.3054(14)\\
+    \hline
+    3.0&150&7700&-37.3037(14)\\
+    \hline
+    4.0&200&10250&-37.1007(16)\\
+    \hline
+    6.0&300&15350&-37.2989(14)\\
+    \hline
+    8.0&400&20450&-37.1710(15)\\
+    \hline
+    10.0&500&25550&-37.1946(15)\\
+    \hline
+    \end{tabular}}
+    \vspace{2mm}
 	\caption{\label{tab:alpha} Numerical results for the density of hidden nodes, $\alpha = \frac{num_{h}}{num_{v}}$, and its influence on groundstate energy calculation.} 
-\end{figure}
-
-\todo{we need to get rid of time column, as it does not show anything and depends on the cpu and ... computing resources we used.}
+\end{table}
 
 % From these results we can infer the following:
 
@@ -641,12 +676,26 @@ In order to check the effect of the relative number of hidden and visible nodes 
 
 \textbf{The performance of FFNN vs. no-visible-bias RBM}
 
-In the table of Fig.\hspace{0.2mm}\ref{tab:ffnn}, we give a brief summary of the comparison results between an FFNN with one layer and a no-visible-bias RBM (referred to as novb RBM in the table). The two architectures are similar and for the same computational resources (such as CPU and memory) and system size these results have been obtained.
-\begin{figure}[!htb]
+In Table \hspace{0.2mm}\ref{tab:ffnn}, we give a brief summary of the comparison results between an FFNN with one layer and a no-visible-bias RBM (referred to as novb-RBM in the table). The two architectures are similar and for the same computational resources (such as CPU and memory) and system size these results have been obtained.
+
+\begin{table}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{./images/ffnn.png}
-	\caption{\label{tab:ffnn} Comparison between a single-layer FFNN and a novb RBM performance, in terms of training time and accuracy of energy for a $5 \times 5$ plaquette lattice.} 
-\end{figure}    
+    {\rowcolors{2}{green!80!yellow!50}{green!60!yellow!30}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    $\alpha$&\# Hidden Nodes&\# Parameters&Energy(FFNN)&Energy(novb-RBM)&Time(FFNN)&Time(novb-RBM)\\
+    \hline \hline
+    1.0& 50&2550&-37.2401(15)&-37.1532(15)&2783s&2754s\\
+    \hline
+    2.0&100&5100&-37.2958(14)&-36.8954(18)&4591s&5476s\\
+    \hline
+    3.0&150&7650&-37.3007(14)&-37.2191(15)&6889s&8331s\\
+    \hline
+    \end{tabular}}
+    \vspace{2mm}
+	%\includegraphics[width=0.8\textwidth]{./images/ffnn.png}
+	\caption{\label{tab:ffnn} Comparison between a single-layer FFNN and a novb-RBM performance, in terms of training time and accuracy of energy for a $5 \times 5$ plaquette lattice.} 
+\end{table}    
 
 The conclusion we reach is:
 \begin{enumerate}
@@ -666,11 +715,24 @@ As described in Section\hspace{0.2mm}\ref{sec4}, there are three theoretically e
     
 We applied all three methods to a 3x3 lattice and computed the corresponding energy levels for excited states. The numerical result obtained for the groundstate energy of a 3x3 lattice is -13.7166(2), while the theoretical groundstate energy is -14.2915. For excited states obtained by flipping spins, the results we get are shown in the table below.
 
-\begin{figure}[!htb]
+\begin{table}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{./images/3x3.png}
+	{\rowcolors{2}{green!80!yellow!50}{green!60!yellow!30}
+    \begin{tabular}{|c||c|c|c|}
+    \hline
+    Spins Flipped&Energy(Method A)&Energy(Method B)&Energy(Method C)\\
+    \hline \hline
+    $\sigma_8^y$&-11.7335(5) &-12.1070(51)&-13.9146\\
+    \hline
+    $\sigma_9^y$&-11.7474(5) &-11.8873(57)&-13.9146\\
+    \hline
+    $\sigma_8^x\sigma_8^z$&unrealizable&-12.7447(37)&-13.9146\\
+    \hline
+    \end{tabular}}
+	\vspace{2mm}
+	%\includegraphics[width=0.6\textwidth]{./images/3x3.png}
 	\caption{\label{tab:3x3} Energy of excited states with a pair of vortices in a $3 \times 3$ lattice system, measured through different methods as explained in the text.} 
-\end{figure}
+\end{table}
 
 We find that method (a) is more stable than method (b), which might be due to the random initialization of RBM parameters in method (b) for the training process. Both methods, (a) and (b), deviate by a margin from the analytic values, namely method (c). This can be again explained by the fact that the state from which these states are obtained by flipping, is not a true groundstate but an entangled state. This can be confirmed by measuring the plaquette operators in the excited states we created and the result is again a value close to zero rather than $+1$ or $-1$.
 
@@ -683,7 +745,6 @@ In this section we apply the technique discussed in Section \ref{sec3.2} to reco
 	\includegraphics[width=0.8\textwidth]{./images/2x2_16k_1.png}
 	\caption{\label{fig:qst} Energy and overlap results for QST of $2 \times 2$ lattice system for different training phases with specified learning rates in the figure.} 
 \end{figure}
-\todo{@Youran: can you pls include the vertical lines in Fig11 as well? To separate different training phases?}
 
 There are many intricate parameters which one can adjust during training, such as learning rate, batch size, number of Metropolis samples, and number of single measurements. Only with a suitable choice of parameters and large enough training data set, can one achieve a satisfactory result. For the example depicted, the size of the training data set is $8 \times 32 \times 2000$ \todo{@Youran: what are the numbers?} and the hidden node density $\alpha$ is $2$. With this combinations of parameters, QST leads to an overlap of 97 percent between the exact wave function and the learned one. 
 
@@ -699,31 +760,30 @@ Starting from the state obtained from tomography as discussed above, one can the
 	\caption{\label{qst_vor} Labeling convention for plaquette operator measurements.} 
 \end{figure}
 
-For the trained RBM state after performing QST for groundstate of $2 \times 2$ lattice, the expectation values of its four plaquette operators as well as the expected and measured energies are shown in Fig.\hspace{0.2mm}\ref{tab:pl0}. \todo{plots for energy/expectation-value of plaquettes vs iteration?} Moreover, flipping the $y$- and $z$-components of the spin at lattice site number $5$ (or equivalently, applying $\hat{S}_5^{x}$) will produce a pair of vortices at $B$ and $D$ plaquettes. Therefore, the expectation value of $\hat{W}_p$ operator in these plaquettes also flips sign (see Fig.\hspace{0.2mm}\ref{tab:pl5}). Similarly, applying $\hat{S}_7^{y}$, will kill the vortex in plaquette $D$ and produce one in plaquette $A$. The changes in the sign of expectation values for these plaquettes is shown in the Fig.\hspace{0.2mm}\ref{tab:pl7} below. Finally, by applying $\hat{S}_3^{z}$ we return back to the groundstate representation (see Fig.\hspace{0.2mm}\ref{tab:pl3}). These results, prove the effectiveness of the framework developed in Section\hspace{0.2mm}\ref{sec4} for realization of vortices in RBM states, in both QST and usual learning approaches.  
+For the trained RBM state after performing QST for groundstate of $2 \times 2$ lattice, the expectation values of its four plaquette operators as well as the measured energies are shown in Table \hspace{0.2mm}\ref{tab:pl0}. Moreover, flipping the $y$- and $z$-components of the spin at lattice site number $5$ (or equivalently, applying $\hat{S}_5^{x}$) will produce a pair of vortices at $B$ and $D$ plaquettes. Therefore, the expectation value of $\hat{W}_p$ operator in these plaquettes also flips sign. Similarly, applying $\hat{S}_7^{y}$, will kill the vortex in plaquette $D$ and produce one in plaquette $A$. The changes in the sign of expectation values for these plaquettes is shown in the Table \hspace{0.2mm}\ref{tab:pl0} below. Finally, by applying $\hat{S}_3^{z}$ we return back to the groundstate representation. These results, prove the effectiveness of the framework developed in Section\hspace{0.2mm}\ref{sec4} for realization of vortices in RBM states, in both QST and usual learning approaches.  
 
-\begin{figure}[!htb]
+\begin{table}[!htb]
 	\centering
-	\includegraphics[width=\textwidth]{./images/Plaquette0.png}
-	\caption{\label{tab:pl0} Expectation values of plaquette operators for the RBM state after performing QST.} 
-\end{figure}
+	{\rowcolors{2}{green!80!yellow!50}{green!60!yellow!30}
+    \begin{tabular}{|c||c|c|c|c|c|}
+    \hline
+    Spin Flip Operator (acting successively)&$W_A$&$W_B$&$W_C$&$W_D$&Energy\\
+    \hline \hline
+    Groundstate&0.94889473&0.95168581&0.95248031&0.95528330&-6.0778\\
+    \hline
+    $\hat{S}_5^{x}$&0.94889473&-0.95168581&0.95248031&-0.95528330&-4.0105\\
+    \hline
+    $\hat{S}_7^{y}$&-0.94889473&-0.95168581&0.95248031&0.95528330&-1.8040\\
+    \hline
+    $\hat{S}_3^{z}$&0.94889473&0.95168581&0.95248031&0.95528330&0.0606\\
+    \hline
+    \end{tabular}}
+	\vspace{2mm}
+	%\includegraphics[width=\textwidth]{./images/Plaquette0.png}
+	\caption{\label{tab:pl0} Expectation values of plaquette operators after applying a series of spin flip operators on the RBM state obtained from QST.} 
+\end{table}
 
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=\textwidth]{./images/Plaquette5.png}
-	\caption{\label{tab:pl5} Expectation values of plaquette operators obtained after applying $\hat{S}_5^{x}$ on the system.} 
-\end{figure}
 
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=\textwidth]{./images/Plaquette7.png}
-	\caption{\label{tab:pl7} Expectation values of plaquette operators obtained after applying $\hat{S}_7^{y}$ on the system.} 
-\end{figure}
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=\textwidth]{./images/Plaquette0.png}
-	\caption{\label{tab:pl3} Expectation values of plaquette operators obtained after applying $\hat{S}_3^{z}$ on the system.} 
-\end{figure}
 % \section{Topological Quantum Phase Transition}
 
 %\subsection{Implementation in \textit{Intel-QS}}
