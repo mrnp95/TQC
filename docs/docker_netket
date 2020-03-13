@@ -1,0 +1,12 @@
+FROM python
+RUN python -V
+RUN g++ -v
+RUN apt update
+RUN apt install -y --no-install-recommends apt-utils ca-certificates cmake libopenmpi-dev openmpi-bin openmpi-doc libblas-dev liblapack-dev
+RUN pip install --upgrade pip
+RUN pip install netket -i https://pypi.tuna.tsinghua.edu.cn/simple   --trusted-host  pypi.tuna.tsinghua.edu.cn 
+RUN pip install jupyter
+RUN pip install numpy
+RUN pip install matplotlib
+RUN pip install sys
+CMD ["jupyter","notebook","--ip=0.0.0.0","--allow-root"]
