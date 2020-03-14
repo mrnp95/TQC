@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.26)  14 MAR 2020 12:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.26)  14 MAR 2020 12:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -984,18 +984,21 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <12> not available
 (Font)              Font shape `T1/ptm/b/sc' tried instead on input line 97.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 104.
+
+Underfull \vbox (badness 1152) has occurred while \output is active []
+
  [1
 
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<./images/Final_A_2.png, id=92, 794.97pt x 587.94656pt>
+<./images/Final_A_2.png, id=91, 794.97pt x 587.94656pt>
 File: ./images/Final_A_2.png Graphic file (type png)
 
 <use ./images/Final_A_2.png>
 Package pdftex.def Info: ./images/Final_A_2.png used on input line 152.
 (pdftex.def)             Requested size: 328.82706pt x 243.2038pt.
 
-<./images/br_zone_v2.jpg, id=94, 217.2918pt x 105.996pt>
+<./images/br_zone_v2.jpg, id=93, 217.2918pt x 105.996pt>
 File: ./images/br_zone_v2.jpg Graphic file (type jpg)
 
 <use ./images/br_zone_v2.jpg>
@@ -1005,7 +1008,7 @@ Package pdftex.def Info: ./images/br_zone_v2.jpg used on input line 153.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/Jor-Wig.png, id=95, 839.38594pt x 636.87938pt>
+<./images/Jor-Wig.png, id=94, 839.38594pt x 636.87938pt>
 File: ./images/Jor-Wig.png Graphic file (type png)
 
 <use ./images/Jor-Wig.png>
@@ -1015,7 +1018,7 @@ Package pdftex.def Info: ./images/Jor-Wig.png used on input line 160.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/diag_1.png, id=96, 650.43pt x 447.17062pt>
+<./images/diag_1.png, id=95, 650.43pt x 447.17062pt>
 File: ./images/diag_1.png Graphic file (type png)
  <use ./images/diag_1.png>
 Package pdftex.def Info: ./images/diag_1.png used on input line 167.
@@ -1035,20 +1038,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--195
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- []
+ [2]
+Overfull \vbox (35.03212pt too high) has occurred while \output is active []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
-
- []
 
 [3 <./images/Final_A_2.png> <./images/br_zone_v2.jpg>]
 
 LaTeX Warning: Text page 4 contains only floats.
 
 [4 <./images/Jor-Wig.png> <./images/diag_1.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 228--229
 
  []
@@ -1073,12 +1083,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
-
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 278--280
 
  []
 
-[5]
+
 Underfull \hbox (badness 10000) in paragraph at lines 288--289
 
  []
@@ -1094,6 +1104,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 307--308
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
 Underfull \hbox (badness 10000) in paragraph at lines 320--321
 
  []
@@ -1103,7 +1116,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 328--329
 
  []
 
-[6]
+
 Underfull \hbox (badness 10000) in paragraph at lines 338--339
 
  []
@@ -1113,7 +1126,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 355--356
 
  []
 
-<./images/rbm.jpg, id=181, 217.2918pt x 105.996pt>
+[7] <./images/rbm.jpg, id=189, 217.2918pt x 105.996pt>
 File: ./images/rbm.jpg Graphic file (type jpg)
  <use ./images/rbm.jpg>
 Package pdftex.def Info: ./images/rbm.jpg used on input line 369.
@@ -1123,11 +1136,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 386--387
 
  []
 
-[7]
-
-LaTeX Warning: Citation `coldatom' on page 8 undefined on input line 397.
-
-
+[8 <./images/rbm.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 405--406
 
  []
@@ -1137,7 +1146,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
-[8 <./images/rbm.jpg>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 419--420
 
  []
@@ -1147,7 +1156,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 425--426
 
  []
 
-<./images/anyons.png, id=214, 483.8075pt x 571.13374pt>
+[9] <./images/anyons.png, id=226, 483.8075pt x 571.13374pt>
 File: ./images/anyons.png Graphic file (type png)
 
 <use ./images/anyons.png>
@@ -1158,7 +1167,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 455--456
 
  []
 
-[9 <./images/anyons.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 466--467
 
  []
@@ -1173,7 +1182,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 483--484
 
  []
 
-
+[10 <./images/anyons.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 491--492
 
  []
@@ -1188,7 +1197,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 509--510
 
  []
 
-[10]
+
 Underfull \hbox (badness 10000) in paragraph at lines 525--526
 
  []
@@ -1203,20 +1212,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 543--544
 
  []
 
-<./images/Anyons_Strings.png, id=241, 715.17188pt x 434.37282pt>
+[11] <./images/Anyons_Strings.png, id=252, 715.17188pt x 434.37282pt>
 File: ./images/Anyons_Strings.png Graphic file (type png)
 
 <use ./images/Anyons_Strings.png>
 Package pdftex.def Info: ./images/Anyons_Strings.png used on input line 555.
 (pdftex.def)             Requested size: 328.82706pt x 199.72112pt.
- [11]
-Underfull \vbox (badness 2951) has occurred while \output is active []
-
- [12 <./images/Anyons_Strings.png>] <./images/plots.pdf, id=269, 433.62pt x 289
-.08pt>
+ [12 <./images/Anyons_Strings.png>]
+<./images/plots.pdf, id=268, 433.62pt x 289.08pt>
 File: ./images/plots.pdf Graphic file (type pdf)
-
-<use ./images/plots.pdf>
+ <use ./images/plots.pdf>
 Package pdftex.def Info: ./images/plots.pdf used on input line 616.
 (pdftex.def)             Requested size: 469.75499pt x 313.1854pt.
 
@@ -1224,38 +1229,34 @@ Overfull \hbox (12.0036pt too wide) in paragraph at lines 597--620
 [][]
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13 <./images/plots.pdf>]
+[13]
 Overfull \hbox (14.21216pt too wide) in paragraph at lines 686--699
  [][] 
  []
 
-[14]
+[14 <./images/plots.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 714--717
 
  []
 
-<./images/2x2_16k_1.png, id=327, 481.8pt x 361.35pt>
+[15] <./images/2x2_16k_1.png, id=335, 481.8pt x 361.35pt>
 File: ./images/2x2_16k_1.png Graphic file (type png)
 
 <use ./images/2x2_16k_1.png>
 Package pdftex.def Info: ./images/2x2_16k_1.png used on input line 747.
 (pdftex.def)             Requested size: 375.80542pt x 281.8629pt.
- <./images/2x2.jpg, id=330, 321.2pt x 220.825pt>
+ <./images/2x2.jpg, id=338, 321.2pt x 220.825pt>
 File: ./images/2x2.jpg Graphic file (type jpg)
 
 <use ./images/2x2.jpg>
 Package pdftex.def Info: ./images/2x2.jpg used on input line 761.
 (pdftex.def)             Requested size: 281.85585pt x 193.78072pt.
- [15] [16 <./images/2x2_16k_1.png> <./images/2x2.jpg>]
+ [16 <./images/2x2_16k_1.png>] [17 <./images/2x2.jpg>]
 (./template.bbl
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 7.
- [17]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 85.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
 ) [18]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 890.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 890.
@@ -1264,18 +1265,14 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 890.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 890.
 Package rerunfilecheck Info: File `template.out' has not changed.
 (rerunfilecheck)             Checksum: 4003E299E0C89F3BF5BC5DB640D2163F;785.
-
-
-LaTeX Warning: There were undefined references.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 890.
  ) 
 Here is how much of TeX's memory you used:
- 22487 strings out of 493014
- 407703 string characters out of 6133351
- 636150 words of memory out of 5000000
+ 22494 strings out of 493014
+ 407773 string characters out of 6133351
+ 639150 words of memory out of 5000000
  25277 multiletter control sequences out of 15000+600000
- 75980 words of font info for 201 fonts, out of 8000000 for 9000
+ 76335 words of font info for 205 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,97p,1510b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1304,10 +1301,10 @@ ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/
 type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on template.pdf (18 pages, 1044865 bytes).
+Output written on template.pdf (18 pages, 1045287 bytes).
 PDF statistics:
- 479 PDF objects out of 1000 (max. 8388607)
- 411 compressed objects within 5 object streams
- 110 named destinations out of 1000 (max. 500000)
+ 484 PDF objects out of 1000 (max. 8388607)
+ 416 compressed objects within 5 object streams
+ 111 named destinations out of 1000 (max. 500000)
  33951 words of extra memory for PDF output out of 35830 (max. 10000000)
 
