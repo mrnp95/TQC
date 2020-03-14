@@ -425,7 +425,7 @@ where
         \mathbb{KL}_{b}({\boldsymbol{\kappa}}) = \sum_{\boldsymbol{\sigma}} P_{b}(\boldsymbol{\sigma}) \log \frac{ P_{b}(\boldsymbol{\sigma})}{\tilde P_{b}(\boldsymbol{\sigma})}
 \end{equation}\\
 
-A more detailed explanation of how to perform this minimization using gradient descent can be found in \cite{Torlai_2018}. In the present paper, we will follow the simpler approach of using the representation \ref{eq:19_0} (\ref{eq:19_1}) for the wavefunction, or in other words we work with a choice where $\phi_{\boldsymbol{\mu}}(\boldsymbol{\sigma}) = 0$ while the RBM $p_{\boldsymbol{\mu}}(\boldsymbol{\sigma})$ has complex parameters and thus automatically takes care of the phase. The entire process of QST was implemented using \texttt{NetKet} \cite{netket:2019} which has the above algorithm already built in.
+A more detailed explanation of how to perform this minimization using gradient descent can be found in \cite{Torlai_2018}. In the present paper, we will follow the simpler approach of using the representation in Equ.\hspace{0.2mm}\ref{eq:19_0} (\ref{eq:19_1}) for the wave function, or in other words we work with a choice where $\phi_{\boldsymbol{\mu}}(\boldsymbol{\sigma}) = 0$ while the RBM $p_{\boldsymbol{\mu}}(\boldsymbol{\sigma})$ has complex parameters and thus automatically takes care of the phase. The entire process of QST was implemented using \texttt{NetKet} \cite{netket:2019} which has the above algorithm already built in.
 
 \section{Braiding}\label{sec4}
 
@@ -752,7 +752,7 @@ In this section we apply the technique discussed in Section \ref{sec3.2} to reco
 	\caption{\label{fig:qst} Energy and overlap results for QST of $2 \times 2$ lattice system for different training phases with specified learning rates in the figure.} 
 \end{figure}
 
-There are many intricate parameters which one can adjust during training, such as learning rate, batch size, number of Metropolis samples, and number of single measurements. Only with a suitable choice of parameters and large enough training data set, can one achieve a satisfactory result. For the example depicted, the size of the training data set is $8 \times 32 \times 2000$ \todo{@Youran: what are the numbers?} and the hidden node density $\alpha$ is $2$. With this combinations of parameters, QST leads to an overlap of 97 percent between the exact wave function and the learned one. 
+There are many intricate parameters which one can adjust during training, such as learning rate, batch size, number of Metropolis samples, and number of single measurements. Only with a suitable choice of parameters and large enough training data set, can one achieve a satisfactory result. For the example depicted in Fig.\hspace{0.2mm}\ref{fig:qst}, in order to build the training data set, the exact wave function was sampled 2000 times for 256 randomly chosen basis $x, y, z$ and the hidden node density $\alpha$ was set equal to $2$. With this combinations of parameters, QST leads to an overlap of 97 percent between the exact wave function and the learned one. 
 
 % On the other hand, the overlap can only reach $50$ percent for a $2 \times 2$ lattice if the number of training data points is reduced to $2000$. Moreover, we observe that, only in cases where  the variables train-batch-num and sample-num both reach certain thresholds, the tomography can be successful. Otherwise, the overlap of the two wave functions will fluctuate around a very low level indefinitely. For the $2 \times 2$ lattice this threshold is reached when train-batch-num = sample-num = 1000 and higher. 
 
