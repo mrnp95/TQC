@@ -149,22 +149,22 @@ The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli m
 %     \caption{1b}
 %     \label{fig:fig0b}
 %     \end{subfigure}%
-    \subfloat[]{\includegraphics[width=0.7\textwidth]{./images/Final_A_2}}\\
-    \subfloat[]{\includegraphics[width=0.8\textwidth]{./images/br_zone_v2}}
+    \subfloat[]{\includegraphics[width=0.6\textwidth]{./images/Final_A_2}}\\
+    \subfloat[]{\includegraphics[width=0.7\textwidth]{./images/br_zone_v2}}
     \caption{(a) The honeycomb lattice in position space and its primitive vectors and primitive cell. (b) First Brillouin zone and primitive vectors of reciprocal lattice.}
     \label{fig:fig0}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.8\textwidth]{./images/Jor-Wig}
+	\includegraphics[width=0.7\textwidth]{./images/Jor-Wig}
 	\caption{\label{jor} Brick-wall lattice and the Jordan-Wigner transformation path depicted with the dashed arrows. The $\textbf{r}_1$ and $\textbf{r}_2$ are the primitive vectors for this lattice.} 
 	\label{fig:fig01}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.8\textwidth]{./images/diag_1.png}
+	\includegraphics[width=0.7\textwidth]{./images/diag_1.png}
 	\caption{\label{kit_torus} Kitaev Honeycomb lattice model on a torus: The generators of the lattice in position space are named
 	$\textbf{e}_{1}$ and  $\textbf{e}_{2}$, as shown in the image above. Hence, the lattice points are $\textbf{L} = n_{1}\textbf{e}_{1} + 
 	n_{2}\textbf{e}_{2}$ with $n_{1}, n_{2} \in \mathbb{Z}$ and the above lattice is drawn for $N_{1} = N_{2} = 4 $ with toric boundary conditions.} 
@@ -183,7 +183,7 @@ In this paper we apply the approach developed in \cite{Deng_2017} to the Honeyco
 
 \section{Solution of the Model}\label{sec2}
 
-In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved where we will be \todo{@Reza: What is the correct reference here?}following references \cite{Kitaev_2006,pachos_2012}. First of all, we fermionize the Hamiltonian by performing a one-dimensional Jordan-Wigner transformation \cite{Jordan:1928wi} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice (see Fig.\hspace{0.2mm}\ref{fig:fig01})  clarifies the mechanism of the Jordan-Wigner transformation and why it is one-dimensional \cite{Chen_2008}. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
+In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved where we will be following references \cite{Kitaev_2006,pachos_2012,Schmoll_2017}. First of all, we fermionize the Hamiltonian by performing a one-dimensional Jordan-Wigner transformation \cite{Jordan:1928wi} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice (see Fig.\hspace{0.2mm}\ref{fig:fig01})  clarifies the mechanism of the Jordan-Wigner transformation and why it is one-dimensional \cite{Chen_2008}. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
 
 \begin{equation}\label{eq:2}
 	\begin{aligned}
@@ -474,7 +474,7 @@ Notice that the spins have a two dimensional space (being up or down) and now th
     \end{aligned}
 \end{equation}{}\\
 
-We can define the projector $P_i$ on site $i$ to do this job for us
+One can define the projector $P_i$ on site $i$ \cite{Pedrocchi_2011} to do this job for us
 
 \begin{equation}\label{eq:22}
     \begin{aligned}
@@ -508,7 +508,7 @@ The $u_{ij}$ are antisymmetric Hermitian link operators with eigenvalues $\pm 1$
 	\end{aligned}
 \end{equation}\\
 
-The link operators commute with the Hamiltonian, $[H, u_{ij}] = 0$, so they are local symmetries. In this form, the Hamiltonian is representing a tight binding model of free Majorana fermions hopping along the lattice, with tunneling couplings that depend on the eigevalues of link operators which can be thought of as a classical $\mathbb{Z}_2$ gauge field. One can assign a configuration $\{u\}$ to all link operators and diagonalize the resulting quadratic Hamiltonian in Majorana operators directly and obtain the spectrum and groundstate energy for $H\{u\}$. But which configuration $\{u\}$ corresponds to the global minimum of the energy? This question has been answered by Lieb (1994) \cite{kour2014real}. The groundstate lies in the sector with $B_p = 1 \hspace{2mm} \forall ~p$ and since the $B_p$ operators are the only gauge invariant objects, every gauge fixing choice $\{u\}$ which leads to this particular configuration for $B_p$ is equivalent. Therefore, our goal is to find a configuration $\{u\}$ which leads to $B_p = 1 \hspace{2mm} \forall ~p$. 
+The link operators commute with the Hamiltonian, $[H, u_{ij}] = 0$, so they are local symmetries. In this form, the Hamiltonian is representing a tight binding model of free Majorana fermions hopping along the lattice, with tunneling couplings that depend on the eigevalues of link operators which can be thought of as a classical $\mathbb{Z}_2$ gauge field. One can assign a configuration $\{u\}$ to all link operators and diagonalize the resulting quadratic Hamiltonian in Majorana operators directly and obtain the spectrum and groundstate energy for $H\{u\}$. But which configuration $\{u\}$ corresponds to the global minimum of the energy? This question has been answered by Lieb (1994) \cite{Lieb_1994}. The groundstate lies in the sector with $B_p = 1 \hspace{2mm} \forall ~p$ and since the $B_p$ operators are the only gauge invariant objects, every gauge fixing choice $\{u\}$ which leads to this particular configuration for $B_p$ is equivalent. Therefore, our goal is to find a configuration $\{u\}$ which leads to $B_p = 1 \hspace{2mm} \forall ~p$. 
 
 Next, we define the vortex operator $W_p$ as
 
@@ -576,12 +576,15 @@ In principle, it is possible to directly manipulate the weight and bias paramete
 	\end{aligned}
 \end{equation}
 
-Next, one needs to evaluate how $(-i \hat{\sigma}^{\alpha}_a)$ acts on $|\Xi\rangle$. Here we subdivide the three cases $\alpha =z$, $x$ and $y$. If $\alpha =z$, spin up states will get a phase $-i$ and spin down states a phase $i$. The overall effect of this can be absorbed in a shift of $a_l$ by $-i \frac{\pi}{2}$. If $\alpha=x$, then spins up and down are just exchanged and the $-i$ is an overall phase which can be ignored. If $\alpha = y$, we get a combination of the previous two cases. \todo{@Reza: need to fix equation alignment} Summarizing, we obtain:
-\begin{eqnarray}
-	\hat{S}^z_l & : & \left(W_{lk'},a_l\right) \mapsto \left(W_{lk'},a_l- i \frac{\pi}{2}\right) \nonumber \\	
-	\hat{S}^x_l & : & \left(W_{lk'},a_l\right) \mapsto \left(-W_{lk'},-a_l\right) \nonumber \\
-	\hat{S}^y_l & : & \left(W_{lk'},a_l\right) \mapsto \left(-W_{lk'},-a_l-i \frac{\pi}{2}\right)~.
-\end{eqnarray}
+Next, one needs to evaluate how $(-i \hat{\sigma}^{\alpha}_a)$ acts on $|\Xi\rangle$. Here we subdivide the three cases $\alpha =z$, $x$ and $y$. If $\alpha =z$, spin up states will get a phase $-i$ and spin down states a phase $i$. The overall effect of this can be absorbed in a shift of $a_l$ by $-i \frac{\pi}{2}$. If $\alpha=x$, then spins up and down are just exchanged and the $-i$ is an overall phase which can be ignored. If $\alpha = y$, we get a combination of the previous two cases. 
+
+\begin{equation}\label{eq:29_2}
+	\begin{aligned}
+		\hat{S}^z_l & : \left(W_{lk'},a_l\right) \mapsto \left(W_{lk'},a_l- i \frac{\pi}{2}\right) \\	
+    	\hat{S}^x_l & : \left(W_{lk'},a_l\right) \mapsto \left(-W_{lk'},-a_l\right) \\
+    	\hat{S}^y_l & : \left(W_{lk'},a_l\right) \mapsto \left(-W_{lk'},-a_l-i \frac{\pi}{2}\right)~.
+	\end{aligned}
+\end{equation}
 
 \section{Results and Discussion}\label{sec5}
 
