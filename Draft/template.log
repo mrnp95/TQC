@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.26)  14 MAR 2020 12:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.26)  14 MAR 2020 17:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -983,7 +983,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <12> not available
 (Font)              Font shape `T1/ptm/b/sc' tried instead on input line 97.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 104.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 105.
 
 Underfull \vbox (badness 1152) has occurred while \output is active []
 
@@ -995,15 +995,15 @@ Underfull \vbox (badness 1152) has occurred while \output is active []
 File: ./images/Final_A_2.png Graphic file (type png)
 
 <use ./images/Final_A_2.png>
-Package pdftex.def Info: ./images/Final_A_2.png used on input line 152.
-(pdftex.def)             Requested size: 328.82706pt x 243.2038pt.
+Package pdftex.def Info: ./images/Final_A_2.png used on input line 153.
+(pdftex.def)             Requested size: 281.85585pt x 208.45784pt.
 
 <./images/br_zone_v2.jpg, id=93, 217.2918pt x 105.996pt>
 File: ./images/br_zone_v2.jpg Graphic file (type jpg)
 
 <use ./images/br_zone_v2.jpg>
-Package pdftex.def Info: ./images/br_zone_v2.jpg used on input line 153.
-(pdftex.def)             Requested size: 375.80542pt x 183.32686pt.
+Package pdftex.def Info: ./images/br_zone_v2.jpg used on input line 154.
+(pdftex.def)             Requested size: 328.82706pt x 160.4104pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1012,8 +1012,8 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ./images/Jor-Wig.png Graphic file (type png)
 
 <use ./images/Jor-Wig.png>
-Package pdftex.def Info: ./images/Jor-Wig.png used on input line 160.
-(pdftex.def)             Requested size: 375.80542pt x 285.13538pt.
+Package pdftex.def Info: ./images/Jor-Wig.png used on input line 161.
+(pdftex.def)             Requested size: 328.82706pt x 249.4898pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1021,19 +1021,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <./images/diag_1.png, id=95, 650.43pt x 447.17062pt>
 File: ./images/diag_1.png Graphic file (type png)
  <use ./images/diag_1.png>
-Package pdftex.def Info: ./images/diag_1.png used on input line 167.
-(pdftex.def)             Requested size: 375.80542pt x 258.36977pt.
-LaTeX Font Info:    Try loading font information for U+bbold on input line 170.
+Package pdftex.def Info: ./images/diag_1.png used on input line 168.
+(pdftex.def)             Requested size: 328.82706pt x 226.07524pt.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 171.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/bbold/Ubbold.fd)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 186.
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
@@ -1041,270 +1039,280 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--195
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-Overfull \vbox (35.03212pt too high) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
+ []
 
 [3 <./images/Final_A_2.png> <./images/br_zone_v2.jpg>]
+Overfull \vbox (23.94643pt too high) has occurred while \output is active []
 
-LaTeX Warning: Text page 4 contains only floats.
 
 [4 <./images/Jor-Wig.png> <./images/diag_1.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--239
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--258
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
+Underfull \hbox (badness 10000) in paragraph at lines 279--281
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 278--280
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--299
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--308
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
+
+ []
+
+<./images/rbm.jpg, id=181, 217.2918pt x 105.996pt>
+File: ./images/rbm.jpg Graphic file (type jpg)
+ <use ./images/rbm.jpg>
+Package pdftex.def Info: ./images/rbm.jpg used on input line 370.
+(pdftex.def)             Requested size: 375.80542pt x 183.32686pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
+
+ []
+
+[8 <./images/rbm.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 420--421
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
+
+ []
+
+<./images/anyons.png, id=216, 483.8075pt x 571.13374pt>
+File: ./images/anyons.png Graphic file (type png)
+
+<use ./images/anyons.png>
+Package pdftex.def Info: ./images/anyons.png used on input line 451.
+(pdftex.def)             Requested size: 140.92792pt x 166.3653pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
+
+ []
+
+[9 <./images/anyons.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
+
+ []
+
+
+LaTeX Warning: Citation `Pedrocchi_2011' on page 10 undefined on input line 478
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--503
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 510--511
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 526--527
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--537
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--545
+
+ []
+
+<./images/Anyons_Strings.png, id=243, 715.17188pt x 434.37282pt>
+File: ./images/Anyons_Strings.png Graphic file (type png)
+
+<use ./images/Anyons_Strings.png>
+Package pdftex.def Info: ./images/Anyons_Strings.png used on input line 556.
+(pdftex.def)             Requested size: 328.82706pt x 199.72112pt.
+ [11] [12 <./images/Anyons_Strings.png>]
+<./images/plots.pdf, id=269, 433.62pt x 289.08pt>
+File: ./images/plots.pdf Graphic file (type pdf)
+ <use ./images/plots.pdf>
+Package pdftex.def Info: ./images/plots.pdf used on input line 620.
+(pdftex.def)             Requested size: 469.75499pt x 313.1854pt.
+
+Overfull \hbox (12.0036pt too wide) in paragraph at lines 601--624
+[][]
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6]
-Underfull \hbox (badness 10000) in paragraph at lines 320--321
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 338--339
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 355--356
-
- []
-
-[7] <./images/rbm.jpg, id=189, 217.2918pt x 105.996pt>
-File: ./images/rbm.jpg Graphic file (type jpg)
- <use ./images/rbm.jpg>
-Package pdftex.def Info: ./images/rbm.jpg used on input line 369.
-(pdftex.def)             Requested size: 375.80542pt x 183.32686pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 386--387
-
- []
-
-[8 <./images/rbm.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 411--412
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--420
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--426
-
- []
-
-[9] <./images/anyons.png, id=226, 483.8075pt x 571.13374pt>
-File: ./images/anyons.png Graphic file (type png)
-
-<use ./images/anyons.png>
-Package pdftex.def Info: ./images/anyons.png used on input line 450.
-(pdftex.def)             Requested size: 140.92792pt x 166.3653pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 455--456
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 466--467
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 475--476
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 483--484
-
- []
-
-[10 <./images/anyons.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 491--492
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 501--502
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 509--510
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 525--526
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 535--536
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 543--544
-
- []
-
-[11] <./images/Anyons_Strings.png, id=252, 715.17188pt x 434.37282pt>
-File: ./images/Anyons_Strings.png Graphic file (type png)
-
-<use ./images/Anyons_Strings.png>
-Package pdftex.def Info: ./images/Anyons_Strings.png used on input line 555.
-(pdftex.def)             Requested size: 328.82706pt x 199.72112pt.
- [12 <./images/Anyons_Strings.png>]
-<./images/plots.pdf, id=268, 433.62pt x 289.08pt>
-File: ./images/plots.pdf Graphic file (type pdf)
- <use ./images/plots.pdf>
-Package pdftex.def Info: ./images/plots.pdf used on input line 616.
-(pdftex.def)             Requested size: 469.75499pt x 313.1854pt.
-
-Overfull \hbox (12.0036pt too wide) in paragraph at lines 597--620
-[][]
- []
-
-[13]
-Overfull \hbox (14.21216pt too wide) in paragraph at lines 686--699
+ [13 <./images/plots.pdf>]
+Overfull \hbox (14.21216pt too wide) in paragraph at lines 690--703
  [][] 
  []
 
-[14 <./images/plots.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 714--717
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 718--721
 
  []
 
-[15] <./images/2x2_16k_1.png, id=335, 481.8pt x 361.35pt>
+<./images/2x2_16k_1.png, id=327, 481.8pt x 361.35pt>
 File: ./images/2x2_16k_1.png Graphic file (type png)
 
 <use ./images/2x2_16k_1.png>
-Package pdftex.def Info: ./images/2x2_16k_1.png used on input line 747.
+Package pdftex.def Info: ./images/2x2_16k_1.png used on input line 751.
 (pdftex.def)             Requested size: 375.80542pt x 281.8629pt.
- <./images/2x2.jpg, id=338, 321.2pt x 220.825pt>
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 755.
+ <./images/2x2.jpg, id=330, 321.2pt x 220.825pt>
 File: ./images/2x2.jpg Graphic file (type jpg)
 
 <use ./images/2x2.jpg>
-Package pdftex.def Info: ./images/2x2.jpg used on input line 761.
+Package pdftex.def Info: ./images/2x2.jpg used on input line 765.
 (pdftex.def)             Requested size: 281.85585pt x 193.78072pt.
- [16 <./images/2x2_16k_1.png>] [17 <./images/2x2.jpg>]
+ [15] [16 <./images/2x2_16k_1.png> <./images/2x2.jpg>]
 (./template.bbl
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 7.
+ [17]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
 ) [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 890.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 890.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 896.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 896.
  (./template.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 890.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 890.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 896.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 896.
 Package rerunfilecheck Info: File `template.out' has not changed.
 (rerunfilecheck)             Checksum: 4003E299E0C89F3BF5BC5DB640D2163F;785.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 890.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 896.
  ) 
 Here is how much of TeX's memory you used:
- 22494 strings out of 493014
- 407773 string characters out of 6133351
- 639150 words of memory out of 5000000
- 25277 multiletter control sequences out of 15000+600000
+ 22479 strings out of 493014
+ 407442 string characters out of 6133351
+ 633150 words of memory out of 5000000
+ 25263 multiletter control sequences out of 15000+600000
  76335 words of font info for 205 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,97p,1510b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/tex
-mf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2016/texmf-d
-ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/
-type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw
-/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utm
-ri8a.pfb>
-Output written on template.pdf (18 pages, 1045287 bytes).
+pdfTeX warning (dest): name{https://github.com/mrnp95/TQC/} has been referenc
+ed but does not exist, replaced by a fixed one
+
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/
+usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/t
+imes/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on template.pdf (18 pages, 1044991 bytes).
 PDF statistics:
- 484 PDF objects out of 1000 (max. 8388607)
- 416 compressed objects within 5 object streams
- 111 named destinations out of 1000 (max. 500000)
+ 485 PDF objects out of 1000 (max. 8388607)
+ 417 compressed objects within 5 object streams
+ 110 named destinations out of 1000 (max. 500000)
  33951 words of extra memory for PDF output out of 35830 (max. 10000000)
 
