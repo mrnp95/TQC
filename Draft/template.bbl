@@ -4,12 +4,12 @@
 \bibitem{Kitaev_2006}
 A.~Kitaev, \emph{Anyons in an exactly solved model and beyond},
   \href{https://doi.org/10.1016/j.aop.2005.10.005}{\emph{Annals of Physics}
-  {\bfseries 321} (2006) 2–111}.
+  {\bfseries 321} (2006) 2}.
 
 \bibitem{Kitaev_2003}
 A.~Kitaev, \emph{Fault-tolerant quantum computation by anyons},
   \href{https://doi.org/10.1016/s0003-4916(02)00018-0}{\emph{Annals of Physics}
-  {\bfseries 303} (2003) 2–30}.
+  {\bfseries 303} (2003) 2}.
 
 \bibitem{Jackeli_2009}
 G.~Jackeli and G.~Khaliullin, \emph{Mott insulators in the strong spin-orbit
@@ -38,7 +38,7 @@ G.~Carleo, K.~Choo, D.~Hofmann, J.~E.~T. Smith, T.~Westerhout, F.~Alet et~al.,
 G.~Torlai, G.~Mazzola, J.~Carrasquilla, M.~Troyer, R.~Melko and G.~Carleo,
   \emph{Neural-network quantum state tomography},
   \href{https://doi.org/10.1038/s41567-018-0048-5}{\emph{Nature Physics}
-  {\bfseries 14} (2018) 447â450}.
+  {\bfseries 14} (2018) 447}.
 
 \bibitem{pachos_2012}
 J.~K. Pachos, \emph{Introduction to Topological Quantum Computation}. Cambridge
@@ -65,7 +65,7 @@ P.~Schmoll and R.~Orús, \emph{Kitaev honeycomb tensor networks: Exact unitary
 \bibitem{Lieb_1994}
 E.~H. Lieb, \emph{Flux phase of the half-filled band},
   \href{https://doi.org/10.1103/physrevlett.73.2158}{\emph{Physical Review
-  Letters} {\bfseries 73} (1994) 2158–2161}.
+  Letters} {\bfseries 73} (1994) 2158}.
 
 \bibitem{LeRouxBengio}
 N.~Le~Roux and Y.~Bengio, \emph{Representational power of restricted boltzmann
@@ -79,7 +79,7 @@ N.~Le~Roux and Y.~Bengio, \emph{Representational power of restricted boltzmann
 C.~Nayak, S.~H. Simon, A.~Stern, M.~Freedman and S.~Das~Sarma,
   \emph{Non-abelian anyons and topological quantum computation},
   \href{https://doi.org/10.1103/revmodphys.80.1083}{\emph{Reviews of Modern
-  Physics} {\bfseries 80} (2008) 1083–1159}.
+  Physics} {\bfseries 80} (2008) 1083}.
 
 \bibitem{Leggett}
 A.~J. Leggett, \emph{Lecture 26, the kitaev models, \textbf{PHYS598PTD}},

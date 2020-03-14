@@ -55,9 +55,11 @@
 
 
 \author{
-    Mohammadreza Noormandipour\thanks{\texttt{mrn31@cam.ac.uk}}\hspace{1mm}$^{,a}$ , Youran Sun\thanks{\texttt{syouran0508@gmail.com}}\hspace{1mm}$^{,b}$ , Babak Haghighat\thanks{\texttt{babakhaghighat@tsinghua.edu.cn}}\hspace{1mm}$^{,b}$ \\
+    Mohammadreza Noormandipour\thanks{\texttt{mrn31@cam.ac.uk}}\hspace{1mm}$^{,a}$ , Youran Sun\thanks{\texttt{syouran0508@gmail.com}}\hspace{1mm}$^{,b,c}$ , Babak Haghighat\thanks{\texttt{babakhaghighat@tsinghua.edu.cn}}\hspace{1mm}$^{,b}$ \\
 	$^{a}$ \textit{DAMTP}, University of Cambridge, Wilberforce Road, Cambridge CB3 0WA, UK \\
 	$^{b}$ \textit{Yau Mathematical Sciences Center}, Tsinghua University, Beijing, 100084, China\\
+	$^{c}$ \textit{School of Physics},
+Peking University, Beijing, China\\
       %% David S.~Hippocampus\thanks{Use footnote for providing further
   %%  information about author (webpage, alternative
   %%    address)---\emph{not} for acknowledging funding agencies.} \\
@@ -169,7 +171,7 @@ The Hamiltonian of the Kitaev model is a nearest-neighbor interaction of Pauli m
 	\label{fig:fig1}
 \end{figure}
 
-In this paper we apply the approach developed in \cite{Deng_2017} to the Honeycomb model. In Section\hspace{0.2mm}\ref{sec2}, we briefly review the analytical solution of the model. In Section\hspace{0.2mm}\ref{sec3} the mapping of the spin model to an RBM architecture is explained. In particular, we demonstrate how to calculate the groundstate and excited states of the Honeycomb model using machine learning techniques. To this end we employ the \texttt{NetKet} environment \cite{netket:2019} to train a restricted Boltzmann machine (RBM) in order to find a groundstate via gradient decent. In Section\hspace{0.2mm}\ref{sec4} realization of vortices is discussed from both analytical and RBM language points of view. In brief, a vortex pair can be created by adjusting the parameters of the RBM and subsequent braiding can be achieved by further adjustments of parameters. Section\hspace{0.2mm}\ref{sec5} is dedicated to results and relevant discussions and finally we conclude in Section\hspace{0.2mm}\ref{sec6}. An important application of the techniques developed in this paper is the reconstruction of a given quantum state from simple measurements known as quantum state tomography \cite{Torlai_2018}.
+In this paper we apply the approach developed in \cite{Deng_2017} to the Honeycomb model. In Section\hspace{0.2mm}\ref{sec2}, we briefly review the analytical solution of the model. In Section\hspace{0.2mm}\ref{sec3} the mapping of the spin model to an RBM architecture is explained. In particular, we demonstrate how to calculate the groundstate and excited states of the Honeycomb model using machine learning techniques. To this end we employ the \texttt{NetKet} environment \cite{netket:2019} to train a restricted Boltzmann machine (RBM) in order to find a groundstate via gradient descent. In Section\hspace{0.2mm}\ref{sec4} realization of vortices is discussed from both analytical and RBM language points of view. In brief, a vortex pair can be created by adjusting the parameters of the RBM and subsequent braiding can be achieved by further adjustments of parameters. Section\hspace{0.2mm}\ref{sec5} is dedicated to results and relevant discussions and finally we conclude in Section\hspace{0.2mm}\ref{sec6}. An important application of the techniques developed in this paper is the reconstruction of a given quantum state from simple measurements known as quantum state tomography \cite{Torlai_2018}.
 
 
 % \section{The model}
@@ -181,7 +183,7 @@ In this paper we apply the approach developed in \cite{Deng_2017} to the Honeyco
 
 \section{Solution of the Model}\label{sec2}
 
-In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved where we will be following references \cite{Kitaev_2006,pachos_2012}. First of all, we fermionize the Hamiltonian by performing a one-dimensional Jordan-Wigner transformation \cite{Jordan:1928wi} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice (see Fig.\hspace{0.2mm}\ref{fig:fig01})  clarifies the mechanism of the Jordan-Wigner transformation and why it is one-dimensional \cite{Chen_2008}. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
+In this section an exact solution of the system is provided and an explicit form of the groundstate energy is achieved where we will be \todo{@Reza: What is the correct reference here?}following references \cite{Kitaev_2006,pachos_2012}. First of all, we fermionize the Hamiltonian by performing a one-dimensional Jordan-Wigner transformation \cite{Jordan:1928wi} defined in Equ.\hspace{0.2mm}\ref{eq:2}. A deformation of the hexagonal lattice to a brick-wall lattice (see Fig.\hspace{0.2mm}\ref{fig:fig01})  clarifies the mechanism of the Jordan-Wigner transformation and why it is one-dimensional \cite{Chen_2008}. In the brick-wall lattice, each lattice site $r$ is denoted by the coordinates $(i,j)$.
 
 \begin{equation}\label{eq:2}
 	\begin{aligned}
@@ -574,7 +576,7 @@ In principle, it is possible to directly manipulate the weight and bias paramete
 	\end{aligned}
 \end{equation}
 
-Next, one needs to evaluate how $(-i \hat{\sigma}^{\alpha}_a)$ acts on $|\Xi\rangle$. Here we subdivide the three cases $\alpha =z$, $x$ and $y$. If $\alpha =z$, spin up states will get a phase $-i$ and spin down states a phase $i$. The overall effect of this can be absorbed in a shift of $a_l$ by $-i \frac{\pi}{2}$. If $\alpha=x$, then spins up and down are just exchanged and the $-i$ is an overall phase which can be ignored. If $\alpha = y$, we get a combination of the previous two cases. Summarizing, we obtain:
+Next, one needs to evaluate how $(-i \hat{\sigma}^{\alpha}_a)$ acts on $|\Xi\rangle$. Here we subdivide the three cases $\alpha =z$, $x$ and $y$. If $\alpha =z$, spin up states will get a phase $-i$ and spin down states a phase $i$. The overall effect of this can be absorbed in a shift of $a_l$ by $-i \frac{\pi}{2}$. If $\alpha=x$, then spins up and down are just exchanged and the $-i$ is an overall phase which can be ignored. If $\alpha = y$, we get a combination of the previous two cases. \todo{@Reza: need to fix equation alignment} Summarizing, we obtain:
 \begin{eqnarray}
 	\hat{S}^z_l & : & \left(W_{lk'},a_l\right) \mapsto \left(W_{lk'},a_l- i \frac{\pi}{2}\right) \nonumber \\	
 	\hat{S}^x_l & : & \left(W_{lk'},a_l\right) \mapsto \left(-W_{lk'},-a_l\right) \nonumber \\
@@ -738,7 +740,7 @@ We find that method (a) is more stable than method (b), which might be due to th
 
 \subsection{Quantum State Tomography for Groundstate}\label{sec5.3}
 
-In this section we apply the technique discussed in Section \ref{sec3.2} to reconstruct the wave function from measurements . In order to generate measurements data set, we sample from an exact groundstate by random measurements in different basis. To this end, we focus on the $2 \times 2$ lattice in order to deal with the computational resource requests and also being able to find the exact groundstate wave function through exact diagonalization. The last step is to train the RBM using the data set obtained. The result is shown in Fig.\hspace{0.2mm}\ref{fig:qst}.
+In this section we apply the technique discussed in Section \ref{sec3.2} to reconstruct the wave function from measurements . In order to generate measurement data set, we sample from an exact groundstate by random measurements in different basis. To this end, we focus on the $2 \times 2$ lattice in order to deal with the computational resource requests and also being able to find the exact groundstate wave function through exact diagonalization. The last step is to train the RBM using the data set obtained. The result is shown in Fig.\hspace{0.2mm}\ref{fig:qst}.
 
 \begin{figure}[!htb]
 	\centering
@@ -799,7 +801,7 @@ In this paper we have constructed RBM realizations of several sectors of the Kit
 Of course, in the case of the Honeycomb model we have an exact solution of the spectrum using Kitaev's Majorana fermion representation. However, such a representation, though giving exact values for the energies of given states in the Hilbert space, is at the same time loosing information. For example it is difficult and in some cases unknown how to compute expectation values of string operators composed of Pauli matrices. Moreover, one may loose the Majorana representation in cases where a complicated perturbation is added to the Hamiltonian which obscures such a simple representation. For all these reasons it is desirable to obtain realizations of the quantum state in terms of spin eigenstates and the RBM given in Equ.\hspace{0.2mm}\ref{eq:19_0} is such a representation. It would be interesting to look at further refinements of the RBM representation which would allow us to find more accurate approximations of ground and excited states as well as shorter learning times. One way to achieve this is to use ``projected gradient descent'' where after each learning step/gradient step one projects the parameters of the RBM to a subspace corresponding to a specific vortex sector of the physical system. We leave such refinements and further applications for future work.
 
 \section{Acknowledgement}
-MN would like to thank Yau Mathematical Science Center (YMSC) for hospitality during the early stages of this work. He also thanks Martin Duy Tat for helpful discussions. BH is supported by grant ... .\todo{Babak would you like to add anything?} Part of the numerical calculations were performed on SARMAD computing cluster at Shahid Beheshti University but the majority of the work was done using Spinor cluster at YMSC. 
+MN would like to thank Yau Mathematical Science Center (YMSC) for hospitality during the early stages of this work. He also thanks Martin Duy Tat for helpful discussions. The work of BH and YS is supported by the National Thousand-Young-Talents Program of China. BH would also like to thank the Bethe Center for Theoretical Physics in Bonn, where part of this work was completed, for hospitality. Part of the numerical calculations were performed on the SARMAD computing cluster at Shahid Beheshti University but the majority of the work was done using the Spinor cluster at YMSC. 
 
 %\subsection{Figures}
 %\lipsum[10] 

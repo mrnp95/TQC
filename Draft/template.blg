@@ -6,24 +6,24 @@ Database file #1: references.bib
 Warning--I didn't find a database entry for "coldatom"
 You've used 16 entries,
             2268 wiz_defined-function locations,
-            687 strings with 7520 characters,
-and the built_in function-call counts, 4893 in all, are:
-= -- 524
+            687 strings with 7510 characters,
+and the built_in function-call counts, 4496 in all, are:
+= -- 455
 > -- 191
 < -- 0
 + -- 57
 - -- 41
-* -- 331
-:= -- 691
+* -- 344
+:= -- 680
 add.period$ -- 17
 call.type$ -- 16
 change.case$ -- 16
 chr.to.int$ -- 0
 cite$ -- 16
-duplicate$ -- 281
-empty$ -- 392
+duplicate$ -- 223
+empty$ -- 381
 format.name$ -- 41
-if$ -- 1291
+if$ -- 1171
 int.to.chr$ -- 0
 int.to.str$ -- 16
 missing$ -- 60
@@ -33,16 +33,16 @@ pop$ -- 37
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 248
+skip$ -- 179
 stack$ -- 0
-substring$ -- 189
-swap$ -- 160
+substring$ -- 170
+swap$ -- 102
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 30
+while$ -- 35
 width$ -- 18
 write$ -- 161
 (There was 1 warning)
