@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.26)  14 MAR 2020 17:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.26)  14 MAR 2020 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1147,7 +1147,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 426--427
 
  []
 
-<./images/anyons.png, id=216, 483.8075pt x 571.13374pt>
+<./images/anyons.png, id=218, 483.8075pt x 571.13374pt>
 File: ./images/anyons.png Graphic file (type png)
 
 <use ./images/anyons.png>
@@ -1158,12 +1158,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 456--457
 
  []
 
-[9 <./images/anyons.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 467--468
 
  []
 
-
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 476--477
 
  []
@@ -1192,7 +1192,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 510--511
 
  []
 
-[10]
+[10 <./images/anyons.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 526--527
 
  []
@@ -1207,14 +1207,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 544--545
 
  []
 
-<./images/Anyons_Strings.png, id=243, 715.17188pt x 434.37282pt>
+<./images/Anyons_Strings.png, id=245, 715.17188pt x 434.37282pt>
 File: ./images/Anyons_Strings.png Graphic file (type png)
 
 <use ./images/Anyons_Strings.png>
 Package pdftex.def Info: ./images/Anyons_Strings.png used on input line 556.
 (pdftex.def)             Requested size: 328.82706pt x 199.72112pt.
  [11] [12 <./images/Anyons_Strings.png>]
-<./images/plots.pdf, id=269, 433.62pt x 289.08pt>
+<./images/plots.pdf, id=271, 433.62pt x 289.08pt>
 File: ./images/plots.pdf Graphic file (type pdf)
  <use ./images/plots.pdf>
 Package pdftex.def Info: ./images/plots.pdf used on input line 620.
@@ -1237,7 +1237,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 718--721
 
  []
 
-<./images/2x2_16k_1.png, id=327, 481.8pt x 361.35pt>
+<./images/2x2_16k_1.png, id=329, 481.8pt x 361.35pt>
 File: ./images/2x2_16k_1.png Graphic file (type png)
 
 <use ./images/2x2_16k_1.png>
@@ -1245,7 +1245,7 @@ Package pdftex.def Info: ./images/2x2_16k_1.png used on input line 751.
 (pdftex.def)             Requested size: 375.80542pt x 281.8629pt.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
 ine 755.
- <./images/2x2.jpg, id=330, 321.2pt x 220.825pt>
+ <./images/2x2.jpg, id=332, 321.2pt x 220.825pt>
 File: ./images/2x2.jpg Graphic file (type jpg)
 
 <use ./images/2x2.jpg>
@@ -1309,10 +1309,10 @@ t/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
 pe1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on template.pdf (18 pages, 1044991 bytes).
+Output written on template.pdf (18 pages, 1045440 bytes).
 PDF statistics:
- 485 PDF objects out of 1000 (max. 8388607)
- 417 compressed objects within 5 object streams
+ 487 PDF objects out of 1000 (max. 8388607)
+ 419 compressed objects within 5 object streams
  110 named destinations out of 1000 (max. 500000)
  33951 words of extra memory for PDF output out of 35830 (max. 10000000)
 

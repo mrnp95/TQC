@@ -425,7 +425,7 @@ where
         \mathbb{KL}_{b}({\boldsymbol{\kappa}}) = \sum_{\boldsymbol{\sigma}} P_{b}(\boldsymbol{\sigma}) \log \frac{ P_{b}(\boldsymbol{\sigma})}{\tilde P_{b}(\boldsymbol{\sigma})}
 \end{equation}\\
 
-A more detailed explanation of how to perform this minimization using gradient descent can be found in \cite{Torlai_2018}. The entire process of QST was implemented using \texttt{NetKet} \cite{netket:2019} which has the above algorithm already built in.
+A more detailed explanation of how to perform this minimization using gradient descent can be found in \cite{Torlai_2018}. In the present paper, we will follow the simpler approach of using the representation \ref{eq:19_0} (\ref{eq:19_1}) for the wavefunction, or in other words we work with a choice where $\phi_{\boldsymbol{\mu}}(\boldsymbol{\sigma}) = 0$ while the RBM $p_{\boldsymbol{\mu}}(\boldsymbol{\sigma})$ has complex parameters and thus automatically takes care of the phase. The entire process of QST was implemented using \texttt{NetKet} \cite{netket:2019} which has the above algorithm already built in.
 
 \section{Braiding}\label{sec4}
 
