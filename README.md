@@ -8,6 +8,25 @@ This package was developed for research published in arXiv:20... . In order to c
 
 ## Installing
 
+#### Conda
+
+- Build the conda environment using 'environment.yml' and activate it:
+    '''
+    conda env create -f environment.yml
+    conda activate tqc
+    '''
+- Install _mpich_ and _netket_:
+    '''
+    [mpich]{https://mpi4py.readthedocs.io/en/stable/appendix.html#building-mpi}
+    pip install netket
+    '''
+#### Docker
+
+- Use the docker file 'docker_tqc'
+'''
+docker
+'''
+
 ## Documentation
 
 
@@ -18,7 +37,7 @@ This package was developed for research published in arXiv:20... . In order to c
 
 - **honeycomb.py**
 
-    - _ _some utility functions which will be used in many other codes. It includes, get_graph_reza(), get_hamiltonian(), exact_diag(), gs_energy_babak(), rbm(), measure() and flip_spins()_ _
+    - some utility functions which will be used in many other codes. It includes, get_graph_reza(), get_hamiltonian(), exact_diag(), gs_energy_babak(), rbm(), measure() and flip_spins()
     - you need to create machine yourself and pass it to rbm() to train it
     - This script is supposed to only be imported and used in other scripts. One of using demo of this script can be found in calc_gs.py
 
