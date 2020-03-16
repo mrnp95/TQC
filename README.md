@@ -1,4 +1,5 @@
 # TQC
+
 Source codes for implementation of the Kitaev Honeycomb model and related calculations.
 
 This package was developed for research published in arXiv:20... . In order to cite this work, use the following: 
@@ -10,25 +11,24 @@ This package was developed for research published in arXiv:20... . In order to c
 
 #### Conda
 
-- Build the conda environment using 'environment.yml' and activate it:
-    '''
+- Build the conda environment using `environment.yml` and activate it:
+    ```
     conda env create -f environment.yml
     conda activate tqc
-    '''
-- Install _mpich_ and _netket_:
-    '''
+    ```
+- Install `_mpich_` and `_netket_`:
+    ```
     [mpich]{https://mpi4py.readthedocs.io/en/stable/appendix.html#building-mpi}
     pip install netket
-    '''
-#### Docker
+    ```
+    #### Docker
 
 - Use the docker file 'docker_tqc'
-'''
-docker
-'''
+	```
+	docker
+	```
 
 ## Documentation
-
 
 - **show.py**
 
@@ -41,8 +41,8 @@ docker
     - you need to create machine yourself and pass it to rbm() to train it
     - This script is supposed to only be imported and used in other scripts. One of using demo of this script can be found in calc_gs.py
 
-### Examples in Jupyeter notebooks
+    ### Examples in Jupyeter notebooks
 
-Some basic examples of using built-in functions are demonstrated in [examples/example.ipynb](examples/example.ipynb).
+    Some basic examples of using built-in functions are demonstrated in [examples/example.ipynb](examples/example.ipynb).
 
 
