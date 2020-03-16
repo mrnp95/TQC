@@ -22,7 +22,7 @@ This package was developed for research published in arXiv:20... . In order to c
     ```
 #### Docker
 
-- Use the docker file [docker_tqc](./dokcer_tqc)
+- Use the docker file [docker_tqc](dokcer_tqc)
 
 ## Documentation
 
