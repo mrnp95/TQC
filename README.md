@@ -7,7 +7,7 @@ This package was developed for research published in arXiv:20... . In order to c
 ### bibtex
 
 
-## Installing
+## Installation
 
 #### Conda
 
@@ -18,10 +18,10 @@ This package was developed for research published in arXiv:20... . In order to c
     ```
 - Install `mpich` and `netket`:
     ```
-    [mpich]{https://mpi4py.readthedocs.io/en/stable/appendix.html#building-mpi}
+    [mpich](https://mpi4py.readthedocs.io/en/stable/appendix.html#building-mpi)
     pip install netket
     ```
-    #### Docker
+#### Docker
 
 - Use the docker file 'docker_tqc'
 	```
