@@ -16,9 +16,8 @@ This package was developed for research published in arXiv:20... . In order to c
     conda env create -f environment.yml
     conda activate tqc
     ```
-- Install `mpich` and `netket`:
+- Install [mpich](https://mpi4py.readthedocs.io/en/stable/appendix.html#building-mpi) and then `netket`:
     ```
-    [mpich](https://mpi4py.readthedocs.io/en/stable/appendix.html#building-mpi)
     pip install netket
     ```
 #### Docker
