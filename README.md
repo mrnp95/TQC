@@ -42,9 +42,9 @@ This package was developed for research published in [arXiv:2003.07280](https://
 
 - **honeycomb.py**
 
-    - some utility functions which will be used in many other codes. It includes, get_graph_reza(), get_hamiltonian(), exact_diag(), gs_energy_babak(), rbm(), measure() and flip_spins()
-    - you need to create machine yourself and pass it to rbm() to train it
-    - This script is supposed to only be imported and used in other scripts. One of using demo of this script can be found in calc_gs.py
+    - some utility functions which will be used in many other codes. It includes, get_graph_reza(), get_hamiltonian(), exact_diag(), gs_energy_babak(), rbm(), measure() and flip_spins().
+    - you need to create the machine yourself and then pass it to rbm() for training.
+    - This script is supposed to only be imported and used in other scripts. See contents of calc_gs.py as an example.
 
     ### Examples in Jupyeter notebooks
 
