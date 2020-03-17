@@ -2,11 +2,20 @@
 
 Source codes for implementation of the Kitaev Honeycomb model and related calculations.
 
-This package was developed for research published in arXiv:20... . In order to cite this work, use the following: 
+This package was developed for research published in [arXiv:2003.07280](https://arxiv.org/abs/2003.07280) . In order to cite this work, use the following: 
 
 ### bibtex
 
-
+	```
+	@misc{noorm2020restricted,
+		title={Restricted Boltzmann machine representation for the groundstate and excited states of Kitaev Honeycomb model},
+		author={Mohammadreza Noormandipour and Youran Sun and Babak Haghighat},
+		year={2020},
+		eprint={2003.07280},
+		archivePrefix={arXiv},
+		primaryClass={cond-mat.dis-nn}
+	}
+	```
 ## Installation
 
 #### Conda
