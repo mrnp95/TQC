@@ -1,47 +1,36 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
-import netket,time,random
+import netket,time
 from honeycomb import *
-
-def gen_plaquette(dict_ps,hilbert):
-    dict_obs={}
-    for k in dict_ps:
-        dict_obs[k]=netket.operator.LocalOperator(hilbert,[sx,sy,sz,sx,sy,sz],[[i] for i in dict_ps[k]])
-        log("operator %s acting on: %s"%(k,dict_obs[k].acting_on))
-    return dict_obs
-        
 def rbm_gs(size):
-    alpha=2
-    lrs=[0.05,0.02]
-    n_iters=[400,1000]
-    n_samples=[400,1000]
-    log("lrs: %s"%(lrs))
-    log("n_iters: %s"%(n_iters))
-    log("n_samples: %s"%(n_samples))
-    output_prefix="%dx%d_a%d.%d"%(size[0],size[1],alpha,random.randint(1000,2000))
-    log(output_prefix)
-
+    lr=0.01
+    n_iter=4000
     hamiltonian=get_hamiltonian(size)
-    dict_focuson={"A":[8,9,16,15,14,7],'B':[2,3,8,7,6,1],'C':[4,5,10,9,8,3],'D':[10,11,12,17,16,9]}
-    dict_obs=gen_plaquette(dict_focuson,hamiltonian.hilbert)
-    ma=netket.machine.RbmSpin(hilbert=hamiltonian.hilbert,alpha=alpha)
-    ma.init_random_parameters(seed=1234,sigma=0.1)
+    output_prefix="rbm%d%d_a2_1kx10k"%(size[0],size[1])
+    print(output_prefix)
+    ma=netket.machine.RbmSpin(hilbert=hamiltonian.hilbert,alpha=2)
+    ma.init_random_parameters(sigma=0.1)
+    t=rbm(hamiltonian,ma,output_prefix,learning_rate=lr,n_iter=n_iter)
+    log("%s %.4fs"%(output_prefix,t),l=1)
 
-    for stage in range(len(lrs)):
-        sa=netket.sampler.MetropolisLocal(machine=ma)
-        op=netket.optimizer.Sgd(learning_rate=lrs[stage])
-        gs=netket.variational.Vmc(hamiltonian=hamiltonian,sampler=sa,optimizer=op,n_samples=n_samples[stage]
-                                  ,diag_shift=0.1,use_iterative=True,method='Sr')
-        for k in dict_obs:
-            gs.add_observable(dict_obs[k],k)
-
-        start=time.time()
-        gs.run(output_prefix=output_prefix+".%d"%(stage),n_iter=n_iters[stage])
-        end=time.time()
-        log('optimize stage %d takes %fs'%(stage,end-start,))
-    log("finish")
-
+def rbm_change_lr_gs(size,batch1,batch2,lr1,lr2):
+    salt=str(int(time.time())%1000000)
+    output_prefix="rbm%d%d_a2_"%(size[0],size[1])+"%dkat%.2f&%dkat%.2f_"%(batch1/1000,lr1,batch2/1000,lr2)+salt
+    
+    log("going to rbm %s"%(output_prefix))
+    hamiltonian=get_hamiltonian(size)
+    ma=netket.machine.RbmSpin(hilbert=hamiltonian.hilbert,alpha=2)
+    ma.init_random_parameters(sigma=0.01)
+    t1=rbm(hamiltonian,ma,output_prefix+".1",learning_rate=lr1,n_iter=batch1)
+    log("%s %.4fs"%(output_prefix,t1),l=1)
+    t2=rbm(hamiltonian,ma,output_prefix+".2",learning_rate=lr2,n_iter=batch2)
+    log("%s %.4fs"%(output_prefix,t2),l=1)
 
 if __name__=="__main__":
-    size=(3,3)
-    rbm_gs(size)
+    log("begin rbm gs",l=1)
+    size=(5,5)
+    rbm_change_lr_gs(size,5000,5000,0.03,0.01)
+    rbm_change_lr_gs(size,4000,6000,0.03,0.01)
+    rbm_change_lr_gs(size,3000,7000,0.03,0.01)
+    rbm_change_lr_gs(size,2000,8000,0.03,0.01)
+    rbm_change_lr_gs(size,1000,9000,0.03,0.01)

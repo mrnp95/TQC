@@ -1,22 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 # a script to compute properties of Kitaev's honeycomb model
-
-import netket,numpy,time,json,sys,traceback,math
+# author: Sun Youran, Reza
 
 #define consts
-JX,JY,JZ=(-1,-1,-1) #add minus sign here, then you'll never forget minus sign!
-K=0 #freely tunable parameter
+#add minus sign here, then you'll never forget minus sign!
+JX,JY,JZ=(-1,-1,-1)
+#freely tunable parameter, not be used yet
+K=0
+#three Pauli matrix
 sz=[[1,0],[0,-1]]
 sx=[[0,1],[1,0]]
 sy=[[0,-1j],[1j,0]]
-#sz=sy0
-#sx=(-1*numpy.sqrt(3)/2)*numpy.array(sx0)-numpy.array(sy0)*0.5
-#sy=(numpy.sqrt(3)/2)*numpy.array(sx0)-numpy.array(sy0)*0.5
+#some flags used in codes
 X_FLAG,Y_FLAG,Z_FLAG=(0,1,2)
 INV_FLAG=3
+#log consts
 LOGLEVEL={0:"DEBUG",1:"INFO",2:"WARN",3:"ERR",4:"FATAL"}
-
+#log function. I believe my log function is more friendly than logging package
+import sys,traceback,math
 def log(msg,l=1,end="\n",logfile=None):
     st=traceback.extract_stack()[-2]
     lstr=LOGLEVEL[l]
@@ -34,21 +36,26 @@ def log(msg,l=1,end="\n",logfile=None):
         with open(logfile,"a") as f:
             f.write(tempstr)
 
+import netket,numpy,time,json
+
 def show_graph(g):
+    """show basic infos about a graph"""
     print("graph spinor number: %d, edge number: %d, is_bipartite: %s"%(g.n_sites,len(g.edges),g.is_bipartite))
 
 def show_hilbert(h):
+    """show basic infos about a Hilbert space"""
     try:
         print("hilbert size: %d, n_states: %d"%(h.size,h.n_states))
     except Exception as e:
         print(e)
         print("hilbert size: %d"%(h.size))
 
-def get_graph_reza(size,flip=[],show=True):
+def get_graph(size,flip=[],show=True):
     """ generate a graph for Kitaev Honeycomb model with double periodic boundry condition
-        size is a tuple recording (row_num,col_num)
-        flip records which spin should be fliped, looks like [(0,X_FLAG),(1,Y_FLAG)]
-        the 'reza' here means the cyclic boundry condition is reza's not index rule"""
+            size: a tuple recording (row_num,col_num)
+            flip: records which spin should be fliped, looks like [(0,X_FLAG),(1,Y_FLAG)]
+            show: if true, will print some debug infos about the graph
+    """
     row_num,col_num=size
     n_lattice=row_num*col_num*2
     edges=[]
@@ -112,8 +119,11 @@ def get_graph_reza(size,flip=[],show=True):
 
 def get_hamiltonian(size,flip=[],show=True):
     """ generate the hamiltonian for Kitaev Honeycomb model with double periodic boundry condition
-        size is a tuple recording (row_num,col_num)"""
-    graph=get_graph_reza(size,flip=flip,show=show)
+            size: a tuple recording (row_num,col_num)
+            flip: records which spin should be fliped, looks like [(0,X_FLAG),(1,Y_FLAG)]
+            show: if true, will print some debug infos about the graph
+    """
+    graph=get_graph(size,flip=flip,show=show)
     hilbert=netket.hilbert.Spin(s=0.5,graph=graph)
     hamiltonian=netket.operator.GraphOperator(hilbert
                 ,bondops=[(JX*numpy.kron(sx,sx)).tolist(),(JY*numpy.kron(sy,sy)).tolist(),(JZ*numpy.kron(sz,sz)).tolist(),
@@ -124,6 +134,10 @@ def get_hamiltonian(size,flip=[],show=True):
     return hamiltonian
 
 def exact_diag(hamiltonian,first_n=1,compute_eigenvectors=False):
+    """ exact diag hamiltonian
+            first_n: how many eigenvalues to compute
+            compute_eigenvectors: literal meaning
+    """
     tik=time.time()
     res=netket.exact.lanczos_ed(hamiltonian,first_n=first_n,compute_eigenvectors=compute_eigenvectors)
     tok=time.time()
@@ -139,7 +153,11 @@ def exact_diag(hamiltonian,first_n=1,compute_eigenvectors=False):
             print("")
     return res
 
-def gs_energy_babak(size):
+def gs_energy_1(size):
+    """ return the groundstate energy
+            size: a tuple recording (row_num,col_num)
+        it is Babak's version of formula
+    """
     Egs=0
     for nx in range(-1*(size[1]-1),size[1],2):
         for ny in range(-1*(size[0]-1),size[0],2):
@@ -151,8 +169,11 @@ def gs_energy_babak(size):
     print("Babak's gs energy for %s is %f"%(size,Egs))
     return Egs
 
-def gs_energy_mine(size):
-    """youran's toy, useless"""
+def gs_energy_2(size):
+    """ return the groundstate energy
+            size: a tuple recording (row_num,col_num)
+        it is Youran's version of formula
+    """
     Egs=0
     for nx in range(0,size[1]):
         for ny in range(0,size[0]):
@@ -169,11 +190,13 @@ def gs_energy_mine(size):
     return Egs
 
 def rbm(hamiltonian,machine,output_prefix,n_samples=1000,n_iter=10000,learning_rate=0.01,decay_factor=1):
+    """ train rbm using hamiltonian and machine
+            output_perfix: filename to save results
+    """
     log('machine has %d parameters'%(machine.n_par,))
     log("rbm start with %dkx%dk lr=%.3f df=%.4f"%(n_samples/1000,n_iter/1000,learning_rate,decay_factor))
     sa=netket.sampler.MetropolisLocal(machine=machine)
     op=netket.optimizer.Sgd(learning_rate=0.01,decay_factor=1)
-    #op=netket.optimizer.Momentum()
     gs=netket.variational.Vmc(hamiltonian=hamiltonian,sampler=sa,optimizer=op,n_samples=n_samples
                               ,diag_shift=0.1,use_iterative=True,method='Sr')
     start = time.time()
@@ -182,7 +205,10 @@ def rbm(hamiltonian,machine,output_prefix,n_samples=1000,n_iter=10000,learning_r
     log('optimize machine takes %fs'%(end-start,))
     return end-start
 
-def measure(hamiltonian,machine,observables,output_prefix=None,delete_temp=True,n_iter=100,n_samples=10000):
+def measure(hamiltonian,machine,observables,output_prefix=None,n_iter=100,n_samples=10000):
+    """ measure something of a machine
+            observables: {"name":observable,...}
+    """
     sa=netket.sampler.MetropolisLocal(machine=machine)
     op=netket.optimizer.Sgd(learning_rate=0,decay_factor=0)
     #op=netket.optimizer.Momentum(learning_rate=0,beta=0)
@@ -221,13 +247,6 @@ def measure(hamiltonian,machine,observables,output_prefix=None,delete_temp=True,
         results[k]["Error"]=results[k]["mean_Sigma"]/numpy.sqrt(len(results[k]["Sigma"]))
     for k in sorted(results):
         log("%s: %f(%f)"%(k,results[k]["mean_Mean"],results[k]["Error"]))
-    #if delete_temp:
-    #    import os
-    #    try:
-    #        os.system("rm %s*"%(output_prefix))
-    #        print("remove tempdata successfully")
-    #    except Exception as e:
-    #        print("remove tempdata failed: %s"%(e))
     return results
 
 def flip_yz_spin(para,n_v,n_h,i):
@@ -285,16 +304,16 @@ def flip_spins(machine,n_h,sites):
 
 if __name__=="__main__":
     print("It is honeycomb.py")
-    #get_graph_reza((3,3),flip=[(8,0),(8,2)])
-    #get_graph_reza((3,3))
+    #get_graph((3,3),flip=[(8,0),(8,2)])
+    #get_graph((3,3))
     #size=(3,3)
     #h=get_hamiltonian(size)
     #print(exact_diag(h))
     #for i in range(2,14):
     #    size=(i,i)
-    #    gs_energy_babak(size)
-    #    gs_energy_mine(size)
-    gs_energy_mine((3,2))
+    #    gs_energy_1(size)
+    #    gs_energy_2(size)
+    gs_energy_2((3,2))
     
 
     
