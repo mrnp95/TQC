@@ -33,7 +33,21 @@ This package was developed for research published in [arXiv:2003.07280](https://
 
 ### Files in Source_Torch
 
-Coming Soon.
+More coming soon.
+
+- **honeycomb.py**
+
+    - The conterpart of honeycomb.py in "source".
+    - add torch supports: gen_ops_npmat, gen_ops_torchsparse, gen_H_torchsparse, gen_shift_sym.
+
+- **rbm_mxn.py**
+
+    - Scripts for mxn lattice.
+    - "Projection method" and "pre-train technology" are used.
+    
+- **Full-36-14.275.pkl**
+
+    - network data for an rbm which can achieve -14.275 for 3x3 honeycomb model.
 
 __In order to cite this work, use the following:__
 
