@@ -7,4 +7,4 @@ However, the energy for 1st excited state is still not good. The exact diagonali
 Item          |GS with K=0|GS with K=0.2|1st with K=0.2
 :------------:|:---------:|:-----------:|:------------:
 Exact Energies|-14.2915   |-17.5260     |-16.5689
-RBM Energies  |           |-17.393      |-15.340
+RBM Energies  |           |-17.393      |-15.357
