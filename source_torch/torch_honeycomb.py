@@ -2,8 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 # A frame for honeycomb model using PyTorch
-# One should inherit TorchHoneycomb class and write forward and train function
-# See jastrow.py and rbm.py for example
+# See rbm2x2.py for example
 
 import time,sys,traceback,math
 LOGLEVEL={0:"DEBUG",1:"INFO",2:"WARN",3:"ERR",4:"FATAL"}
@@ -74,9 +73,6 @@ def gen_edges(size,show=True):
     return edges
 
 import torch
-import torch.optim as optim
-import torch.nn as nn
-import torch.nn.functional as F
 import random,numpy,pickle,itertools
 
 def sample_all(spinor_num):
@@ -238,9 +234,7 @@ def gen_H(state_index,ha_list):
     sample_num,spinor_num=state_index.shape
     H=torch.zeros(sample_num,sample_num,dtype=torch.float32)
     for i,sti in enumerate(state_index):
-        #print("origin state: %s"%(sti))
         for h_part,edges in ha_list:
-            #print("operator and edges: %s, %s"%(h_part,edges))
             for e in edges:
                 neost,weight=h_part(sti,e)
                 v,j=(neost==state_index).sum(1).max(0)
@@ -292,7 +286,8 @@ def gen_shift_sym(perfix):
         log("successfully loaded state_index from %s"%(smp_file))
     sample_num,spinor_num=state_index.shape
     S=torch.sparse.FloatTensor(torch.LongTensor([[],[]]),torch.FloatTensor([]),torch.Size([sample_num,sample_num]))
-    up_rots,right_rots=shift_rots
+    up_rots=[(0,6,14),(1,7,15),(2,8,16),(3,9,17),(4,10,12),(5,11,13)]
+    right_rots=[(0,2,4),(1,3,5),(6,8,10),(7,9,11),(13,15,17),(12,14,16)]
     for i,j in itertools.product(range(3),range(3)):
         log("generating (%d,%d)th symmetry"%(i,j))
         S.add_(gen_ops_torchsparse([],[],state_index,rots=up_rots*i+right_rots*j))
@@ -304,52 +299,5 @@ def gen_shift_sym(perfix):
         pickle.dump(S,f)
         log("successfully dumped S to %s"%(fname))
 
-def gen_shift_sym_one(perfix,rots,name):
-    smp_file=perfix+".smp"
-    with open(smp_file,'rb') as f:
-        state_index=pickle.load(f)
-        log("successfully loaded state_index from %s"%(smp_file))
-    sample_num,spinor_num=state_index.shape
-    S=gen_ops_torchsparse([],[],state_index,rots=rots)
-    S=S.coalesce()
-    log("gened shift symmetry:\n%s"%(S))
-    fname="%s_%s.sym"%(perfix,name)
-    with open(fname,'wb') as f:
-        pickle.dump(S,f)
-        log("successfully dumped S to %s"%(fname))
-
-def gen_id(perfix):
-    smp_file=perfix+".smp"
-    with open(smp_file,'rb') as f:
-        state_index=pickle.load(f)
-        log("successfully loaded state_index from %s"%(smp_file))
-    sample_num,spinor_num=state_index.shape
-    indices=torch.LongTensor([[i,i] for i in range(sample_num)]).t()
-    values=torch.FloatTensor([1]*sample_num)
-    S=torch.sparse.FloatTensor(indices,values,torch.Size([sample_num,sample_num]))
-    fname="%s_id.sym"%(perfix,)
-    with open(fname,'wb') as f:
-        pickle.dump(S,f)
-        log("successfully dumped S to %s"%(fname))
-
 if __name__=="__main__":
     pass
-    #up_rots=[(0,6,14),(1,7,15),(2,8,16),(3,9,17),(4,10,12),(5,11,13)]
-    #left_rots=[(0,2,4),(1,3,5),(6,8,10),(7,9,11),(13,15,17),(12,14,16)]
-    #e_rots=[(0,4,2),(1,5,3),(6,10,8),(7,11,9),(13,17,15),(12,16,14)]
-    #s_rots=[(0,14,6),(1,15,7),(2,16,8),(3,17,9),(4,12,10),(5,13,11)]
-    #nw_rots=[(0,8,12),(1,9,13),(2,10,14),(3,11,15),(4,6,16),(5,7,17)]
-    #se_rots=[(0,12,8),(1,13,9),(2,14,10),(3,15,11),(4,16,6),(5,17,7)]
-    #ne_rots=[(0,10,16),(1,11,17),(2,6,12),(3,7,13),(4,8,14),(5,9,15)]
-    sw_rots=[(0,16,10),(1,17,11),(2,12,6),(3,13,7),(4,14,8),(5,15,9)]
-    gen_shift_sym_one("operators_3x3/3x3_full",sw_rots,"sw")
-    #gen_id("operators_3x3/3x3_full")
-
-    """
-    with open("operators_3x3/3x3_full_up.sym",'rb') as f:
-        S1=pickle.load(f)
-    with open("operators_3x3/3x3_full_up2.sym",'rb') as f:
-        S2=pickle.load(f)
-    log("S1:\n%s\nS2: %s"%(S1,S2))
-    log("S1==S2: %s"%((S1-S2).coalesce()._values().abs().sum()==0))
-    """

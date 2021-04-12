@@ -3,7 +3,7 @@
 from torch_honeycomb import *
 import math,pickle
 
-RENRM_REAL=1
+RENRM_REAL=2
 
 class RBM(nn.Module):
     def __init__(self,state_index,H):

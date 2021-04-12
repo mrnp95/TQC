@@ -57,7 +57,6 @@ def eigv_overlap():
             overlap[i][j]=numpy.vdot(eigv0[:,gi],eigv1[:,gj])
     log("overlap:\n%s"%(overlap))
 
-
 def translate_eig():
     op_ss=numpy.zeros((3,3),dtype=numpy.complex64)
     for i in range(3):

@@ -37,17 +37,31 @@ This package was developed for research published in [arXiv:2003.07280](https://
 
 - __source_torch/honeycomb.py__
 
-    - The conterpart of honeycomb.py in "source/honeycomb.py".
-    - add torch supports: gen_ops_npmat, gen_ops_torchsparse, gen_H_torchsparse, gen_shift_sym.
+    - The conterpart of honeycomb.py in "source/honeycomb.py". Including
+        - gen_H(): generate a Hamiltonian. Used in rbm_2x2.py.
+    - add other varieties to support torch: gen_ops_npmat, gen_ops_torchsparse, gen_H_torchsparse, gen_shift_sym.
 
-- __source_torch/rbm_mxn.py__
+- __source_torch/rbm_eig.py__
 
-    - Scripts for mxn lattice.
+    - Exact diagnolize Hamiltonian
+
+- __source_torch/rbm_2x2.py__
+
+    - Scripts for 2x2 lattice.
+    - Esay to understand.
+
+- __source_torch/rbm_3x3.py__
+
+    - Scripts for 3x3 lattice.
     - "Projection method" and "pre-train technology" are used.
 
 - __source_torch/Full-36-14.275.pkl__
 
     - network data for an rbm which can achieve -14.275 for 3x3 honeycomb model.
+
+- __source_torch/operators_3x3__
+
+    - Operators for 3x3 lattice.
 
 __In order to cite this work, use the following:__
 

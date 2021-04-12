@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 from torch_honeycomb import *
+import torch.nn as nn
+import torch.optim as optim
+import pickle,numpy,itertools
 
 RENRM_REAL=2 #DO NOT TOUCH IT! LEAVE IT AS TWO(ER)!
 
@@ -51,10 +54,6 @@ class RBM(nn.Module):
 
     def multiply(self,dx_re,dx_im):
         #the "t" here in tex has no meaning, just for alignment
-        """RBM.imgmul((dx_re[:, 41],dx_im[:, 41]),RBM.imgmul((dx_re[:, 40],dx_im[:, 40]),
-            RBM.imgmul((dx_re[:, 39],dx_im[:, 39]),RBM.imgmul((dx_re[:, 38],dx_im[:, 38]),
-            RBM.imgmul((dx_re[:, 37],dx_im[:, 37]),RBM.imgmul((dx_re[:, 36],dx_im[:, 36]),
-            """
         tex=RBM.imgmul((dx_re[:, 35],dx_im[:, 35]),RBM.imgmul((dx_re[:, 34],dx_im[:, 34]),
             RBM.imgmul((dx_re[:, 33],dx_im[:, 33]),RBM.imgmul((dx_re[:, 32],dx_im[:, 32]),
             RBM.imgmul((dx_re[:, 31],dx_im[:, 31]),RBM.imgmul((dx_re[:, 30],dx_im[:, 30]),
@@ -111,76 +110,51 @@ class RBM(nn.Module):
         overlaps=["%.4f"%(100*torch.sqrt(((bx[0,:]*self.gs[i]).sum().square()+(bx[1,:]*self.gs[i]).sum().square())/norm).item()) for i in range(3)]
         return ", ".join(overlaps)
 
-    def train(self):
-        #optimizer=optim.SGD(self.parameters(),lr=0.04,momentum=0)
-        optimizer=optim.Adam(self.parameters(),lr=0.001,betas=(0.3,0.999),eps=1e-07)
-        log("optimizer: %s"%(optimizer.__dict__['defaults'],))
-        self.train_stage=0
-        for epoch in range(160000+1):
-            energy=self()
-            if (epoch<5000 and epoch%100==0) or epoch%10000==0:
-                prob_list=[]
-                with torch.no_grad():
-                    #prob_list.append(self.get_overlap())
-                    prob_list.append("%.4f"%(self.w1_re.weight.abs().max().item()))
-                    prob_list.append("%.4f"%(self.w1_im.weight.abs().max().item()))
-                log("%5d: %.8f, %s"%(epoch,energy,prob_list))
-            if self.train_stage==0 and epoch==80000:
-                self.train_stage=1
-                log("increase train stage to 1")
-            elif self.train_stage==1 and epoch==120000:
-                optimizer=optim.SGD(self.parameters(),lr=0.01,momentum=0)
-                log("optimizer: %s"%(optimizer.__dict__['defaults'],))
-            optimizer.zero_grad()
-            energy.backward()
-            optimizer.step()
-        save_name='Full-%d-%.3f.pkl'%(self.hidden_num_1,self().abs())
-        torch.save(self.state_dict(),save_name)
-        log("saved state_dict to %s"%(save_name))
-
-import pickle,numpy,itertools
-
-def filp_x(t,nums):
-    hidden_num,spinor_num=t.w1_re.weight.shape
-    for num in nums:
-        t.w1_re.weight[:,num]*=-1
-        t.w1_im.weight[:,num]*=-1
-
-def load_matrices(perfix,print=True):
+def load_matrices(perfix):
     with open(perfix+".smp",'rb') as f:
         state_index=pickle.load(f)
-        log("loaded state_index from %s"%(f.name,))
+    # .ha is gened by gen_H_torchsparse in torch_honeycomb
     with open(perfix+".ha",'rb') as f:
         H=pickle.load(f)
-        log("loaded H from %s"%(f.name))
+    # .sym is gened by gen_shift_sym() in torch_honeycomb
     with open(perfix+".sym",'rb') as f:
         S=pickle.load(f)
-        log("loaded S from %s"%(f.name))
+    # eig is gened by get_eig in rbm_eig
     with open(perfix+".eig",'rb') as f:
         eig,eigv=pickle.load(f)
-        log("loaded eig from %s: %s ..."%(f.name,eig[0:8]))
     return state_index,H,S,eig,eigv
 
-def main_2():
-    with open("3x3_full_right.sym",'rb') as f:
-        sym_right=pickle.load(f)
-    with open("3x3_full_up.sym",'rb') as f:
-        sym_up=pickle.load(f)
-
-    fa=[7,15,1]
-    fb=[5,11,13]
-    fc=[3,9,17]
-
-    #filp_x(t,(7,))
-    bx=t.stage_a().t()
-    norm=bx.square().sum()
-
-    Hv=t.H.mm(bx)
-    energy=(bx[:,0].dot(Hv[:,0])+bx[:,1].dot(Hv[:,1]))/norm
-    log(energy.item())
-
-    bx=bx.t()
-    log(["%.4f"%(100*torch.sqrt(((bx[0,:]*t.gs[i]).sum().square()+(bx[1,:]*t.gs[i]).sum().square())/norm).item()) for i in range(3)])
+def main(perfix):
+    st,H,S,eig,eigv=load_matrices(perfix)
+    r=RBM(st,H,parafile="Full-36-14.275.pkl",device="cpu")
+    r.train_stage=1
+    r.symmetry=S.to(r.device)
+    r.gs=torch.tensor([eigv[:,1],eigv[:,3],eigv[:,4]],dtype=torch.float32).to(r.device)
+    optimizer=optim.SGD(r.parameters(),lr=0.03,momentum=0)
+    #optimizer=optim.Adam(r.parameters(),lr=0.001,betas=(0.3,0.999),eps=1e-07)
+    log("optimizer: %s"%(optimizer.__dict__['defaults'],))
+    ckpts=[-14.275,-14.28,-14.285,-14.29,-14.291,-14.2914,-14.2915]
+    ckpt_num=0
+    for epoch in range(40*80000+1):
+        energy=r()
+        if (epoch<1000 and epoch%100==0) or epoch%10000==0:
+            prob_list=[]
+            with torch.no_grad():
+                prob_list.append(r.get_overlap())
+                #prob_list.append("%.4f"%(self.w1_re.weight.abs().max().item()))
+                #prob_list.append("%.4f"%(self.w1_im.weight.abs().max().item()))
+            log("%5d: %.8f, %s"%(epoch,energy,prob_list))
+            if energy<ckpts[ckpt_num]: #14.2915
+                save_name='Full-%d-%.3f.pkl'%(r.hidden_num_1,r().abs())
+                torch.save(r.state_dict(),save_name)
+                log("saved state_dict to %s"%(save_name))
+                ckpt_num+=1
+        optimizer.zero_grad()
+        energy.backward()
+        optimizer.step()
+    save_name='Full-%d-%.3f.pkl'%(r.hidden_num_1,r().abs())
+    torch.save(r.state_dict(),save_name)
+    log("saved state_dict to %s"%(save_name))
 
 if __name__=="__main__":
-    main()
+    main("operators_3x3/3x3_full")
