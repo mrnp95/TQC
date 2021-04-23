@@ -126,7 +126,8 @@ def load_matrices(perfix):
 
 def main(perfix):
     st,H,S,eig,eigv=load_matrices(perfix)
-    r=RBM(st,H,parafile="Full-36-14.275.pkl",device="cpu")
+    #r=RBM(st,H,parafile="Full-36-14.275.pkl",device="cpu")
+    r=RBM(st,H,parafile=None,device="cpu")
     r.train_stage=1
     r.symmetry=S.to(r.device)
     r.gs=torch.tensor([eigv[:,1],eigv[:,3],eigv[:,4]],dtype=torch.float32).to(r.device)
@@ -137,7 +138,7 @@ def main(perfix):
     ckpt_num=0
     for epoch in range(40*80000+1):
         energy=r()
-        if (epoch<1000 and epoch%100==0) or epoch%10000==0:
+        if (epoch<1000 and epoch%10==0) or epoch%10000==0:
             prob_list=[]
             with torch.no_grad():
                 prob_list.append(r.get_overlap())
