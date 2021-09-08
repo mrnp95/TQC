@@ -25,12 +25,22 @@ def log(msg,l=1,end="\n",logfile=None):
         with open(logfile,"a") as f:
             f.write(tempstr)
 
+import numpy
+
 #define consts
 JX,JY,JZ=(-1,-1,-1) #add minus sign here, then you'll never forget minus sign!
-K=0                 #freely tunable parameter, not be used yet
-sz=[[1,0],[0,-1]]   #three Pauli matrix
-sx=[[0,1],[1,0]]
-sy=[[0,-1],[1,0]]
+"""
+sz=numpy.array([[1,0],[0,-1]],dtype=numpy.complex128)   #three Pauli matrix
+sx=numpy.array([[0,1],[1,0]],dtype=numpy.complex128)
+sy=numpy.array([[0,-1j],[1j,0]],dtype=numpy.complex128)"""
+
+cost=1/math.sqrt(3) #0.577
+varu=0.5+math.sqrt(3)/6 #0.788
+varv=0.5-math.sqrt(3)/6 #0.211
+sz=numpy.array([[cost,cost-cost*1j],[cost+cost*1j,-cost]],dtype=numpy.complex128)
+sx=numpy.array([[-cost,varu+varv*1j],[varu-varv*1j,cost]],dtype=numpy.complex128)
+sy=numpy.array([[-cost,-varv-varu*1j],[-varv+varu*1j,cost]],dtype=numpy.complex128)
+
 X_FLAG,Y_FLAG,Z_FLAG=(0,1,2) #some flags (indices) used in codes
 FLIP_SHIFT=3        #X_FLIP_FLAG=X_FLAG+FLIP_SHIFT
 
@@ -104,7 +114,7 @@ def get_hamiltonian(size,flip=[],show=True):
         show_hilbert(hilbert)
     return hamiltonian
 
-def run_rbm(size,alpha=2,n_samples=4000,n_iter=3000,lr=0.01,df=1):
+def run_rbm(size,alpha=2,n_samples=8000,n_iter=3000,lr=0.01,df=1):
     """
     train rbm using hamiltonian and machine
         output_perfix: filename to save results
@@ -121,7 +131,7 @@ def run_rbm(size,alpha=2,n_samples=4000,n_iter=3000,lr=0.01,df=1):
                               ,diag_shift=0.1,use_iterative=True,method='Sr')"""
 
     ma=netket.models.RBM(alpha=alpha)
-    sa=netket.sampler.MetropolisExchange(hilbert=ha.hilbert,graph=ha.graph)
+    sa=netket.sampler.MetropolisLocal(hilbert=ha.hilbert)
     vs=netket.vqs.MCState(sa,ma,n_samples=n_samples)
     op=netket.optimizer.Sgd(learning_rate=lr)
     sr=netket.optimizer.SR(diag_shift=0.1)
@@ -133,8 +143,14 @@ def run_rbm(size,alpha=2,n_samples=4000,n_iter=3000,lr=0.01,df=1):
     log('optimize machine takes %.2fs'%(end-start,))
     return end-start
 
+def exact_diag(size):
+    ha=get_hamiltonian(size,show=False)
+    eig=netket.exact.lanczos_ed(ha,compute_eigenvectors=False)
+    log(eig)
+
 if __name__=="__main__":
-    log("It is /source_neobases/honeycomb.py")
+    log("This is /source_neobases/honeycomb.py")
     #get_graph((3,3),flip=[(8,0),(8,2)])
     #get_graph((6,4))
     run_rbm((3,3))
+    #exact_diag((3,3))
