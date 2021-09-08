@@ -224,7 +224,7 @@ def measure(hamiltonian,machine,observables,output_prefix=None,n_iter=100,n_samp
     gs.run(output_prefix=output_prefix,n_iter=n_iter)
     end=time.time()
     log('measuring %d observables takes %fs'%(len(observables),end-start))
-    
+
     try:
         data=json.load(open(output_prefix+".log"))
     except:
@@ -305,7 +305,7 @@ def flip_spins(machine,n_h,sites):
 if __name__=="__main__":
     print("It is honeycomb.py")
     #get_graph((3,3),flip=[(8,0),(8,2)])
-    #get_graph((3,3))
+    get_graph((6,4))
     #size=(3,3)
     #h=get_hamiltonian(size)
     #print(exact_diag(h))
@@ -313,8 +313,8 @@ if __name__=="__main__":
     #    size=(i,i)
     #    gs_energy_1(size)
     #    gs_energy_2(size)
-    gs_energy_2((3,2))
-    
+    #gs_energy_2((3,2))
 
-    
+
+
 
